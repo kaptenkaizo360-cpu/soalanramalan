@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#5C94FC">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Kuiz Akhlak, Tajwid dan Sirah Darjah 5</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@600;700;800;900&family=Amiri:wght@400;700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#E60012;--blue:#049CD8;--yellow:#FBD000;--green:#43B047;--orange:#F58B2D;--purple:#8E4FD8;--pink:#FF6FB5;--sky:#5C94FC;--ink:#1b1b1b;--line:#1b1b1b;--muted:#4a4a4a;--card:#fff;--ok:#2e9e3a;--okbg:#dff7d9;--no:#E60012;--nobg:#ffe1e1;--akhlak:#E60012;--tajwid:#049CD8;--sirah:#43B047;--semua:#F58B2D;--cabaran:#8E4FD8;--l1:#43B047;--l2:#F58B2D;--l3:#E60012;--gold:#b8892b;--green-c:#0f5c3a;--sh:0 5px 0 var(--line)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-family:'Nunito',system-ui,sans-serif;color:var(--ink);min-height:100vh;padding:16px;padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right));padding-bottom:calc(70px + env(safe-area-inset-bottom));overflow-x:hidden;
+  background:
+   radial-gradient(ellipse 70px 26px at 12% 9%,#fff 98%,transparent) ,
+   radial-gradient(ellipse 46px 22px at 17% 7%,#fff 98%,transparent),
+   radial-gradient(ellipse 80px 28px at 84% 16%,#fff 98%,transparent),
+   radial-gradient(ellipse 50px 24px at 79% 14%,#fff 98%,transparent),
+   linear-gradient(180deg,#5C94FC 0%,#7FB0FF 60%,#9CC3FF 100%);
+  background-attachment:fixed}
+body::after{content:"";position:fixed;left:0;right:0;bottom:0;height:calc(44px + env(safe-area-inset-bottom));z-index:-1;
+  background:linear-gradient(#43B047 0 10px,#2a7a2f 10px 13px,transparent 13px),
+   repeating-linear-gradient(90deg,transparent 0 30px,#7a3b12 30px 33px),
+   repeating-linear-gradient(0deg,#c8641e 0 14px,#7a3b12 14px 17px);}
+button,input{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.wrap{max-width:760px;margin:0 auto}
+.ar{font-family:'Amiri','Noto Naskh Arabic','Traditional Arabic','Geeza Pro',serif;line-height:1.9;font-size:1.35em;direction:rtl;unicode-bidi:isolate}
+header{text-align:center;padding:14px 0 16px}
+header h1{font-family:'Fredoka','Nunito',sans-serif;font-size:2rem;font-weight:700;line-height:1.12;color:#fff;letter-spacing:.5px;
+  text-shadow:3px 3px 0 var(--line),-2px -2px 0 var(--line),2px -2px 0 var(--line),-2px 2px 0 var(--line),0 3px 0 var(--line)}
+header h1 .c1{color:var(--yellow)}header h1 .c2{color:#fff}
+header p{color:#fff;margin-top:8px;font-weight:800;text-shadow:0 2px 0 rgba(0,0,0,.35)}
+.namebox{background:#fff;border:3px solid var(--line);border-radius:16px;padding:14px;margin-bottom:6px;box-shadow:var(--sh)}
+.namebox label{font-weight:900;display:block;margin-bottom:6px}
+.namebox input,.login input{width:100%;padding:13px;border-radius:12px;border:3px solid var(--line);font-family:inherit;font-size:1.05rem;font-weight:700;background:#fffbe6}
+.namebox input:focus,.login input:focus{outline:none;border-color:var(--blue);background:#fff}
+.namebox .err{text-align:left;margin-top:6px}
+.lv{display:inline-block;font-weight:800;font-size:.8rem;padding:4px 10px;border-radius:99px;color:#fff;border:2px solid var(--line)}
+.lv1{background:var(--l1)}.lv2{background:var(--l2)}.lv3{background:var(--l3)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.sub{position:relative;border:3px solid var(--line);cursor:pointer;border-radius:18px;padding:20px 12px 18px;color:#fff;text-align:center;font-family:inherit;box-shadow:var(--sh);transition:transform .08s;text-shadow:0 2px 0 rgba(0,0,0,.35)}
+.sub::before{content:"";position:absolute;inset:6px;border-radius:12px;border:2px dashed rgba(255,255,255,.45);pointer-events:none}
+.sub:active{transform:translateY(4px);box-shadow:0 1px 0 var(--line)}
+.sub .ic{font-size:2.4rem;filter:drop-shadow(0 2px 0 rgba(0,0,0,.35))}.sub .nm{font-family:'Fredoka','Nunito',sans-serif;font-size:1.25rem;font-weight:700;margin-top:6px}.sub .ct{font-size:.9rem;font-weight:800}
+.sub .best,.sub .resume{font-size:.8rem;margin-top:6px;background:rgba(0,0,0,.28);border-radius:99px;padding:3px 9px;display:inline-block;font-weight:800}
+.sub .resume{background:var(--yellow);color:var(--ink);text-shadow:none;border:2px solid var(--line)}
+.sub.pp{background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.12) 0 10px,transparent 10px 20px)!important}
+.card{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--sh)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.top .pill{max-width:46vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btn{border:3px solid var(--line);cursor:pointer;font-family:inherit;font-weight:900;border-radius:14px;padding:11px 17px;font-size:1rem;box-shadow:0 4px 0 var(--line);transition:transform .08s}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--line)}
+.ghost{background:#fff;color:var(--ink)}
+.pill{font-weight:900;padding:6px 12px;border-radius:99px;color:#fff;font-size:.9rem;border:3px solid var(--line);text-shadow:0 1px 0 rgba(0,0,0,.35)}
+#sc{background:var(--yellow);border:3px solid var(--line);border-radius:99px;padding:5px 12px;color:var(--ink);font-weight:900}
+.bar{height:16px;background:#fff;border:3px solid var(--line);border-radius:99px;overflow:hidden;margin-bottom:16px}
+.bar i{display:block;height:100%;transition:width .3s;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.35) 0 8px,transparent 8px 16px)!important}
+.qn{color:var(--muted);font-weight:900;font-size:.95rem}
+.q{font-size:1.2rem;font-weight:800;margin:10px 0 14px;line-height:1.5}
+.q .st{display:block;background:#fffbe6;border:2px dashed #c9a400;border-radius:12px;padding:10px 14px;margin:8px 0;font-weight:700;line-height:1.8}
+.hintrow{display:flex;justify-content:flex-start;margin-bottom:12px}
+.hintbtn{background:var(--yellow);color:var(--ink);padding:8px 14px;font-size:.95rem}
+.hint{display:none;background:#fff8cc;border:3px solid var(--line);border-radius:14px;padding:11px 14px;font-weight:700;margin-bottom:12px;line-height:1.55}
+.hint b{color:#b06a00}
+.opt{min-height:56px;word-break:break-word;display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:#fff;border:3px solid var(--line);border-radius:16px;padding:12px 14px;margin-bottom:11px;font-family:inherit;font-size:1.05rem;font-weight:800;color:var(--ink);cursor:pointer;line-height:1.4;box-shadow:0 4px 0 var(--line);transition:transform .08s}
+.opt:active:not(:disabled){transform:translateY(3px);box-shadow:0 1px 0 var(--line)}
+.opt b{flex:0 0 36px;height:36px;border-radius:50%;display:grid;place-items:center;border:3px solid var(--line);color:#fff;font-size:1rem;text-shadow:0 1px 0 rgba(0,0,0,.4)}
+.opt:nth-child(1) b{background:var(--red)}.opt:nth-child(2) b{background:var(--blue)}.opt:nth-child(3) b{background:var(--yellow);color:var(--ink);text-shadow:none}.opt:nth-child(4) b{background:var(--green)}
+.opt.ok{background:var(--okbg);animation:pop .35s}.opt.ok b{background:var(--ok)!important;color:#fff}
+.opt.no{background:var(--nobg);animation:shake .35s}.opt.no b{background:var(--no)!important;color:#fff}
+.opt:disabled{cursor:default}
+@keyframes pop{50%{transform:scale(1.03)}}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.fb{border-radius:14px;border:3px solid var(--line);padding:12px 14px;margin:6px 0 14px;font-weight:700;line-height:1.5;display:none}
+.fb.ok{display:block;background:var(--okbg);color:#14501a}.fb.no{display:block;background:var(--nobg);color:#8a0b12}
+.next{width:100%;color:#fff;font-size:1.1rem;padding:14px;text-shadow:0 2px 0 rgba(0,0,0,.35)}
+.next.wait{filter:grayscale(.55) brightness(1.05);opacity:.85}
+.score{text-align:center}
+.big{font-family:'Fredoka','Nunito',sans-serif;font-size:4rem;font-weight:700;line-height:1;-webkit-text-stroke:2px var(--line);text-shadow:0 4px 0 var(--line)}
+.grade{display:inline-block;margin-top:12px;font-weight:900;font-size:1.15rem;padding:6px 16px;border-radius:99px;color:#fff;border:3px solid var(--line);text-shadow:0 1px 0 rgba(0,0,0,.35)}
+.msg{font-size:1.2rem;font-weight:900;margin:12px 0 4px}
+.row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:18px 0}
+.certbtn{background:var(--yellow);color:var(--ink);font-size:1.08rem;padding:13px 20px}
+.nocert{background:#fff4d6;border:3px dashed var(--orange);border-radius:14px;padding:12px;font-weight:800;color:#7a3b00;margin-top:14px}
+.rv{margin-top:18px;text-align:left}
+.rv h3{margin-bottom:10px}
+.ri{background:#fff;border:3px solid var(--line);border-left:10px solid var(--no);border-radius:12px;padding:12px;margin-bottom:10px;font-weight:700;line-height:1.5}
+.ri .a{color:var(--ok)}.ri .y{color:var(--no)}
+.hide{display:none!important}
+.sech{display:flex;align-items:center;gap:10px;margin:22px 0 10px;font-weight:900;font-size:1.1rem;color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.4);flex-wrap:wrap}
+.sech small{font-weight:800;font-size:.85rem}
+.sech .tagb{background:var(--red);color:#fff;border:3px solid var(--line);border-radius:10px;padding:3px 10px;font-size:.85rem;box-shadow:0 3px 0 var(--line)}
+.qtag{display:inline-block;background:var(--ink);color:var(--yellow);font-weight:900;font-size:.82rem;border-radius:10px;padding:4px 10px;margin-top:6px}
+footer{text-align:center;color:#fff;font-size:.88rem;margin-top:22px;font-weight:800;line-height:1.5;text-shadow:0 2px 0 rgba(0,0,0,.4)}
+.gtab{width:100%;border-collapse:collapse;margin-top:8px;font-weight:800;font-size:.92rem}
+.gtab td,.gtab th{border:2px solid var(--line);padding:6px 8px;text-align:center}
+.gtab th{background:var(--yellow)}
+.gtab tr.certrow td{background:#dff7d9}
+.admbtn{display:block;margin:18px auto 0;background:var(--ink);color:#fff;box-shadow:0 4px 0 #000}
+.login{max-width:380px;margin:30px auto}
+.login h2{text-align:center;margin-bottom:14px}
+.login input{margin-bottom:10px}
+.err{color:var(--no);font-weight:900;text-align:center;min-height:22px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 14px}
+.tab{background:#fff;color:var(--ink);padding:8px 13px}
+.tab.on{color:#fff;text-shadow:0 1px 0 rgba(0,0,0,.35)}
+.ak{border:3px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px;background:#fff;box-shadow:0 3px 0 var(--line);line-height:1.55;font-weight:700}
+.ak .no{color:var(--muted);font-size:.9rem}
+.ak .jw{color:var(--ok);margin-top:6px}
+.ak .pj{background:#f2f7ff;border-radius:10px;padding:8px 12px;margin-top:6px;font-weight:600}
+.ak .hn{background:#fff8cc;border-radius:10px;padding:8px 12px;margin-top:6px;font-weight:600}
+.lvh{margin:18px 0 8px}
+.admbar{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 6px}
+.admbar .btn{padding:8px 12px;font-size:.9rem}
+.selbtn{background:var(--green);color:#fff}
+.akh{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:4px}
+.akb{display:flex;gap:6px;flex-shrink:0}
+.ico{border:3px solid var(--line);background:#fff;border-radius:10px;font-size:1.05rem;padding:5px 8px;cursor:pointer;line-height:1;box-shadow:0 3px 0 var(--line)}
+.ak.sel{background:#effbea;outline:4px solid var(--green)}
+#printArea{display:none}
+#printArea h1{font-size:1.3rem;margin-bottom:2px}
+#printArea .pinfo{color:#555;font-weight:700;margin-bottom:12px;font-size:.9rem}
+/* ===== BAHAGIAN C: ZON HITAM ===== */
+.zone{margin-top:26px;background:#0d0d0d;border:4px solid #000;border-radius:22px;padding:16px 14px 18px;box-shadow:0 6px 0 #000;color:#fff;position:relative;overflow:hidden}
+.zone::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 12px,transparent 12px 24px);pointer-events:none}
+.zone .sech{margin:0 0 6px;color:#fff;text-shadow:none}
+.zone .sech .tagb{background:#000;color:var(--yellow);border-color:var(--yellow);box-shadow:0 3px 0 var(--yellow)}
+.zone p.zi{font-weight:700;color:#cfcfcf;margin:0 0 12px;line-height:1.5;font-size:.92rem;position:relative}
+.anbtn{position:relative;display:block;width:100%;background:var(--yellow);color:#000;border-color:#000;box-shadow:0 4px 0 #000;margin-bottom:12px;font-size:1.02rem}
+.sub.hd{background:#1c1c1c!important;border-color:#000;box-shadow:0 5px 0 #000;text-shadow:none}
+.sub.hd::before{border:2px solid var(--acc);inset:5px}
+.sub.hd .nm{color:var(--acc)}
+.sub.hd .ct{color:#ddd}
+.sub.hd .best{background:#333}
+#analisis .card{background:#0d0d0d;color:#eee;border-color:#000}
+#analisis h2{font-family:'Fredoka','Nunito',sans-serif;color:var(--yellow);margin-bottom:4px}
+#analisis h4{color:var(--yellow);margin:16px 0 8px;font-size:1.02rem}
+#analisis ul{padding-left:20px;line-height:1.6;font-weight:600}
+#analisis li{margin-bottom:4px}
+#analisis .zsrc{color:#aaa;font-weight:700;font-size:.88rem;margin-top:6px}
+#analisis .tabs .tab{background:#1c1c1c;color:#fff;border-color:#000;box-shadow:0 3px 0 #000}
+#analisis .tabs .tab.on{background:var(--yellow);color:#000;text-shadow:none}
+.zbar{display:grid;grid-template-columns:minmax(120px,42%) 1fr auto;align-items:center;gap:8px;margin:6px 0;font-weight:800;font-size:.9rem}
+.zbar i{display:block;height:14px;border-radius:99px;background:#2a2a2a;position:relative;overflow:hidden}
+.zbar i::after{content:"";position:absolute;inset:0;width:var(--w);background:linear-gradient(90deg,var(--green),var(--yellow),var(--red));border-radius:99px}
+.zbar b{color:var(--yellow);min-width:2ch;text-align:right}
+.zwarn{background:#2a1a00;border:2px dashed var(--orange);border-radius:14px;padding:4px 14px 10px;margin-top:14px}
+.zwarn h4{color:var(--orange)!important}
+.znote{background:#1c1c1c;border-radius:12px;padding:10px 12px;color:#bbb;font-weight:700;font-size:.85rem;margin-top:16px;line-height:1.5}
+/* popup */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:18px;z-index:50}
+.modal .box{background:#fff;border:4px solid var(--line);border-radius:20px;box-shadow:0 7px 0 var(--line);max-width:420px;width:100%;padding:20px 18px;text-align:center;animation:pop .3s}
+.modal .mi{font-size:3rem;line-height:1}
+.modal h3{font-family:'Fredoka','Nunito',sans-serif;font-size:1.35rem;margin:8px 0 6px}
+.modal p{font-weight:700;line-height:1.5;color:#333}
+.modal .row{margin:16px 0 0}
+.modal .row .btn{flex:1 1 140px}
+@media (max-width:520px){
+  body{padding-top:10px}
+  header{padding:6px 0 12px}
+  header h1{font-size:1.55rem}
+  header p{font-size:.92rem}
+  .grid{grid-template-columns:repeat(3,1fr);gap:8px}
+  .sub .ic{font-size:1.7rem}
+  .sub{padding:14px 4px 12px;border-radius:14px}
+  .sub .ic{font-size:2rem}
+  .sub .nm{font-size:.95rem;line-height:1.2}
+  .sub .ct{font-size:.8rem}
+  .sech{font-size:1rem;gap:6px;margin:18px 0 8px}
+  .card{padding:15px;border-radius:18px}
+  .q{font-size:1.06rem}
+  .q .st{padding:8px 10px;font-size:.98rem}
+  .opt{font-size:.98rem;padding:11px 12px;gap:10px;border-radius:14px}
+  .opt b{flex:0 0 32px;height:32px}
+  .fb,.hint{font-size:.95rem;padding:11px 12px}
+  .btn{padding:10px 13px;font-size:.95rem}
+  .next{font-size:1.02rem;padding:13px}
+  .big{font-size:3.2rem}
+  .row .btn{flex:1 1 auto}
+  .admbar .btn{flex:1 1 calc(50% - 8px)}
+  .tabs .btn{flex:1 1 calc(50% - 8px);font-size:.86rem}
+  .ak{padding:12px;font-size:.95rem}
+  .akh{flex-direction:column}
+  .akb{align-self:flex-end}
+  .ico{font-size:1.2rem;padding:8px 10px}
+  .gtab{font-size:.8rem}
+  .login{margin:12px auto}
+  .certbtn{font-size:1rem;padding:12px 16px}
+}
+/* ===== SIJIL ===== */
+.certwrap{overflow:hidden;width:100%}
+.cert{width:1000px;height:700px;margin:0;transform-origin:top left;background:#fffdf6;position:relative;padding:22px;font-family:'Nunito',sans-serif;color:#2a2a2a}
+.cert .b1{position:absolute;inset:14px;border:6px solid var(--green-c);border-radius:6px}
+.cert .b2{position:absolute;inset:28px;border:2px solid var(--gold);border-radius:4px}
+.cert .b3{position:absolute;inset:34px;border:1px solid var(--gold);border-radius:3px}
+.cert .corner{position:absolute;width:70px;height:70px;border:3px solid var(--gold);transform:rotate(45deg);background:#fffdf6}
+.cert .corner::after{content:"";position:absolute;inset:10px;border:2px solid var(--green-c);background:repeating-linear-gradient(45deg,#fffdf6 0 5px,#f3e7c3 5px 7px)}
+.cert .c1{top:-8px;left:-8px}.cert .c2{top:-8px;right:-8px}.cert .c3{bottom:-8px;left:-8px}.cert .c4{bottom:-8px;right:-8px}
+.cert .inner{position:relative;height:100%;display:flex;flex-direction:column;align-items:center;text-align:center;padding:40px 70px 30px}
+.cert .bism{font-family:'Amiri',serif;font-size:1.7rem;color:var(--green-c);direction:rtl}
+.cert h2{font-family:'Cinzel',serif;font-size:2.7rem;color:var(--green-c);letter-spacing:4px;margin-top:6px}
+.cert .sub2{font-family:'Cinzel',serif;color:var(--gold);letter-spacing:6px;font-size:1rem;margin-top:2px}
+.cert .orn{width:300px;height:14px;margin:12px auto;background:radial-gradient(circle,var(--gold) 3px,transparent 4px) center/18px 14px repeat-x;opacity:.8}
+.cert .txt{font-size:1.1rem;font-weight:600;color:#444}
+.cert .nm{font-size:2.3rem;font-weight:900;color:#1d2b4f;margin:8px 0 4px;padding:0 30px 4px;border-bottom:2px solid var(--gold);min-width:520px}
+.cert .subj{font-size:1.35rem;font-weight:900;color:var(--green-c);margin:6px 0}
+.cert .res{display:flex;gap:18px;margin:12px 0 4px}
+.cert .res div{border:2px solid var(--gold);border-radius:12px;padding:8px 20px;background:#fff}
+.cert .res small{display:block;font-size:.75rem;font-weight:800;color:var(--gold);letter-spacing:1px}
+.cert .res b{font-size:1.5rem;color:#1d2b4f}
+.cert .sign{margin-top:auto;display:flex;justify-content:space-between;width:100%;padding:0 30px}
+.cert .sign div{width:240px;font-weight:700;font-size:.95rem;color:#444}
+.cert .sign hr{border:none;border-top:2px dotted #888;margin-bottom:6px}
+.cert .medal{position:absolute;right:70px;top:150px;width:110px;height:110px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffe9a8,#d4a63a 55%,#9b7018);display:grid;place-items:center;color:#fff;font-weight:900;font-family:'Cinzel',serif;box-shadow:0 0 0 6px #fffdf6,0 0 0 8px var(--gold);text-align:center;line-height:1.05}
+.cert .medal span{font-size:2.6rem}
+.cert .medal small{font-size:.7rem;letter-spacing:1px}
+@media print{
+  @page{size:A4 landscape;margin:0}
+  body{background:#fff;padding:0}
+  body.printcert .wrap>*:not(#certPage){display:none!important}
+  body.printcert #certPage{display:block!important}
+  body.printcert .noprint{display:none!important}
+  body.printcert .cert{transform:none!important;width:297mm;height:210mm;margin:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body.printcert .certwrap{overflow:visible;height:auto!important}
+  body.printsel .wrap{display:none!important}
+  body.printsel #printArea{display:block!important;padding:10mm}
+  body.printsel #printArea .ak{box-shadow:none;border:1px solid #bbb;break-inside:avoid;outline:none;background:#fff}
+  body.printsel .noprint{display:none!important}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div id="home">
+  <header>
+    <h1>⭐ <span class="c1">Kuiz</span> Akhlak, Tajwid<br>dan Sirah <span class="c1">Darjah 5</span> ⭐</h1>
+    <p>Jawab semua soalan dengan teliti. Dapat 70% ke atas, layak terima sijil! 🏅</p>
+  </header>
+  <div class="namebox">
+    <label for="sname">✏️ Nama murid</label>
+    <input id="sname" placeholder="Tulis nama penuh" autocomplete="off" maxlength="60">
+    <div class="err" id="nerr"></div>
+  </div>
+  <div class="sech"><span class="tagb">BAHAGIAN A</span> Latihan Berdasarkan Nota</div>
+  <div class="grid" id="subs"></div>
+  <div class="sech"><span class="tagb">BAHAGIAN B</span> Soalan Peperiksaan Sebenar <small>Sekolah Agama Kerajaan Johor</small></div>
+  <div class="grid" id="subsPP"></div>
+  <div class="zone">
+    <div class="sech"><span class="tagb">BAHAGIAN C</span> ⚫ Zon Cabaran Tersukar</div>
+    <p class="zi">Analisis soalan berdasarkan kertas peperiksaan sebenar, dan 5 soalan tersukar bagi setiap subjek. Untuk murid yang mahu cuba cabaran paling tinggi!</p>
+    <button class="btn anbtn" onclick="showAnalisis('akhlak')">📊 Analisis &amp; Ramalan Soalan Peperiksaan</button>
+    <div class="grid" id="subsHD"></div>
+  </div>
+  <footer>Semua soalan wajib dijawab. Markah dikira secara kumulatif dan ditukar kepada peratus.<br>Semoga berjaya! 🤲</footer>
+  <button class="btn admbtn" onclick="show('login')">🔐 Dashboard Guru / Muallim</button>
+</div>
+
+<div id="quiz" class="hide">
+  <div class="top">
+    <button class="btn ghost" onclick="askLeave()">🏠 Menu</button>
+    <span class="pill" id="pill"></span>
+    <span class="qn" id="sc"></span>
+  </div>
+  <div class="bar"><i id="prog"></i></div>
+  <div class="card">
+    <div class="qn" id="qn"></div><div id="qtg"></div>
+    <div class="q" id="qt"></div>
+    <div class="hintrow"><button class="btn hintbtn" id="hb" onclick="showHint()">💡 Hint</button></div>
+    <div class="hint" id="hint"></div>
+    <div id="opts"></div>
+    <div class="fb" id="fb"></div>
+    <button class="btn next" id="next" onclick="nextQ()">Soalan Seterusnya →</button>
+  </div>
+</div>
+
+<div id="result" class="hide">
+  <div class="card score">
+    <div style="font-size:3rem" id="emo"></div>
+    <div class="big" id="pct"></div>
+    <div class="grade" id="grd"></div>
+    <div class="msg" id="rmsg"></div>
+    <div class="qn" id="rdet"></div>
+    <div id="certArea"></div>
+    <div class="row">
+      <button class="btn ghost" onclick="goHome()">🏠 Menu</button>
+      <button class="btn" id="retry" style="color:#fff" onclick="start(cur)">🔁 Cuba Lagi</button>
+      <button class="btn ghost" id="retryWrong" onclick="startWrong()">✏️ Ulang Soalan Salah</button>
+    </div>
+    <table class="gtab">
+      <tr><th>Gred</th><th>Peratus</th><th>Tahap</th></tr>
+      <tr><td>A</td><td>80 – 100</td><td>Cemerlang</td></tr>
+      <tr><td>B</td><td>60 – 79</td><td>Baik</td></tr>
+      <tr><td>C</td><td>40 – 59</td><td>Memuaskan</td></tr>
+      <tr><td>D</td><td>0 – 39</td><td>Perlu Bimbingan</td></tr>
+      <tr class="certrow"><td colspan="3">🏅 Sijil diberi kepada murid yang mendapat 70% ke atas</td></tr>
+    </table>
+    <div class="rv" id="rv"></div>
+  </div>
+</div>
+
+<div id="certPage" class="hide">
+  <div class="top noprint">
+    <button class="btn ghost" onclick="show('result')">← Kembali</button>
+    <button class="btn certbtn" onclick="printCert()">🖨️ Cetak / PDF</button>
+    <button class="btn certbtn" onclick="saveCertPNG()">📥 Simpan Gambar</button>
+  </div>
+  <div class="certwrap"><div class="cert" id="cert"></div></div>
+  <p class="qn noprint" style="text-align:center;margin-top:10px">📱 Di telefon: tekan "Simpan Gambar" untuk simpan sijil dalam galeri atau kongsi melalui WhatsApp. Untuk PDF, tekan "Cetak / PDF", pilih "Simpan sebagai PDF" dan susun atur Landskap.</p>
+</div>
+
+<div id="analisis" class="hide">
+  <div class="top"><button class="btn ghost" onclick="goHome()">🏠 Menu</button></div>
+  <div class="card">
+    <h2>📊 Analisis &amp; Ramalan Soalan</h2>
+    <div class="tabs" id="anTabs"></div>
+    <div id="anBody"></div>
+    <div class="znote">ℹ️ Ramalan ini dibuat berdasarkan kekerapan topik dalam kertas peperiksaan lepas yang dimuat naik. Ia membantu menentukan topik yang perlu diberi tumpuan, tetapi <b>bukan jaminan</b> soalan sebenar esok. Ulang kaji semua topik.</div>
+  </div>
+</div>
+
+<div id="login" class="hide">
+  <div class="card login">
+    <h2>🔐 Dashboard Guru / Muallim</h2>
+    <input id="uid" placeholder="ID" autocomplete="off">
+    <input id="pwd" type="password" placeholder="Kata laluan" onkeydown="if(event.key==='Enter')doLogin()">
+    <div class="err" id="err"></div>
+    <div class="row" style="margin:8px 0 0">
+      <button class="btn ghost" onclick="goHome()">← Kembali</button>
+      <button class="btn" style="background:#1d2b4f;color:#fff" onclick="doLogin()">Masuk</button>
+    </div>
+  </div>
+</div>
+
+<div id="admin" class="hide">
+  <div class="top noprint">
+    <button class="btn ghost" onclick="logout()">← Log Keluar</button>
+    <span></span>
+  </div>
+  <div class="card">
+    <h2>📋 Skema Jawapan dan Penjelasan</h2>
+    <p class="qn" id="admInfo"></p>
+    <div class="tabs noprint" id="tabs"></div>
+    <div class="admbar noprint">
+      <button class="btn ghost" onclick="selTab(true)">☑️ Pilih semua (tab ini)</button>
+      <button class="btn ghost" onclick="selTab(false)">⬜ Nyahpilih tab ini</button>
+      <button class="btn ghost" onclick="SEL.clear();refreshSel()">🧹 Kosongkan semua pilihan</button>
+      <button class="btn selbtn" onclick="printIds(sortIds([...SEL]))">🖨️ Cetak pilihan (<span id="selc">0</span>)</button>
+      <button class="btn ghost" onclick="printIds(TABIDS)">🖨️ Cetak semua dalam tab ini</button>
+      <button class="btn ghost" onclick="resetProg()">♻️ Set semula kuiz murid yang belum selesai</button>
+    </div>
+    <p class="qn noprint" style="margin-bottom:8px">Klik ⬜ untuk memilih soalan, atau 🖨️ pada soalan untuk cetak soalan itu sahaja. Pilihan kekal walaupun bertukar tab.</p>
+    <div id="akList"></div>
+  </div>
+</div>
+
+</div>
+<div id="printArea"></div>
+<div id="modal" class="modal hide" role="dialog" aria-modal="true"><div class="box"><div class="mi" id="mIcon"></div><h3 id="mTitle"></h3><p id="mText"></p><div class="row" id="mBtns"></div></div></div>
+<script>
+// Format: [aras(1 senang,2 sederhana,3 sukar), soalan, [jawapan betul, salah, salah, salah], penerangan, (tidak digunakan)]
+const A = s => `<span class="ar">${s}</span>`;
+const ST = (...x) => `<span class="st">${x.join("<br>")}</span>`;
+const BANK = {
+akhlak:[
+// ===== SENANG (15) =====
+[1,"Apakah maksud pekerja produktif?",["Pekerja yang buat kerja bagus, kreatif, cepat dan luar biasa","Pekerja yang selalu datang lewat","Pekerja yang buat kerja sambil lewa","Pekerja yang suka membuang masa"],"Pekerja produktif buat kerja dengan bagus, kreatif, cepat dan luar biasa.","Produktif = hasil kerja yang baik dan cepat."],
+[1,"Antara berikut, yang manakah faktor produktiviti kerja?",["Teknologi","Malas","Membuang masa","Bergaduh"],"8 faktor produktiviti: pendidikan, kemahiran, sikap, pendapatan, keselamatan sosial, teknologi, suasana kerja dan motivasi.","Pilih perkara yang MEMBANTU kerja jadi lebih baik."],
+[1,"Apakah pengertian jual beli?",["Pertukaran sesuatu barangan dengan sesuatu yang lain untuk dimiliki","Meminjam barang tanpa membayar","Memberi hadiah kepada kawan","Menyimpan barang di rumah"],"Jual beli ialah pertukaran barangan dengan sesuatu yang lain untuk dimiliki oleh orang lain.","Ada pertukaran antara penjual dan pembeli."],
+[1,"Antara berikut, yang manakah adab SEBELUM bersukan?",["Bersalam-salaman","Berdendam","Melanggar peraturan","Tidak menyimpan alatan"],"Adab sebelum bersukan: bersalam-salaman, pastikan kesihatan stabil, alat selamat dan patuhi peraturan.","Perbuatan baik yang dilakukan sebelum permainan bermula."],
+[1,"Antara berikut, yang manakah LARANGAN ketika bersukan?",["Berdendam","Bekerjasama","Mengawal emosi","Semangat kesukanan"],"Larangan bersukan: berdendam, melanggar peraturan, tingkah laku kurang sopan dan tiada semangat kesukanan.","Larangan = perkara yang TIDAK boleh dibuat."],
+[1,"Siapakah pemimpin bagi peringkat MUKIM?",["Penghulu","Ketua Kampung","Pegawai Daerah","Menteri Besar"],"Penghulu memimpin di peringkat mukim.","Mukim lebih besar daripada kampung, lebih kecil daripada daerah."],
+[1,"Imam ialah pemimpin dalam...",["Solat berjemaah","Keluarga","Daerah","Negara"],"Imam memimpin solat berjemaah.","Di masjid, siapa yang berdiri di hadapan saf?"],
+[1,"Antara berikut, yang manakah adab SEBELUM bermesyuarat?",["Datang tepat masa","Datang lewat","Menghantar orang lain sebagai ganti","Tidak tahu topik mesyuarat"],"Adab sebelum mesyuarat: datang tepat masa, bersedia, hadir sendiri, tahu topik dan lantik ketua.","Persediaan yang baik sebelum mesyuarat bermula."],
+[1,"Apakah maksud ikhlas dari segi bahasa?",["Bersih, murni dan khusus","Menahan diri","Berterima kasih","Sombong"],"Ikhlas dari segi bahasa: bersih, murni dan khusus.","Seperti air yang jernih dan bersih."],
+[1,"Apakah maksud sabar dari segi bahasa?",["Menahan","Berterima kasih","Bersih","Sombong"],"Sabar ("+A("صَبَرَ")+") bermaksud menahan.","Orang sabar dapat ____ diri daripada marah."],
+[1,"Mengucapkan 'Alhamdulillah' ialah contoh syukur dengan...",["Lidah","Hati","Seluruh anggota badan","Mata sahaja"],"Syukur lidah: memuji nikmat dan menyebut nama Allah, contohnya Alhamdulillah.","Anggota mana yang kita guna untuk menyebut?"],
+[1,"Apakah maksud hasad dengki?",["Iri hati, tidak senang melihat kelebihan orang lain","Gembira melihat kejayaan orang lain","Suka menolong orang lain","Bersyukur dengan nikmat Allah"],"Hasad ialah iri hati dan tidak senang melihat kelebihan orang lain sehingga timbul niat jahat.","Lihat pengertian hasad dalam nota Pelajaran 9."],
+[1,"Apakah hukum riak?",["Haram (syirik kecil)","Wajib","Sunat","Harus"],"Hukum riak ialah haram kerana ia termasuk syirik kecil.","Riak ialah sifat yang dilarang oleh Allah."],
+[1,"Apakah maksud takabbur dari segi bahasa?",["Sombong atau bangga diri sendiri","Rendah diri","Bersyukur","Bersabar"],"Takabbur dari segi bahasa ialah sombong atau bangga diri sendiri.","Lawan kepada sifat rendah diri."],
+[1,"Siapakah ulama yang menyimpulkan 7 sebab punca hasad dengki?",["Imam Al-Ghazali","Imam Syafie","Imam Bukhari","Imam Malik"],"Imam Al-Ghazali menyimpulkan 7 punca hasad dengki.","Nama ulama ini ada dalam nota Pelajaran 9."],
+// ===== SEDERHANA (10) =====
+[2,"Ali bekerja di sebuah kilang. Dia selalu datang awal dan menyusun kerja mengikut keutamaan. Apakah sifat yang ditunjukkan oleh Ali?",["Pekerja yang produktif","Pekerja yang malas","Pekerja yang membuang masa","Pekerja yang tidak bertanggungjawab"],"Datang awal dan susun kerja ikut keutamaan ialah cara meningkatkan produktiviti.","Ingat semula 'Cara Tingkatkan Produktiviti'."],
+[2,"Encik Rahman, seorang peniaga, tetap tersenyum walaupun pelanggan banyak bertanya dan memilih barang terlalu lama. Adab berjual-beli yang manakah diamalkan oleh Encik Rahman?",["Sabar dengan kerenah pelanggan","Tidak berjanji palsu","Mengutamakan kebersihan","Menjaga kewajipan kepada Allah"],"Encik Rahman sabar melayan kerenah pelanggan.","Kerenah pelanggan memerlukan sifat apa?"],
+[2,"Pasukan bola sepak Amin kalah dalam satu perlawanan. Apakah tindakan yang PALING BAIK dilakukan oleh Amin?",["Bersalaman dengan pasukan lawan dan menerima keputusan dengan hati terbuka","Merajuk dan terus pulang ke rumah","Memarahi pengadil","Meninggalkan bola di padang"],"Adab selepas bersukan: bermaafan, tidak berdendam dan terima keputusan dengan hati terbuka.","Fikir tentang adab SELEPAS bersukan."],
+[2,"Semasa mesyuarat kelas, Siti ingin memberi pendapat ketika Hafiz sedang bercakap. Apakah yang sepatutnya Siti lakukan?",["Tunggu Hafiz habis bercakap, kemudian minta izin untuk memberi pendapat","Terus memotong percakapan Hafiz","Bercakap dengan kuat supaya didengari","Keluar dari bilik mesyuarat"],"Adab semasa mesyuarat: tidak memotong percakapan dan minta izin sebelum beri pendapat.","Ada dua adab mesyuarat yang berkaitan di sini."],
+[2,"Aiman suka bersedekah secara senyap tanpa memberitahu sesiapa. Aiman menunjukkan sifat...",["Ikhlas","Riak","Sum'ah","Takabbur"],"Menyembunyikan amalan tanpa riak ialah tanda ikhlas.","Lihat 'Tanda-tanda Ikhlas' dalam nota."],
+[2,"Zul berasa sakit hati apabila kawannya mendapat nombor satu dalam kelas, dan dia berharap kawannya gagal. Apakah sifat Zul?",["Hasad dengki","Ikhlas","Syukur","Sabar"],"Ingin nikmat orang lain hilang ialah ciri hasad dengki.","Tidak senang melihat kejayaan orang lain."],
+[2,"Khairul solat dengan khusyuk hanya apabila gurunya sedang melihat. Apakah sifat yang ada pada Khairul?",["Riak","Ikhlas","Syukur","Sabar"],"Riak ialah memperlihatkan ibadat untuk mendapat pujian, bukan kerana Allah.","Dia beribadat kerana siapa?"],
+[2,"Hakim menggunakan kaki dan tangannya untuk pergi ke masjid dan membantu ibunya. Hakim mengamalkan syukur dengan...",["Seluruh anggota badan","Hati sahaja","Lidah sahaja","Harta"],"Syukur anggota badan: menggunakan seluruh anggota untuk kebaikan dan keredhaan Allah.","Hakim menggunakan banyak anggota tubuh."],
+[2,"Farah memakai pakaian sukan yang sopan dan menutup aurat semasa bermain bola jaring. Adab ini termasuk dalam adab...",["Semasa bersukan","Selepas bersukan","Sebelum bermesyuarat","Berjual-beli"],"Menutup aurat ialah adab semasa bersukan.","Farah sedang bermain."],
+[2,"Kamal tidak mahu mendengar teguran guru kerana merasa dirinya paling pandai. Apakah cara TERBAIK untuk Kamal mengubah sikapnya?",["Muhasabah diri dan menerima nasihat dengan terbuka","Menjauhkan diri daripada guru","Berpura-pura mendengar","Membalas teguran dengan marah"],"Cara menangani takabbur: muhasabah diri dan terima nasihat dengan terbuka.","Kamal mempunyai sifat takabbur."],
+// ===== SUKAR / KBAT (5) =====
+[3,"Antara pernyataan berikut, yang manakah cara meningkatkan produktiviti?"+ST("I. Datang awal","II. Elak membuang masa","III. Buat dua kerja serentak","IV. Fokus pada satu tugas"),["I, II dan IV","I, II dan III","II, III dan IV","I, II, III dan IV"],"Buat dua kerja serentak TIDAK digalakkan. Jawapan: I, II dan IV.","Cari pernyataan yang salah dahulu, kemudian buang."],
+[3,"Ketua pasukan menyuruh ahli kumpulannya menipu supaya menang dalam pertandingan. Apakah tindakan yang PALING TEPAT bagi ahli pasukan?",["Tidak mengikut arahan itu kerana ia maksiat, dan menegur ketua dengan cara yang baik","Mengikut sahaja kerana ketua wajib ditaati","Bergaduh dengan ketua di hadapan orang ramai","Keluar dari pasukan tanpa berkata apa-apa"],"Pemimpin yang menyuruh berbuat maksiat tidak wajib ditaati. Menegur pula perlu dengan cara yang baik.","Ingat 'Pemimpin yang Tidak Wajib Ditaati' dan 'Adab Rakyat Terhadap Pemimpin'."],
+[3,"Mengapakah kita perlu menerima keputusan mesyuarat walaupun ia berbeza dengan pendapat kita?",["Keputusan akhir ialah keputusan bersama, dan perbezaan pendapat adalah rahmat","Kerana ketua sentiasa betul","Kerana takut dimarahi oleh ahli lain","Kerana keputusan mesyuarat tidak penting"],"Selepas mesyuarat: bersatu pendapat, keputusan akhir = keputusan bersama, dan sifat redha.","Lihat nota 'Keputusan Mesyuarat Diperakui'."],
+[3,"Ahmad berpuasa sunat kerana Allah. Keesokan harinya, dia menceritakan puasanya kepada kawan-kawan supaya dipuji. Apakah sifat yang ditunjukkan oleh Ahmad?",["Sum'ah","Riak","Ikhlas","Syukur"],"Sum'ah ialah memberitahu amalan soleh yang telah LEPAS kepada orang lain. Riak pula berlaku KETIKA amalan dilakukan.","Bila Ahmad menceritakannya: semasa atau selepas berpuasa?"],
+[3,"Mengapakah orang yang takabbur sukar memiliki sifat terpuji?",["Dia tidak mampu merendahkan diri dan sukar menerima nasihat orang lain","Dia terlalu sibuk bekerja","Dia tidak mempunyai ramai kawan","Dia tidak pernah bersukan"],"Kesan takabbur: tidak mampu merendah diri, tidak mampu tinggalkan marah, dengki dan riak.","Fikir apa yang menghalang orang sombong daripada berubah."],
+[3,"Encik Hamid membuka sebuah kedai makan. Antara berikut, amalan yang menunjukkan Encik Hamid beradab ketika berjual-beli ialah"+ST("I. Membaca Basmallah sebelum memulakan perniagaan","II. Mengutamakan kebersihan dan kualiti makanan","III. Menjaga kewajipan kepada Allah SWT walaupun pelanggan ramai","IV. Meletakkan harga yang tinggi kerana pelanggan ramai"),["I, II dan III","I, II dan IV","II, III dan IV","I, II, III dan IV"],"Pernyataan I, II dan III ialah adab berjual-beli. Pernyataan IV tidak termasuk dalam adab berjual-beli.",""],
+[3,"Antara pasangan sifat terpuji dalam mesyuarat dan penjelasannya berikut, yang manakah BETUL?",["Taat — bersetuju dengan keputusan tanpa mementingkan diri","Ikhlas — bersetuju dengan keputusan tanpa mementingkan diri","Takut — hadir kerana mahu dipuji","Taat — hadir kerana Allah SWT, bukan kerana lain"],"Taat bermaksud bersetuju dengan keputusan tanpa mementingkan diri. Hadir kerana Allah SWT, bukan kerana lain, ialah penjelasan bagi ikhlas.",""],
+[3,"Seorang lelaki sengaja memakai baju yang lusuh dan bertampal supaya disangka ahli tasawuf. Perbuatan ini termasuk dalam kategori riak...",["Penampilan pakaian","Penampilan jasmani","Perbuatan","Persahabatan"],"Memakai baju lusuh dan bertampal supaya disangka ahli tasawuf ialah riak dari segi penampilan pakaian.",""],
+[3,"Seorang lelaki sengaja menyertai majlis ilmu supaya dia dianggap sebagai orang alim. Perbuatan ini termasuk dalam kategori riak...",["Persahabatan","Perkataan","Penampilan jasmani","Penampilan pakaian"],"Sengaja ikut serta majlis ilmu supaya dianggap orang alim ialah riak dari segi persahabatan.",""],
+[3,"Seseorang tidak mengakui perintah solat dan zakat walaupun dia mengetahuinya. Apakah jenis takabbur yang dilakukannya?",["Takabbur kepada Allah SWT","Takabbur kepada Rasulullah SAW","Takabbur kepada sesama manusia","Bukan takabbur"],"Takabbur kepada Allah SWT ialah tidak mengakui kebenaran yang datang daripada Allah SWT, seperti perintah solat dan zakat.",""],
+[3,"Hamid tidak suka apabila Ali dilantik sebagai ketua kelas kerana dia sendiri mahu menjadi ketua dan terkenal. Menurut Imam Al-Ghazali, apakah punca hasad dengki Hamid?",["Ghairah menjadi ketua dan mencari populariti","Merasa diri lebih mulia","Takut terlepas sesuatu tujuan dan habuan","Perasaan permusuhan dan kebencian"],"Mahu menjadi ketua dan terkenal ialah punca hasad yang keenam: ghairah menjadi ketua dan mencari populariti.",""],
+[3,"Antara berikut, yang manakah cara menjauhi sifat hasad?"+ST("I. Gembira di atas kejayaan orang lain","II. Sentiasa berfikiran positif dan bersangka baik","III. Mengadu domba","IV. Redha dengan qada' dan qadar Allah SWT"),["I, II dan IV","I, II dan III","II, III dan IV","I, II, III dan IV"],"Mengadu domba ialah sifat orang yang hasad, bukan cara menjauhinya. Jawapan: I, II dan IV.",""],
+[3,"Antara berikut, yang manakah fadhilat sabar?"+ST("I. Malaikat bersama orang yang bersabar","II. Sabar adalah cahaya","III. Sabar sebagai jalan ke syurga","IV. Sabar adalah sifat yang tercela"),["I, II dan III","I, II dan IV","II, III dan IV","I, II, III dan IV"],"Sabar ialah sifat yang terpuji. Fadhilatnya termasuk malaikat bersama orang yang bersabar, sabar adalah cahaya, dan sabar sebagai jalan ke syurga.",""],
+[3,"Salmah sentiasa membantu jirannya. Apabila dipuji, dia tidak berasa megah. Apakah tanda ikhlas yang ditunjukkan oleh Salmah?",["Tidak terpedaya dengan pujian manusia dan megah diri","Suka menerima pujian dalam setiap amalan","Merasa diri lebih mulia daripada orang lain","Menampakkan kemuliaan diri dibandingkan dengan orang lain"],"Tidak terpedaya dengan pujian manusia dan megah diri ialah salah satu tanda ikhlas.",""],
+[3,"Antara berikut, yang manakah susunan pemimpin yang BETUL daripada peringkat kecil kepada peringkat besar?",["Ketua Kampung → Penghulu → Pegawai Daerah → Menteri Besar","Penghulu → Ketua Kampung → Menteri Besar → Pegawai Daerah","Pegawai Daerah → Penghulu → Ketua Kampung → Menteri Besar","Ketua Kampung → Pegawai Daerah → Penghulu → Menteri Besar"],"Kampung (Ketua Kampung) → Mukim (Penghulu) → Daerah (Pegawai Daerah) → Negeri (Menteri Besar).",""]
+],
+tajwid:[
+// ===== SENANG (15) =====
+[1,"Apakah maksud isti'azah dari segi bahasa?",["Memohon perlindungan","Memanjangkan bacaan","Berhenti","Bersambung"],"Isti'azah bermaksud memohon perlindungan Allah daripada syaitan.","Kita membacanya supaya dilindungi daripada syaitan."],
+[1,"Yang manakah lafaz isti'azah?",[A("أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ"),A("بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِيمِ"),A("الْحَمْدُ لِلَّهِ"),A("سُبْحَانَ اللَّهِ")],"Lafaz isti'azah: A'uzubillahi minasy syaitanir rajim.","Ada perkataan 'syaitan' dalam lafaznya."],
+[1,"Apakah hukum membaca isti'azah?",["Tidak wajib tetapi sangat dituntut","Wajib","Haram","Makruh"],"Isti'azah tidak wajib tetapi sangat dituntut.","Hukumnya bukan wajib, tetapi sangat digalakkan."],
+[1,"Basmallah WAJIB dibaca pada permulaan surah...",["Al-Fatihah","At-Taubah","Al-Ikhlas","An-Nas"],"Wajib pada Al-Fatihah kerana Basmallah sebahagian daripada ayat Al-Fatihah.","Surah yang kita baca dalam setiap rakaat solat."],
+[1,"Surah yang TIDAK dimulakan dengan Basmallah ialah...",["Surah At-Taubah","Surah Al-Fatihah","Surah Al-Baqarah","Surah Al-Ikhlas"],"Basmallah tidak dibaca pada awal Surah At-Taubah.","Surah yang diturunkan ketika peperangan."],
+[1,"Alif Lam Qamariah dibaca dengan...",["Izhar (jelas)","Idgham (masuk)","Ikhfa'","Iqlab"],"Alif Lam Qamariah dibaca izhar, iaitu bunyi Lam jelas.","Bunyi huruf Lam dibaca dengan jelas."],
+[1,"Alif Lam Syamsiah dibaca dengan...",["Idgham (dimasukkan)","Izhar (jelas)","Qalqalah","Mad"],"Alif Lam Syamsiah dibaca idgham, Lam tidak dibunyikan.","Bunyi huruf Lam tidak dibaca."],
+[1,"Apakah huruf-huruf mad?",["Alif, Wau dan Ya","Ba, Jim dan Dal","Qaf, Ta dan Ba","Mim, Nun dan Lam"],"Huruf mad ialah Alif (ا), Wau (و) dan Ya (ي).","Ingat formula NUUHIIHAA."],
+[1,"Mad Asli dibaca dengan kadar...",["2 harakat","4 harakat","5 harakat","6 harakat"],"Mad Asli dibaca 2 harakat. Jangan lebih, jangan kurang.","Genggam 2 jari."],
+[1,"Mad Lazim (Raja Mad) wajib dibaca dengan kadar...",["6 harakat","2 harakat","4 harakat","3 harakat"],"Mad Lazim wajib dibaca 6 harakat ketika wasal dan waqaf.","Mad paling panjang."],
+[1,"Apakah huruf-huruf qalqalah?",["Ba, Jim, Dal, Qaf, Ta ("+A("ب ج د ق ط")+")","Alif, Wau, Ya","Mim, Nun, Lam, Ra","Sin, Syin, Sad"],"Ingat 'BAJU DAH KOTOR': Ba, Jim, Dal, Qaf, Ta.","Ingat ayat 'Baju Dah Kotor'."],
+[1,"Apakah maksud tanda waqaf "+A("م")+" ?",["Wajib berhenti (waqaf lazim)","Dilarang berhenti","Harus berhenti atau sambung","Sambung lebih utama"],"Mim = lampu merah, wajib berhenti.","Lampu isyarat warna merah."],
+[1,"Apakah maksud tanda waqaf "+A("لا")+" ?",["Dilarang berhenti, terus sambung","Wajib berhenti","Harus berhenti","Berhenti di salah satu tempat"],"Lam Alif: jangan berhenti, teruskan bacaan.","Lampu hijau: terus jalan."],
+[1,"Berapakah bilangan huruf Alif Lam Qamariah?",["14","10","28","7"],"Alif Lam Qamariah ada 14 huruf, Alif Lam Syamsiah juga 14.","Bilangannya sama dengan bilangan huruf Alif Lam Syamsiah."],
+[1,"Mad 'Iwad dibaca dengan kadar...",["2 harakat","4 harakat","5 harakat","6 harakat"],"Mad 'Iwad dibaca 2 harakat.","Sama panjang dengan Mad Asli."],
+// ===== SEDERHANA (10) =====
+[2,"Antara berikut, yang manakah contoh Alif Lam SYAMSIAH?",[A("الرَّحِيمُ"),A("الْكَبِيرُ"),A("الْبَابُ"),A("الْعَزِيزُ")],"Dalam "+A("الرَّحِيمُ")+" Lam tidak dibunyikan dan huruf selepasnya bersabdu.","Cari huruf selepas Lam yang ada tanda sabdu."],
+[2,"Antara berikut, yang manakah contoh Alif Lam QAMARIAH?",[A("الْكَبِيرُ"),A("التَّوَّابُ"),A("الرَّحِيمُ"),A("النَّاسُ")],"Dalam "+A("الْكَبِيرُ")+" Lam bersukun dan dibaca jelas.","Cari Lam yang ada tanda sukun."],
+[2,"Antara berikut, yang manakah contoh Mad Wajib Muttasil?",[A("جَآءَ"),A("يَٰٓأَيُّهَا"),A("قَالَ"),A("نُوحِيهَا")],"Dalam "+A("جَآءَ")+" huruf mad dan hamzah berada dalam SATU perkataan.","Hamzah 'duduk serumah' dengan huruf mad."],
+[2,"Antara berikut, yang manakah contoh Mad Jaiz Munfasil?",[A("يَٰٓأَيُّهَا"),A("جَآءَ"),A("ٱلسَّمَآءُ"),A("ٱلضَّآلِّينَ")],"Dalam "+A("يَٰٓأَيُّهَا")+" huruf mad di hujung satu perkataan, hamzah di perkataan berikutnya.","Hamzah duduk di 'rumah sebelah'."],
+[2,"Apabila bertemu tanda waqaf "+A("ج")+", seorang pembaca boleh...",["Memilih sama ada berhenti atau sambung","Wajib berhenti","Wajib sambung","Berhenti tanpa mengambil nafas"],"Jim (waqaf jaiz): bebas pilih, boleh berhenti atau sambung.","Lampu isyarat kuning."],
+[2,"Apakah bacaan yang LEBIH BAIK apabila bertemu tanda waqaf "+A("صلى")+" ?",["Menyambung bacaan","Berhenti bacaan","Berhenti lama","Mengulang ayat"],"Sad-Lam-Ya (waslu aula): harus berhenti atau sambung, tetapi sambung lebih utama.","'Waslu' bermaksud sambung."],
+[2,"Dalam kalimah "+A("يَقْطَعُ")+", huruf "+A("ق")+" mati di tengah kalimah. Apakah hukum bacaannya?",["Qalqalah Sughra","Qalqalah Kubra","Mad Asli","Mad Lazim"],"Huruf "+A("ق")+" bersukun di tengah kalimah "+A("يَقْطَعُ")+", maka ia Qalqalah Sughra (lantunan ringan).","Formula: Tengah kalimah = Kecil."],
+[2,"Antara berikut, yang manakah contoh Mad Lazim Harfi?",[A("الٓمٓ"),A("قَالَ"),A("جَآءَ"),A("يَٰٓأَيُّهَا")],"Mad Lazim Harfi terdapat pada huruf pembukaan surah seperti Alif Laaam Miiim.","Terdapat di awal surah sahaja."],
+[2,"Ali membaca "+A("وَلَا ٱلضَّآلِّينَ")+" dengan 2 harakat sahaja. Apakah ulasan yang tepat?",["Salah, kerana ia Mad Lazim Kalimi Muthaqqal yang wajib dibaca 6 harakat","Betul, kerana semua mad dibaca 2 harakat","Betul, kerana ia Mad Asli","Salah, kerana ia mesti dibaca 4 harakat"],"Huruf mad bertemu huruf bersabdu = Mad Lazim Kalimi Muthaqqal, wajib 6 harakat.","Perhatikan tanda sabdu selepas huruf mad."],
+[2,"Mad Far'i terjadi apabila Mad Asli bertemu dengan...",["Hamzah atau sukun","Huruf qalqalah","Tanwin sahaja","Huruf syamsiah"],"Mad Far'i terjadi bila Mad Asli jumpa HAMZAH atau SUKUN.","Lihat 'Pokok Hukum Mad': dua ekor burung di dahan."],
+// ===== SUKAR / KBAT (5) =====
+[3,"Antara pernyataan berikut, yang manakah BENAR tentang hukum membaca Basmallah?"+ST("I. Wajib pada permulaan Surah Al-Fatihah","II. Sunat pada permulaan surah lain kecuali At-Taubah","III. Sunat ketika hendak memulakan perbuatan baik","IV. Wajib pada permulaan Surah At-Taubah"),["I, II dan III","I dan IV","II, III dan IV","I, II, III dan IV"],"Basmallah tidak dibaca pada awal At-Taubah, jadi pernyataan IV salah.","Kenal pasti pernyataan yang salah tentang Surah At-Taubah."],
+[3,"Apakah PERBEZAAN utama antara Mad Wajib Muttasil dengan Mad Jaiz Munfasil?",["Muttasil: hamzah dalam satu kalimah. Munfasil: hamzah dalam kalimah yang berlainan","Muttasil dibaca 6 harakat, Munfasil dibaca 2 harakat sahaja","Muttasil bertemu sukun, Munfasil bertemu sabdu","Tiada perbezaan langsung"],"Muttasil = bersambung (serumah). Munfasil = berpisah (jiran sebelah).","Bayangkan dua rumah: serumah dan jiran sebelah."],
+[3,"Aisyah ingin membaca isti'azah, Basmallah dan awal surah dengan cara yang PALING BAIK. Apakah yang perlu dilakukannya?",["Berhenti selepas isti'azah, berhenti selepas Basmallah, kemudian baca awal surah","Sambung isti'azah, Basmallah dan awal surah tanpa berhenti","Sambung isti'azah dengan Basmallah, kemudian berhenti","Baca awal surah tanpa isti'azah dan Basmallah"],"Cara paling baik: berhenti pada isti'azah dan berhenti pada Basmallah.","Ada 4 cara dalam nota. Cari yang ditanda 'cara paling baik'."],
+[3,"Mengapakah Mad Far'i dibaca lebih panjang daripada Mad Asli?",["Kerana huruf mad bertemu dengan hamzah atau sukun","Kerana pembaca mahu bacaan lebih sedap","Kerana huruf mad terletak di awal ayat","Kerana tiada tanda waqaf"],"Mad Asli + hamzah/sukun menjadi Mad Far'i (cabang) yang lebih panjang.","Apakah 'sebab' yang menukar Mad Asli menjadi Mad Far'i?"],
+[3,"Hana hampir kehabisan nafas, tetapi di hadapannya ada tanda "+A("لا")+". Apakah tindakan yang PALING TEPAT?",["Tidak berhenti pada tanda "+A("لا")+", dan berhenti di tempat yang dibenarkan seperti "+A("م")+" atau "+A("ج"),"Terus berhenti pada tanda "+A("لا"),"Berhenti di tengah perkataan","Berhenti dan meninggalkan bacaan"],"Tanda Lam Alif melarang berhenti. Rancang nafas dan berhenti di tanda waqaf yang membenarkan berhenti.","Tanda Lam Alif = lampu hijau, jangan berhenti."],
+[3,"Antara berikut, yang manakah BENAR tentang kadar bacaan Mad Wajib Muttasil dan Mad Jaiz Munfasil?",["Mad Wajib Muttasil mesti 4 atau 5 harakat, manakala Mad Jaiz Munfasil boleh 2 harakat tetapi elok 4 atau 5 harakat","Kedua-duanya mesti dibaca 6 harakat","Mad Wajib Muttasil dibaca 2 harakat, manakala Mad Jaiz Munfasil dibaca 6 harakat","Mad Jaiz Munfasil mesti 4 atau 5 harakat, manakala Mad Wajib Muttasil boleh 2 harakat"],"Wajib = mesti 4/5 harakat. Jaiz = boleh 2 harakat, tetapi elok 4/5 harakat.",""],
+[3,"Apakah ciri Mad Lazim Kalimi Mukhaffaf?",["Huruf mad bertemu sukun asli dan huruf mad itu tidak diidghamkan ke dalam huruf selepasnya","Huruf mad bertemu sukun asli dan diidghamkan sehingga huruf kedua bertanda sabdu","Huruf mad terdapat pada huruf pembukaan surah","Huruf mad bertemu hamzah dalam satu kalimah"],"Mukhaffaf (ringan): huruf mad bertemu sukun asli dan tidak diidghamkan. Muthaqqal (berat) pula diidghamkan dan bertanda sabdu.",""],
+[3,"Bacaan pada "+A("الٓمٓ")+" (Alif Laaam Miiim) ialah contoh...",["Mad Lazim Harfi Muthaqqal","Mad Lazim Harfi Mukhaffaf","Mad Lazim Kalimi Muthaqqal","Mad Lazim Kalimi Mukhaffaf"],"Pada huruf pembukaan surah, huruf mad bertemu sukun asli dan diidghamkan ke dalam huruf selepasnya. Ini ialah Mad Lazim Harfi Muthaqqal.",""],
+[3,"Bacaan pada "+A("الٓر")+" (Alif Laaam Raa) ialah contoh...",["Mad Lazim Harfi Mukhaffaf","Mad Lazim Harfi Muthaqqal","Mad Lazim Kalimi Muthaqqal","Mad Farqi"],"Pada huruf pembukaan surah, huruf mad bertemu sukun asli dan tidak diidghamkan. Ini ialah Mad Lazim Harfi Mukhaffaf.",""],
+[3,"Antara berikut, yang manakah PERBEZAAN antara Mad Farqi dengan Mad Lazim?",["Mad Farqi berlaku pada huruf Alif sahaja, manakala Mad Lazim berlaku pada huruf Alif, Wau dan Ya","Mad Farqi berlaku pada huruf Alif, Wau dan Ya, manakala Mad Lazim pada huruf Alif sahaja","Mad Farqi dibaca 2 harakat, manakala Mad Lazim dibaca 6 harakat","Mad Lazim berlaku pada perkataan sahaja, manakala Mad Farqi pada huruf pembukaan surah"],"Mad Farqi berlaku pada huruf Alif sahaja dan merupakan tukaran daripada hamzah wasal. Mad Lazim berlaku pada huruf Alif, Wau dan Ya.",""],
+[3,"Seorang murid berhenti (waqaf) pada kalimah "+A("مَآءً")+" dalam ayat "+A("وَأَنزَلَ مِنَ ٱلسَّمَآءِ مَآءً")+". Bagaimanakah cara bacaan yang betul?",["Tanwin baris dua di atas dibaca seperti baris atas dan dipanjangkan 2 harakat","Tanwin dibaca seperti biasa tanpa perubahan","Dipanjangkan 6 harakat","Huruf terakhir dimatikan tanpa dipanjangkan"],"Ini ialah Mad 'Iwad: waqaf pada huruf bertanwin baris dua di atas dibaca 2 harakat.",""],
+[3,"Mad Tamkin terjadi dalam keadaan..."+ST("I. Huruf mad bertemu dengan huruf yang sama jenis","II. Berhimpun dua huruf Ya: yang pertama bersabdu dan berbaris bawah, manakala yang kedua mati"),["I dan II","I sahaja","II sahaja","Bukan I dan bukan II"],"Mad Tamkin terjadi dalam dua keadaan, iaitu I dan II. Kadar panjangnya 2 harakat.",""],
+[3,"Antara berikut, yang manakah cara bacaan yang BETUL bagi Mad Silah Qasirah?",["Dibaca 2 harakat ketika wasal dan ha dhamir dimatikan ketika waqaf","Dibaca 4 atau 5 harakat ketika wasal","Dibaca 6 harakat ketika wasal dan waqaf","Dibaca 2 harakat ketika waqaf"],"Mad Silah Qasirah wajib dibaca 2 harakat ketika sambung (wasal) dan ha dhamir dimatikan ketika berhenti (waqaf).",""],
+[3,"Antara berikut, yang manakah cara membaca akhir Surah Al-Anfal dengan awal Surah At-Taubah?"+ST("I. Waqaf di akhir Surah Al-Anfal, kemudian membaca awal Surah At-Taubah","II. Menyambung akhir Surah Al-Anfal dengan awal Surah At-Taubah","III. Saktah (diam 2 harakat) di akhir Surah Al-Anfal, kemudian membaca awal Surah At-Taubah","IV. Membaca Basmallah di antara kedua-dua surah"),["I, II dan III","I, II dan IV","II, III dan IV","I, II, III dan IV"],"Basmallah tidak dibaca pada awal Surah At-Taubah, jadi IV salah. Tiga cara yang betul ialah I, II dan III.",""],
+[3,"Apakah cara yang betul membaca isti'azah pada awal Surah At-Taubah?",["Berhenti pada isti'azah, kemudian meneruskan bacaan awal surah tanpa Basmallah","Membaca isti'azah dan Basmallah, kemudian awal surah","Membaca Basmallah sahaja tanpa isti'azah","Tidak boleh membaca isti'azah"],"Dua cara: berhenti pada isti'azah lalu meneruskan bacaan, atau menyambung isti'azah dengan awal surah. Basmallah tidak dibaca.",""]
+],
+sirah:[
+// ===== SENANG (15) =====
+[1,"Perjanjian Hudaibiyah berlaku pada tahun ke-berapa Hijrah?",["Tahun ke-6 Hijrah","Tahun ke-2 Hijrah","Tahun ke-8 Hijrah","Tahun ke-10 Hijrah"],"Berlaku pada hari Isnin, bulan Zulkaedah, tahun ke-6 Hijrah.","Dua tahun sebelum Pembukaan Kota Mekah."],
+[1,"Apakah tujuan Rasulullah SAW dan para sahabat keluar dari Madinah ke Mekah sebelum Perjanjian Hudaibiyah?",["Menunaikan umrah","Berperang","Berniaga","Berpindah ke Mekah"],"Rasulullah SAW dan sahabat keluar ke Mekah untuk menunaikan umrah.","Mereka keluar untuk beribadat."],
+[1,"Berapakah bilangan sahabat yang mengikuti Rasulullah SAW untuk umrah itu?",["1,400 orang","10,000 orang","114,000 orang","300 orang"],"Rasulullah SAW bersama 1,400 orang sahabat.","Bilangannya kurang daripada dua ribu."],
+[1,"Siapakah sahabat yang dihantar oleh Rasulullah SAW untuk berunding dengan Musyrikin Mekah?",["Saidina Uthman bin Affan","Saidina Abu Bakar","Saidina Umar","Khalid bin Walid"],"Saidina Uthman bin Affan dihantar untuk berbincang.","Lihat nota bahagian Sebab Perjanjian Hudaibiyah, perkara ke-3."],
+[1,"Apakah nama janji taat setia para sahabat untuk menuntut bela atas berita kematian Saidina Uthman?",["Bai'ah Ridhwan","Bai'ah Aqabah","Piagam Madinah","Haji Wada'"],"Janji setia itu dinamakan Bai'ah Ridhwan.","Ridhwan bermaksud keredhaan."],
+[1,"Siapakah wakil Musyrikin Mekah yang membuat perjanjian damai di Hudaibiyah?",["Suhail bin Amru","Abu Sufian","Abu Jahal","Abu Lahab"],"Musyrikin Mekah mengutuskan Suhail bin Amru.","Namanya bermula dengan huruf S."],
+[1,"Berapa lamakah gencatan senjata dalam Perjanjian Hudaibiyah?",["10 tahun","3 tahun","5 tahun","1 tahun"],"Isi perjanjian pertama: gencatan senjata selama 10 tahun.","Satu dekad."],
+[1,"Pembukaan Kota Mekah berlaku pada bulan Ramadhan tahun ke-berapa Hijrah?",["Tahun ke-8 Hijrah","Tahun ke-6 Hijrah","Tahun ke-10 Hijrah","Tahun ke-1 Hijrah"],"Pembukaan Kota Mekah berlaku pada Ramadhan, tahun ke-8 Hijrah.","Selepas Perjanjian Hudaibiyah, sebelum Haji Wada'."],
+[1,"Berapakah bilangan tentera Islam yang bergerak ke Mekah semasa Pembukaan Kota Mekah?",["10,000 orang","1,400 orang","313 orang","114,000 orang"],"Rasulullah SAW bersama 10,000 orang tentera Islam.","Sepuluh ribu."],
+[1,"Siapakah yang diminta melaungkan azan di atas Kaabah?",["Bilal","Abu Bakar","Umar","Uthman"],"Rasulullah SAW meminta Bilal melaungkan azan di atas Kaabah.","Peristiwa ini berlaku semasa Rasulullah SAW memasuki Masjidil Haram."],
+[1,"Apakah maksud Haji Wada'?",["Haji selamat tinggal, haji terakhir Rasulullah SAW","Haji pertama umat Islam","Haji yang dibuat setiap tahun","Haji untuk orang Madinah sahaja"],"Haji Wada' ialah haji terakhir Rasulullah SAW sebelum wafat.","Wada' bermaksud selamat tinggal."],
+[1,"Haji Wada' dilakukan pada tahun ke-berapa Hijrah?",["Tahun ke-10 Hijrah","Tahun ke-6 Hijrah","Tahun ke-8 Hijrah","Tahun ke-9 Hijrah"],"Haji Wada' tahun ke-10 Hijrah. Pada tahun ke-9 Hijrah, Rasulullah SAW memerintahkan Saidina Abu Bakar menunaikan ibadat haji.","Selepas Pembukaan Kota Mekah."],
+[1,"Apakah nama unta yang ditunggang oleh Rasulullah SAW semasa Haji Wada'?",["Qaswa","Buraq","Zamzam","Hudaibiyah"],"Baginda menunggang unta bernama Qaswa.","Namanya bermula dengan huruf Q."],
+[1,"Di manakah Rasulullah SAW berihram semasa Haji Wada'?",["Zulhulaifah","Arafah","Mina","Muzdalifah"],"Baginda berihram di Zulhulaifah, kira-kira 5 km dari Madinah.","Tempat ini dekat dengan Madinah."],
+[1,"Pada 9 Zulhijjah, Rasulullah SAW menuju ke...",["Arafah","Mina","Madinah","Taif"],"Pada 9 Zulhijjah baginda ke Arafah dan berkhutbah di Lembah 'Uranah.","Selepas solat Subuh dan terbit matahari pada 9 Zulhijjah."],
+// ===== SEDERHANA (10) =====
+[2,"Apakah punca berlakunya Pembukaan Kota Mekah?",["Quraisy melanggar Perjanjian Hudaibiyah apabila Bani Bakar menyerang Bani Khuza'ah","Rasulullah SAW mahu berniaga di Mekah","Orang Mekah menjemput Rasulullah SAW","Berlaku banjir di Madinah"],"Bani Bakar (sekutu Quraisy) menyerang Bani Khuza'ah yang taat kepada Rasulullah SAW.","Ada perjanjian yang telah dilanggar."],
+[2,"Mengapakah Rasulullah SAW mengarahkan tentera menyalakan unggun api yang besar di Damarul-Zhohran?",["Untuk menunjukkan kekuatan tentera Islam","Untuk memasak makanan","Untuk memanaskan badan","Untuk menerangi jalan ke Madinah"],"Unggun api besar menunjukkan kekuatan Islam sehingga Abu Sufian terkejut.","Apa yang dirasai oleh Abu Sufian apabila melihatnya?"],
+[2,"Antara berikut, yang manakah KESAN Perjanjian Hudaibiyah?",["Quraisy mengiktiraf Rasulullah SAW dan kewujudan Negara Islam secara rasmi","Orang Islam tidak boleh lagi beribadat","Kota Madinah menjadi mundur","Orang Islam terpaksa berpindah ke Mekah"],"Kesan: pengiktirafan rasmi Quraisy, Islam berkembang dan jalan ke pembukaan Mekah terbuka.","Kesan yang baik untuk umat Islam."],
+[2,"Rasulullah SAW memaafkan penduduk Mekah yang pernah menyakiti baginda. Apakah sifat mulia yang ditunjukkan?",["Pemaaf dan berkasih sayang","Pendendam","Sombong","Penakut"],"Baginda mempamerkan kasih sayang dan memaafkan semua kesalahan mereka.","Penduduk Mekah sangka mereka akan dibunuh, tetapi..."],
+[2,"Rasulullah SAW memusnahkan berhala di sekeliling Kaabah. Tindakan ini menunjukkan kepimpinan baginda dari sudut...",["Akidah","Muamalat","Perundangan","Sukan"],"Baginda mentauhidkan Allah dan menghapuskan penyembahan berhala.","Berkaitan kepercayaan kepada Allah Yang Esa."],
+[2,"Islam mengharamkan riba, rasuah dan penipuan dalam jual beli. Ini menunjukkan kepimpinan Rasulullah SAW dari sudut...",["Muamalat","Akidah","Ibadat","Sukan"],"Muamalat berkaitan urusan jual beli dan ekonomi.","Berkaitan urusan perniagaan."],
+[2,"Islam memberikan hak yang adil kepada lelaki dan perempuan serta membantu orang miskin. Ini menunjukkan kepimpinan Rasulullah SAW dari sudut...",["Akhlak","Akidah","Ibadat","Peperangan"],"Rasulullah SAW mengubah akhlak buruk Arab Jahiliah kepada akhlak mulia.","Arab Jahiliah menindas wanita dan orang miskin."],
+[2,"Apakah bentuk hukuman dalam perundangan Islam?",["Bersifat mendidik dan mencegah","Bersifat menindas dan menyeksa","Tidak bertulis dan tidak lengkap","Berdasarkan hawa nafsu"],"Hukuman Islam mendidik dan mencegah, berbeza dengan Jahiliah yang menindas.","Bandingkan jadual perundangan Jahiliah dengan Islam."],
+[2,"Rasulullah SAW mengisytiharkan bahawa sesiapa yang masuk ke rumah Abu Sufian akan selamat. Apakah tujuan utama baginda?",["Supaya Kota Mekah dapat dibuka secara aman tanpa pertumpahan darah","Supaya Abu Sufian menjadi kaya","Supaya penduduk Mekah keluar dari Mekah","Supaya tentera Islam boleh berehat"],"Baginda berpesan supaya tidak menggunakan kekerasan. Mekah dibuka secara aman.","Tajuk dalam nota: 'Pembukaan Kota Mekah Secara Aman'."],
+[2,"Antara berikut, yang manakah HIKMAH Perjanjian Hudaibiyah?",["Syiar Islam berkembang dengan pesat tanpa gangguan","Orang Islam dilarang menunaikan haji selama-lamanya","Orang Quraisy semakin kuat menentang","Kota Madinah ditinggalkan"],"Hikmah: syiar Islam berkembang pesat dan orang Islam dapat berdakwah.","Hikmah = kebaikan di sebalik peristiwa."],
+// ===== SUKAR / KBAT (5) =====
+[3,"Syarat Perjanjian Hudaibiyah nampak seperti merugikan orang Islam. Mengapakah ia tetap dianggap satu KEMENANGAN?",["Kerana keamanan yang terhasil membolehkan Islam berkembang dan membuka jalan kepada Pembukaan Kota Mekah","Kerana orang Islam mendapat banyak harta","Kerana orang Quraisy semua terus memeluk Islam pada hari itu","Kerana orang Islam berjaya menunaikan umrah pada tahun itu"],"Keamanan 10 tahun membawa kepada perkembangan Islam dan pembukaan Mekah. Kemenangan ini disebut dalam Surah Al-Fath ayat 1.","Fikir apa yang berlaku SELEPAS perjanjian itu."],
+[3,"Antara pernyataan berikut, yang manakah isi khutbah Haji Wada'?"+ST("I. Riba dalam muamalat Islam diharamkan","II. Orang Islam bersaudara dan perlu bantu-membantu","III. Orang yang mulia dinilai berdasarkan warna kulit","IV. Wajib menjaga amanah"),["I, II dan IV","I, II dan III","II, III dan IV","I, II, III dan IV"],"Orang yang mulia ialah yang paling bertakwa, BUKAN kerana warna kulit. Jadi III salah.","Cari pernyataan yang bercanggah dengan ajaran Islam."],
+[3,"Rasulullah SAW memasuki Kota Mekah dengan penuh tawaduk walaupun baginda menang. Apakah pengajaran yang PALING SESUAI untuk murid?",["Kita tidak boleh sombong apabila berjaya, sebaliknya bersyukur kepada Allah","Kita perlu menunjuk-nunjuk kejayaan","Kita perlu membalas dendam kepada orang yang menyakiti kita","Kita tidak perlu berusaha untuk berjaya"],"Tawaduk ialah lawan takabbur. Kejayaan datang daripada Allah, maka kita bersyukur.","Kaitkan dengan Pelajaran Takabbur dalam Akhlak."],
+[3,"Bandingkan perundangan Arab Jahiliah dengan perundangan Islam dari sudut SUMBER.",["Jahiliah berpandukan logik akal dan hawa nafsu, Islam berpandukan Al-Quran, Al-Sunnah, Ijma' dan Qias","Kedua-duanya berpandukan Al-Quran","Jahiliah berpandukan Al-Quran, Islam berpandukan logik akal","Kedua-duanya berpandukan hawa nafsu"],"Sumber perundangan Islam: Al-Quran, Al-Sunnah, Ijma' dan Qias. Jahiliah ikut akal dan hawa nafsu.","Lihat baris 'Sumber' dalam jadual perbandingan."],
+[3,"Hazim dilantik sebagai ketua kelas. Antara berikut, yang manakah cara TERBAIK untuk dia mencontohi kepimpinan Rasulullah SAW?",["Berlaku adil kepada semua rakan dan bermesyuarat sebelum membuat keputusan","Memilih kawan rapat sahaja untuk diberi tugas","Membuat keputusan sendiri tanpa bertanya sesiapa","Memarahi rakan yang membuat kesilapan"],"Rasulullah SAW adil dan bermesyuarat. Ciri pemimpin baik: keadilan dan perundingan bersama.","Kaitkan dengan 'Ciri-ciri Pemimpin yang Baik' dalam Akhlak."],
+[3,"Antara berikut, yang manakah isi kandungan Perjanjian Hudaibiyah?"+ST("I. Gencatan senjata selama 10 tahun","II. Orang Islam dibenarkan masuk ke Mekah pada tahun berikutnya selama 3 hari","III. Orang Islam yang lari ke pihak Quraisy mesti dikembalikan","IV. Seluruh bangsa Arab bebas mengadakan hubungan baik dengan orang Islam atau kaum Quraisy"),["I, II dan IV","I, II dan III","II, III dan IV","I, II, III dan IV"],"Orang Islam yang lari ke pihak Quraisy TIDAK perlu dikembalikan. Jadi III salah.",""],
+[3,"Antara berikut, yang manakah susunan peristiwa yang BETUL sebelum termeterainya Perjanjian Hudaibiyah?",["Rasulullah SAW berhenti di Hudaibiyah → Saidina Uthman dihantar → tersebar berita Saidina Uthman dibunuh → Bai'ah Ridhwan","Bai'ah Ridhwan → Saidina Uthman dihantar → Rasulullah SAW berhenti di Hudaibiyah → tersebar berita Saidina Uthman dibunuh","Saidina Uthman dihantar → Bai'ah Ridhwan → Rasulullah SAW berhenti di Hudaibiyah → tersebar berita Saidina Uthman dibunuh","Tersebar berita Saidina Uthman dibunuh → Rasulullah SAW berhenti di Hudaibiyah → Bai'ah Ridhwan → Saidina Uthman dihantar"],"Ikut susunan Sebab: berhenti di Hudaibiyah, menghantar Saidina Uthman, berita Saidina Uthman dibunuh, kemudian Bai'ah Ridhwan.",""],
+[3,"Rasulullah SAW dan para sahabat terhalang daripada melakukan umrah pada tahun Perjanjian Hudaibiyah. Bagaimanakah mereka membebaskan diri daripada ihram (bertahallul)?",["Membayar Dam Ihsar dengan menyembelih seekor kambing, bercukur atau bergunting, dan membuka pakaian ihram dengan niat keluar daripada ihram","Meneruskan umrah secara senyap pada waktu malam","Pulang ke Madinah dengan pakaian ihram","Menunggu sehingga tahun berikutnya dalam keadaan berihram"],"Mereka membayar Dam Ihsar: sembelih seekor kambing, bercukur atau bergunting, dan buka pakaian ihram dengan niat keluar daripada ihram.",""],
+[3,"Antara berikut, pemimpin Quraisy manakah yang memeluk Islam sebagai kesan Perjanjian Hudaibiyah?",["Khalid bin Walid dan Uthman bin Thalhah","Abu Jahal dan Abu Lahab","Akramah bin Abu Jahal dan Safwan bin Umayyah","Suhail bin Amru dan Abu Sufian"],"Semakin ramai pemimpin Quraisy memeluk Islam, seperti Khalid bin Walid dan Uthman bin Thalhah. Akramah dan Safwan memeluk Islam semasa Pembukaan Kota Mekah.",""],
+[3,"Antara berikut, yang manakah BUKAN ketua kumpulan tentera Islam semasa memasuki Kota Mekah?",["Abu Sufian","Zubair bin Awwam","Khalid bin Walid","Ali bin Abi Talib"],"Ketua kumpulan: Rasulullah SAW dan Abu Ubaidah bin Jarrah, Zubair bin Awwam, Khalid bin Walid, serta Saad bin Ubaid dan Ali bin Abi Talib.",""],
+[3,"Semasa memasuki Kota Mekah, Rasulullah SAW tidak mendapat sebarang tentangan kecuali pertempuran kecil di pihak tentera...",["Khalid bin Walid","Zubair bin Awwam","Abu Ubaidah bin Jarrah","Ali bin Abi Talib"],"Pertempuran kecil hanya berlaku di pihak tentera Khalid bin Walid.",""],
+[3,"Antara berikut, perkara yang dilakukan oleh Rasulullah SAW semasa memasuki Masjidil Haram ialah"+ST("I. Melakukan tawaf sambil membaca Surah Al-Isra' ayat 81","II. Memusnahkan berhala di sekeliling Kaabah","III. Memerintahkan para sahabat memadamkan lukisan di dalam Kaabah dengan air Zamzam","IV. Memerintahkan penduduk Mekah keluar dari Kota Mekah"),["I, II dan III","I, II dan IV","II, III dan IV","I, II, III dan IV"],"Rasulullah SAW tidak menghalau penduduk Mekah. Baginda memaafkan mereka. Jadi IV salah.",""],
+[3,"Antara berikut, yang manakah kepercayaan masyarakat Arab Jahiliah?"+ST("I. Percaya ada tuhan selain Allah","II. Menganuti pelbagai agama seperti Yahudi, Nasrani dan Majusi","III. Membuat dan menyembah patung berhala","IV. Mentauhidkan Allah semata-mata"),["I, II dan III","I, II dan IV","II, III dan IV","I, II, III dan IV"],"Mentauhidkan Allah ialah akidah yang diajar oleh Rasulullah SAW, bukan kepercayaan Arab Jahiliah.",""],
+[3,"Apakah perbezaan ibadat masyarakat Arab Jahiliah dengan ibadat yang diajar oleh Rasulullah SAW?",["Jahiliah: ibadat dilakukan di tempat ibadat sahaja. Islam: setiap amal perbuatan yang baik dikira ibadat dan boleh dilakukan di mana-mana","Jahiliah: tiada perantara dalam ibadat. Islam: menggunakan berhala sebagai perantara","Kedua-duanya beribadat dengan menyembah berhala","Jahiliah: ibadat di mana-mana. Islam: ibadat di tempat ibadat sahaja"],"Masyarakat Jahiliah beribadat di tempat ibadat sahaja. Rasulullah SAW mengajar bahawa setiap amal yang baik ialah ibadat yang boleh dilakukan di mana-mana.",""],
+[3,"Apakah yang dilakukan oleh Rasulullah SAW pada 10 Zulhijjah semasa Haji Wada'?",["Bergerak ke Mina, melontar Jamratul Kubra (Jamratul Aqabah), melakukan ibadat korban dan bercukur","Berihram di Zulhulaifah","Melakukan tawaf Qudum dan sa'i antara Safa dan Marwah","Menyampaikan khutbah di Lembah 'Uranah"],"Pada 10 Zulhijjah, Rasulullah SAW bergerak ke Mina, melontar Jamratul Kubra (Jamratul Aqabah), melakukan ibadat korban dan bercukur.",""]
+]
+};
+// ===== BAHAGIAN B: SOALAN PEPERIKSAAN SEBENAR =====
+// Format: [tag kertas, nombor soalan, soalan, [jawapan betul, salah, salah, salah], penjelasan]
+const P22A="Peperiksaan Akhir Tahun 2022", P26S="Peperiksaan Setengah Tahun 2026", P23G="Peperiksaan Penggal Kedua 2023", P25A="Peperiksaan Akhir Tahun 2025", U26="Ujian Penilaian 2026";
+const EXAM = {
+akhlak:[
+[P22A,2,"Apakah sebab produktiviti orang Islam tidak maju?",["Kurang sokongan","Bersungguh-sungguh","Mempunyai modal yang besar","Menyedari berniaga merupakan ibadat"],"Kurang sokongan ialah salah satu punca produktiviti rendah. Pilihan lain ialah perkara yang meningkatkan produktiviti."],
+[P22A,6,"Apakah kebaikan bersukan?",["Menguji kebolehan","Badan menjadi sakit","Melahirkan sifat negatif","Menimbulkan permusuhan"],"Menguji kebolehan ialah salah satu hikmah bersukan. Pilihan lain ialah keburukan."],
+[P22A,9,"Saling berbincang, berdialog dan bermuzakarah dalam satu perkara adalah erti...",["Bermesyuarat","Berbual","Bergaduh","Berkongsi"],"Mesyuarat ialah berbincang dengan baik untuk satu perkara, menggunakan akal yang sihat dan cakap yang sopan."],
+[P22A,10,"Antara sifat-sifat terpuji dalam mesyuarat ialah...",["Ikhlas","Riak","Malas","Sombong"],"Sifat terpuji dalam mesyuarat ialah ikhlas, taat dan takut kepada Allah SWT. Riak, malas dan sombong ialah sifat tercela."],
+[P22A,12,"Mendekatkan diri kepada Allah Taala semata-mata, pengertian bagi...",["Ikhlas","Sabar","Tawaduk","Istiqamah"],"Ikhlas dari segi istilah ialah memurnikan tujuan untuk mendekatkan diri kepada Allah SWT semata-mata, bukan kerana makhluk."],
+[P22A,13,"Takut kepada kemasyhuran merupakan salah satu tanda...",["Ikhlas","Riak","Sabar","Sombong"],"Takut kepada kemasyhuran ialah salah satu tanda ikhlas."],
+[P22A,14,"Orang yang sabar ialah orang yang kuat menahan dirinya daripada...",["Marah","Tidur","Lapar","Panas"],"Sabar ialah menahan diri daripada marah, benci, dendam dan berputus asa."],
+[P22A,15,"Erti syukur dari segi bahasa ialah...",["Berterima kasih","Bertakwa","Bersuci","Berhijrah"],"Syukur dari segi bahasa bermaksud berterima kasih."],
+[P22A,16,"Melahirkan rasa cinta merupakan cara bersyukur dengan...",["Hati","Anggota","Lidah","Perbuatan"],"Syukur hati ialah mengingati dan menggambarkan nikmat Allah dengan perasaan hati yang gembira. Rasa cinta lahir daripada hati."],
+[P22A,17,"Berikut adalah punca sifat hasad, KECUALI...",["Bersyukur kepada Allah SWT","Membesarkan diri","Tidak suka orang lain berjaya","Merasa diri lebih baik"],"Bersyukur kepada Allah SWT ialah sifat terpuji, bukan punca hasad. Membesarkan diri dan merasa diri lebih baik ialah punca hasad menurut Imam Al-Ghazali."],
+[P22A,18,"Berikut merupakan ciri-ciri hasad, KECUALI...",["Menutup aib orang","Mendedahkan rahsia orang","Suka melihat orang lain kecewa","Iri hati dengan orang lain"],"Menutup aib orang ialah akhlak terpuji. Mendedahkan rahsia orang lain ialah sifat orang yang hasad."],
+[P22A,19,"Kategori riak ialah riak dalam..."+ST("i. Penampilan","ii. Kemewahan","iii. Perbuatan","iv. Kecemburuan"),["i dan iii","i dan ii","iii dan iv","i dan iv"],"Kategori riak ialah penampilan (jasmani dan pakaian), perbuatan, perkataan dan persahabatan. Kemewahan dan kecemburuan bukan kategori riak."],
+[P22A,20,"Berikut merupakan ciri-ciri orang yang riak..."+ST("i. Suka menerima pujian","ii. Perwatakan yang merendah diri","iii. Suka menunjuk-nunjuk amalan","iv. Bersederhana apabila berpakaian"),["i dan iii","i dan iv","ii dan iii","iii dan iv"],"Orang riak suka menerima pujian dan suka memperlihatkan ibadat kepada orang lain. Merendah diri dan bersederhana ialah sifat terpuji."],
+[P26S,3,"Bagaimanakah cara meningkatkan produktiviti orang Islam?",["Melakukan kerja dengan istiqamah","Tidak memberikan tumpuan","Datang lewat ke tempat kerja","Suka membuang masa"],"Antara cara meningkatkan produktiviti ialah bersungguh-sungguh dan istiqamah. Pilihan lain menurunkan produktiviti."],
+[P26S,5,"Apakah objektif sukan menurut Islam?",["Mewujudkan perpaduan ummah","Memupuk perpecahan","Melakukan perkara yang dilarang","Memutuskan silaturahim"],"Objektif sukan ialah memupuk perpaduan dan keharmonian."],
+[P26S,6,"Apakah adab bersukan dalam Islam?",["Tidak lalai suruhan Allah","Tidak menjaga kesihatan","Percampuran lelaki dan perempuan","Tidak menutup aurat"],"Adab bersukan: tidak lalai kewajipan, tiada percampuran bebas, pakaian sopan menutup aurat dan kesihatan stabil."],
+[P26S,12,"Hukum mentaati pemimpin ialah...",["Wajib","Haram","Harus","Sunat"],"Adab rakyat terhadap pemimpin yang pertama ialah wajib mentaati pemimpin."],
+[P26S,15,"Kesan tidak beradab terhadap pemimpin ialah...",["Dimurkai Allah Taala","Negara maju","Pembangunan pesat","Masyarakat harmoni"],"Implikasi tidak beradab terhadap pemimpin termasuk perselisihan, kucar-kacir dan dimurkai Allah SWT."],
+[P26S,17,"Berikut adalah tujuan bermesyuarat dalam Islam, KECUALI...",["Tiada faedah dan manfaat","Dapat menyelesaikan masalah","Aktiviti berjalan lancar","Bertukar-tukar pendapat dan pandangan"],"Tujuan mesyuarat: selesai masalah, manfaat semua, dapat kata sepakat dan lancar aktiviti. Mesyuarat bukan tanpa faedah."],
+[P26S,19,"Kebaikan beradab ketika bermesyuarat..."+ST("i. Dapat menyelesaikan masalah","ii. Tiada keputusan yang tepat","iii. Mengeruhkan keadaan","iv. Umat bersatu padu"),["i dan iv","i dan ii","ii dan iii","iii dan iv"],"Kebaikan beradab: perselisihan dapat diselesaikan dan umat Islam bersatu padu. Pernyataan ii dan iii ialah keburukan."]
+],
+tajwid:[
+[P23G,1,"Apakah pengertian isti'azah?",["Memohon perlindungan","Meminta kebaikan","Mengharapkan pembalasan","Mencari kebahagiaan"],"Isti'azah dari segi bahasa ialah memohon perlindungan."],
+[P23G,2,"Apakah hukum membaca isti'azah ketika memulakan bacaan?",["Tidak wajib","Haram","Tidak sah","Makruh"],"Hukum isti'azah: tidak wajib, namun ia sangat dituntut."],
+[P23G,4,"Berapakah hukum bacaan Al Ta'rif?",["Dua","Tiga","Empat","Lima"],"Hukum bacaan Alif Lam Ta'rif ada dua: Alif Lam Qamariah (izhar) dan Alif Lam Syamsiah (idgham)."],
+[P23G,11,"Mad 'iwad terjadi apabila waqaf pada huruf yang berbaris...",["Dua di atas","Dua di bawah","Dua di hadapan","Sukun"],"Mad 'Iwad terjadi apabila waqaf pada huruf berbaris dua di atas (tanwin mansub), kecuali Ta Marbutah."],
+[P23G,14,"Huruf mad bertemu sukun asli ketika wasal dan waqaf adalah erti...",["Mad Lazim","Mad Farq","Mad Badal","Mad 'Iwad"],"Mad Lazim terjadi apabila huruf mad bertemu sukun asli ketika wasal dan waqaf."],
+[P23G,16,"Antara bahagian mad silah ialah...",["Mad Silah Towilah","Mad Lin","Mad Badal","Mad Asli"],"Mad Silah terbahagi kepada dua: Mad Silah Qasirah dan Mad Silah Towilah."],
+[P23G,17,"Berikut adalah pernyataan Mad Silah Towilah, KECUALI...",["Huruf selepas ha dhamir ialah alif","Ketika waqaf dimatikan ha dhamir","Harus dibaca 4 atau 5 harakat ketika wasal","Ha dhamir berada di antara 2 huruf berbaris"],"Dalam Mad Silah Towilah, huruf selepas ha dhamir ialah HAMZAH (ء), bukan alif."],
+[P23G,19,"Manakah tanda yang berkaitan dengan waqaf?"+ST("i. "+A("ء"),"ii. "+A("ن"),"iii. "+A("صلى"),"iv. "+A("قلى")),["iii dan iv","i dan ii","i dan iii","ii dan iii"],A("صلى")+" (sambung lebih utama) dan "+A("قلى")+" (berhenti lebih utama) ialah tanda waqaf."],
+[P23G,20,"Apakah maksud bagi tanda waqaf ( ∴ )?"+ST("i. Waqaf aula","ii. Waqaf ta'anuq","iii. Harus waqaf atau wasal","iv. Harus waqaf pada salah satu tempat"),["ii dan iv","i dan ii","i dan iii","ii dan iii"],"Tanda ∴ ialah Waqaf Ta'anuq, iaitu diharuskan berhenti pada salah satu tempat sahaja."],
+[P26S,2,"Apakah nama lain bagi isti'azah?",["Ta'awwuz","Waqaf","Ibtida'","Basmalah"],"Isti'azah juga disebut sebagai lafaz Ta'awwuz ("+A("تَعَوُّذْ")+")."],
+[P26S,8,"Apakah hukum membaca basmalah ketika memulakan perbuatan?",["Sunat","Haram","Wajib","Makruh"],"Basmalah sunat dibaca ketika hendak memulakan semua perbuatan yang baik."],
+[P26S,9,"Apakah nama \"al\" ta'rif yang dibaca dengan izhar?",["Al Qamariah","Al-Imalah","Al-Isymam","Al Syamsiah"],"Alif Lam Qamariah dibaca dengan izhar. Alif Lam Syamsiah dibaca dengan idgham."],
+[P26S,12,"Kadar panjang harakat mad ialah...",["Dua hingga enam harakat","Dua hingga tiga harakat","Dua hingga empat harakat","Dua hingga lima harakat"],"Kadar panjang mad ialah 2 hingga 6 harakat."],
+[P26S,17,"Berikut merupakan kadar panjang harakat Mad Jaiz Munfasil, KECUALI...",["Tiga harakat","Dua harakat","Empat harakat","Lima harakat"],"Mad Jaiz Munfasil boleh dibaca 2 harakat, tetapi elok 4 atau 5 harakat. Tiga harakat bukan kadarnya."],
+[P26S,18,"Berikut adalah contoh ayat Mad Jaiz Munfasil ketika wasal, KECUALI...",[A("جَآءُوكَ"),A("بِمَآ أُنزِلَ"),A("قَالُوٓا۟ إِنَّا"),A("وَفِىٓ أَنفُسِكُمْ")],"Dalam "+A("جَآءُوكَ")+" hamzah berada dalam satu kalimah dengan huruf mad. Ini ialah Mad Wajib Muttasil, bukan Mad Jaiz Munfasil."],
+[P25A,4,"Berapakah kaedah membaca basmalah di antara 2 surah?",["Tiga","Empat","Lima","Enam"],"Ada tiga kaedah membaca Basmallah di antara dua surah."],
+[P25A,7,"Berapakah bahagian harakat mad?",["Empat","Tiga","Lima","Enam"],"Bahagian harakat mad ada empat: 2 harakat (qasr), 4 harakat (tawassut), 5 harakat (fauqa tawassut) dan 6 harakat (isyba')."],
+[P25A,14,"\""+A("وَزِدْنَٰهُمْ هُدًى")+"\" adalah contoh...",["Mad 'Iwad","Mad Silah","Mad Lin","Mad Jaiz"],"Apabila waqaf pada "+A("هُدًى")+" yang berbaris dua di atas, ia dibaca 2 harakat. Ini ialah Mad 'Iwad."],
+[P25A,18,"Berikut adalah contoh Mad Lazim Harfi Mukhaffaf, KECUALI...",[A("الٓمٓر"),A("الٓر"),A("حمٓ"),A("يسٓ")],"Dalam "+A("الٓمٓر")+" huruf Lam diidghamkan ke dalam Mim, jadi ia Mad Lazim Harfi Muthaqqal. "+A("الٓر")+", "+A("حمٓ")+" dan "+A("يسٓ")+" ialah Mukhaffaf."],
+[U26,3,"Kadar panjang harakat Mad Farq adalah wajib dipanjangkan...",["Enam harakat","Dua harakat","Empat harakat","Lima harakat"],"Mad Farqi wajib dipanjangkan kadar 6 harakat."]
+],
+sirah:[
+[P26S,1,"Apakah nama perjanjian damai di antara kaum Muslimin di Madinah dengan kaum Musyrikin di Mekah?",["Perjanjian Hudaibiyah","Perjanjian Mekah","Perjanjian Madinah","Perjanjian Muslimin"],"Perjanjian Hudaibiyah ialah perjanjian damai antara kaum Muslimin di Madinah dengan kaum Musyrikin di Mekah."],
+[P23G,1,"Bilakah Perjanjian Hudaibiyah berlaku?",["Hari Isnin, bulan Zulkaedah","Hari Ahad, bulan Zulkaedah","Hari Ahad, bulan Zulhijjah","Hari Isnin, bulan Zulhijjah"],"Perjanjian Hudaibiyah berlaku pada hari Isnin, bulan Zulkaedah, tahun ke-6 Hijrah."],
+[P26S,2,"Siapakah nama utusan yang dihantar oleh Rasulullah SAW dalam Perjanjian Hudaibiyah?",["Saidina Uthman bin Affan","Saidina Ali bin Abi Talib","Saidina Umar bin Al-Khattab","Saidina Abu Bakar As-Siddiq"],"Rasulullah SAW menghantar Saidina Uthman bin Affan untuk berbincang dan menyatakan tujuan sebenar rombongan baginda."],
+[P26S,3,"Apakah tujuan Rasulullah SAW menuju ke Mekah bersama 1,400 orang sahabat?",["Menunaikan ibadat umrah","Memeterai Bai'ah Ridhwan","Menunaikan ibadat haji","Memeterai Perjanjian Hudaibiyah"],"Rasulullah SAW dan 1,400 orang sahabat keluar dari Madinah menuju ke Mekah untuk menunaikan umrah."],
+[P26S,4,"Apakah tindakan terhadap orang Islam yang lari ke pihak Quraisy?",["Tidak perlu dikembalikan","Dibunuh","Dikembalikan","Dipulaukan"],"Isi perjanjian: orang Islam yang lari ke pihak Quraisy tidak perlu dikembalikan kepada keluarganya."],
+[P25A,3,"Berapakah tempoh masa yang dibenarkan tinggal di Mekah dalam Perjanjian Hudaibiyah?",["3 hari","4 hari","10 hari","11 hari"],"Orang Islam dibenarkan masuk ke Mekah pada tahun berikutnya dan tinggal selama 3 hari sahaja."],
+[P26S,7,"Apakah negara luar yang mempunyai hubungan politik dengan Rasulullah SAW?",["Rom","Syam","Iraq","Turki"],"Kesan Perjanjian Hudaibiyah: Rasulullah SAW membuat hubungan politik dengan negara luar seperti Rom, Parsi dan Habsyah."],
+[P25A,17,"Berikut adalah tempat yang dikunjungi oleh Rasulullah SAW semasa mengerjakan Haji Wada', KECUALI...",["Syam","Zulhulaifah","Kota Mekah","Masjidil Haram"],"Rasulullah SAW berihram di Zulhulaifah, kemudian ke Kota Mekah dan Masjidil Haram. Syam tidak dikunjungi semasa Haji Wada'."],
+[P23G,4,"Apakah peristiwa yang berlaku pada 10 Ramadhan tahun ke-8 Hijrah?",["Pembukaan Kota Mekah","Perjanjian Hudaibiyah","Perjanjian Aqabah","Pembukaan Kota Madinah"],"Pembukaan Kota Mekah berlaku pada 10 Ramadhan, tahun ke-8 Hijrah."],
+[P25A,7,"Apakah nama kaum yang taat kepada Rasulullah SAW?",["Bani Khuza'ah","Syiah","Khawarij","Bani Bakar"],"Bani Bakar (sekutu Quraisy) menyerang Bani Khuza'ah yang taat kepada Rasulullah SAW."],
+[P25A,8,"Di manakah tentera Islam bermalam sebelum bergerak ke Mekah?",["Damarul-Zhohran","Hudaibiyah","Taif","Madinah"],"Tentera Islam bermalam di Damarul-Zhohran dan menyalakan unggun api yang besar untuk menunjukkan kekuatan Islam."],
+[P23G,15,"Isi wasiat Rasulullah SAW dalam Khutbah Haji Wada' yang berkaitan larangan penipuan dalam bermuamalat ialah...",["Segala urusan riba dibatalkan","Menjaga hak atas isteri","Jiwa dan harta orang Islam adalah amanah","Janganlah kamu sakiti sesiapa pun"],"Isi khutbah Haji Wada' menegaskan riba dalam muamalat Islam adalah diharamkan. Hanya pilihan ini berkaitan urusan muamalat."],
+[P23G,5,"Bagaimanakah perasaan Rasulullah SAW ketika memasuki Kota Mekah?",["Tawaduk dan merendah diri","Bangga dan gembira","Bangga dan merendah diri","Tawaduk dan berbesar hati"],"Ketika memasuki Kota Mekah, Rasulullah SAW berjalan dengan penuh tawaduk dan merendah diri."],
+[P26S,13,"Di antara kebijaksanaan Rasulullah SAW ialah...",["Meletakkan Hajarul Aswad","Membina Masjid Nabawi","Membina semula Kaabah","Membina Masjidil Haram"],"Rasulullah SAW bijak menyelesaikan isu meletakkan Hajarul Aswad di tempat asalnya selepas Kaabah dibina semula."],
+[P26S,15,"Gelaran masyarakat Arab sebelum Nabi Muhammad SAW dilantik menjadi Rasulullah ialah...",["Jahiliah","Madani","Badwi","Quraisy"],"Sebelum Nabi Muhammad SAW diutuskan, masyarakat Arab dikenali sebagai Arab Jahiliah."],
+[P26S,17,"Berikut adalah akhlak masyarakat Arab Jahiliah, KECUALI...",["Menjaga hak wanita","Menindas orang miskin","Suka berperang antara kabilah","Melakukan maksiat sebagai cara hidup"],"Dalam masyarakat Jahiliah, hak wanita dinafikan. Menjaga hak wanita ialah ajaran Islam."],
+[P26S,18,"Perubahan yang dilakukan oleh Rasulullah SAW demi keadilan umatnya, KECUALI...",["Menghalalkan riba dan rasuah","Mengharamkan unsur penipuan","Memperkenalkan sistem muamalat","Menerapkan unsur ketakwaan kepada Allah"],"Rasulullah SAW MENGHARAMKAN riba dan rasuah, bukan menghalalkannya."],
+[P26S,19,"Berikut merupakan sumber perundangan Islam..."+ST("i. As-Sunnah","ii. Al-Qias","iii. Al-Quran","iv. Al-Ijma'"),["i, ii, iii dan iv","i dan ii","i dan iii","i, iii dan iv"],"Perundangan Islam berpandukan Al-Quran, Al-Sunnah, Ijma' dan Qias. Keempat-empatnya betul."],
+[P26S,20,"Antara hikmah daripada kepimpinan Rasulullah SAW..."+ST("i. Hidup berpandukan Al-Quran","ii. Melanggar perintah Allah Taala","iii. Undang-undang Islam adalah lengkap","iv. Melaksanakan muamalat yang ditetapkan Islam"),["i, iii dan iv","i dan ii","i dan iii","i, ii, iii dan iv"],"Melanggar perintah Allah bukan hikmah. Umat Islam hendaklah taat kepada perintah Allah."],
+[U26,4,"Berikut adalah pesanan Rasulullah SAW ketika Haji Wada', KECUALI...",["Setiap muslim bermusuhan","Dirikan solat lima waktu","Jual beli riba diharamkan","Melayan wanita dengan cara yang baik"],"Khutbah Haji Wada' menegaskan orang Islam itu bersaudara dan hendaklah saling bantu-membantu, bukan bermusuhan."]
+]
+};
+
+const MARK={1:1,2:2,3:3}; const EXAM_MARK=2; const CERT_MIN=70;
+// ===== PETUNJUK (HINT) — penerangan ringkas isi nota Darjah 5 =====
+const HINT_A={
+akhlak:[
+"Ingat: pekerja produktif = buat kerja BAGUS, KREATIF, CEPAT dan LUAR BIASA. Pilihan lain ialah sifat pekerja yang malas.",
+"Ingat: komputer dan mesin moden (TEKNOLOGI) membantu kerja jadi cepat. Malas, buang masa dan bergaduh tidak membantu.",
+"Ingat: jual beli = PERTUKARAN barang. Meminjam, memberi hadiah dan menyimpan barang bukan jual beli.",
+"Ingat: sebelum perlawanan bermula, pemain BERSALAM-SALAMAN. Tiga pilihan lain ialah perbuatan buruk.",
+"Ingat: BERDENDAM (menyimpan marah dalam hati) dilarang. Bekerjasama, kawal emosi dan semangat kesukanan ialah perkara baik.",
+"Ingat: Kampung → Ketua Kampung. Mukim → PENGHULU. Daerah → Pegawai Daerah. Negeri → Menteri Besar.",
+"Ingat: imam berdiri paling hadapan dan makmum mengikutnya ketika SOLAT BERJEMAAH.",
+"Ingat: mesyuarat yang baik bermula dengan semua ahli DATANG TEPAT PADA MASANYA.",
+"Ingat: ikhlas (bahasa) = BERSIH, MURNI dan KHUSUS.",
+"Ingat: sabar (bahasa) = MENAHAN.",
+"Ingat: 'Alhamdulillah' disebut dengan mulut, jadi ia syukur dengan LIDAH.",
+"Ingat: hasad dengki = IRI HATI, tidak senang melihat orang lain mempunyai kelebihan.",
+"Ingat: riak ialah SYIRIK KECIL, jadi hukumnya HARAM.",
+"Ingat: takabbur (bahasa) = SOMBONG atau BANGGA DIRI.",
+"Ingat: 7 punca hasad dengki disimpulkan oleh IMAM AL-GHAZALI.",
+"Ingat: datang awal dan susun kerja ikut keutamaan ialah tanda pekerja yang PRODUKTIF.",
+"Ingat: melayan pelanggan yang banyak bertanya tanpa marah ialah SABAR dengan kerenah pelanggan.",
+"Ingat: walaupun kalah, kita BERSALAM dan MENERIMA KEPUTUSAN dengan hati terbuka. Jangan merajuk atau marah.",
+"Ingat: semasa orang lain bercakap, kita TUNGGU dia habis, kemudian MINTA IZIN untuk memberi pendapat.",
+"Ingat: buat baik secara SENYAP tanpa mahu dipuji = IKHLAS.",
+"Ingat: sakit hati melihat kawan berjaya dan mahu kawan gagal = HASAD DENGKI.",
+"Ingat: beribadat dengan baik hanya bila ada orang melihat = RIAK.",
+"Ingat: menggunakan tangan, kaki dan tubuh untuk kebaikan = syukur dengan SELURUH ANGGOTA BADAN.",
+"Ingat: Farah sedang bermain, jadi ini adab SEMASA bersukan.",
+"Ingat: orang yang sombong perlu MUHASABAH DIRI (periksa diri) dan MENERIMA NASIHAT dengan terbuka.",
+"Ingat: 'buat dua kerja serentak' (III) TIDAK digalakkan. Buang III, pilih yang lain.",
+"Ingat: arahan supaya MENIPU ialah maksiat, jadi TIDAK perlu diikut. Tetapi tegur ketua dengan cara yang baik, jangan bergaduh.",
+"Ingat: keputusan mesyuarat ialah KEPUTUSAN BERSAMA, dan perbezaan pendapat adalah RAHMAT.",
+"Ingat: menceritakan amalan yang SUDAH BERLALU supaya dipuji = SUM'AH (bukan riak).",
+"Ingat: orang takabbur tidak mahu MERENDAHKAN DIRI dan sukar MENERIMA NASIHAT.",
+"Ingat: meletakkan harga tinggi kerana pelanggan ramai (IV) bukan adab berjual-beli. Buang IV.",
+"Ingat: TAAT = bersetuju dengan keputusan tanpa mementingkan diri. IKHLAS = hadir kerana Allah SWT.",
+"Ingat: baju lusuh dan bertampal ialah tentang apa yang dipakai = riak PENAMPILAN PAKAIAN.",
+"Ingat: sengaja ikut majlis ilmu supaya dianggap alim = riak dalam PERSAHABATAN.",
+"Ingat: solat dan zakat ialah perintah ALLAH. Tidak mengakui perintah Allah = takabbur kepada ALLAH SWT.",
+"Ingat: mahu menjadi ketua dan terkenal = GHAIRAH MENJADI KETUA DAN MENCARI POPULARITI.",
+"Ingat: MENGADU DOMBA (III) ialah sifat orang hasad, bukan cara menjauhinya. Buang III.",
+"Ingat: sabar ialah sifat TERPUJI, bukan tercela. Buang IV.",
+"Ingat: dipuji tetapi tidak berasa megah = TIDAK TERPEDAYA DENGAN PUJIAN MANUSIA DAN MEGAH DIRI.",
+"Ingat: mulakan dari peringkat paling kecil: KETUA KAMPUNG → PENGHULU → PEGAWAI DAERAH → MENTERI BESAR."
+],
+tajwid:[
+"Ingat: isti'azah = MEMOHON PERLINDUNGAN (daripada syaitan).",
+"Ingat: lafaz isti'azah bermula dengan 'A'uzubillah...' dan menyebut perkataan SYAITAN.",
+"Ingat: isti'azah TIDAK WAJIB, tetapi SANGAT DITUNTUT.",
+"Ingat: Basmallah WAJIB dibaca di awal AL-FATIHAH kerana ia sebahagian daripada ayat Al-Fatihah.",
+"Ingat: Surah AT-TAUBAH tidak dimulakan dengan Basmallah.",
+"Ingat: Qamariah = Lam dibaca JELAS = IZHAR.",
+"Ingat: Syamsiah = Lam dimasukkan, tidak dibaca = IDGHAM.",
+"Ingat: huruf mad ada 3 sahaja: ALIF, WAU dan YA.",
+"Ingat: Mad Asli = 2 HARAKAT (genggam 2 jari).",
+"Ingat: Mad Lazim (Raja Mad) = 6 HARAKAT, paling panjang.",
+"Ingat 'BAJU DAH KOTOR' = BA, JIM, DAL, QAF, TA.",
+"Ingat: Mim (م) = lampu merah = WAJIB BERHENTI.",
+"Ingat: Lam Alif (لا) = lampu hijau = JANGAN BERHENTI, terus sambung.",
+"Ingat: Alif Lam Qamariah ada 14 huruf, sama banyak dengan Alif Lam Syamsiah.",
+"Ingat: Mad 'Iwad = 2 HARAKAT, sama seperti Mad Asli.",
+"Ingat: Syamsiah — Lam tiada baris dan huruf selepasnya ada SABDU ( ّ ). Contoh: ar-RAHIIM.",
+"Ingat: Qamariah — Lam ada SUKUN ( ْ ) dan dibaca jelas. Contoh: al-KABIIR.",
+"Ingat: Muttasil = hamzah dalam SATU perkataan dengan huruf mad. Contoh: JAA-A.",
+"Ingat: Munfasil = hamzah di perkataan LAIN. Contoh: YAA + AYYUHA.",
+"Ingat: Jim (ج) = lampu kuning = BOLEH PILIH, berhenti atau sambung.",
+"Ingat: Sad-Lam-Ya (صلى) = boleh berhenti, tetapi SAMBUNG lebih utama.",
+"Ingat: qalqalah di TENGAH kalimah = SUGHRA (kecil). Di hujung kalimah = Kubra (besar).",
+"Ingat: Mad Lazim Harfi ada pada huruf AWAL SURAH, contohnya ALIF LAAAM MIIIM.",
+"Ingat: 'Walad-Daaalliin' ialah Mad Lazim, MESTI dibaca 6 HARAKAT. Jadi bacaan 2 harakat itu SALAH.",
+"Ingat: Mad Far'i terjadi bila Mad Asli bertemu HAMZAH atau SUKUN.",
+"Ingat: Basmallah TIDAK dibaca di awal At-Taubah, jadi IV salah. Buang IV.",
+"Ingat: Muttasil = SATU kalimah (serumah). Munfasil = DUA kalimah (jiran sebelah).",
+"Ingat: cara paling baik = BERHENTI selepas isti'azah, BERHENTI selepas Basmallah, kemudian baca awal surah.",
+"Ingat: Mad Asli jadi lebih panjang kerana bertemu HAMZAH atau SUKUN.",
+"Ingat: JANGAN berhenti di tanda لا. Berhenti di tanda yang membenarkan, seperti م atau ج.",
+"Ingat: Wajib = MESTI 4 atau 5. Jaiz = BOLEH 2, tetapi elok 4 atau 5.",
+"Ingat: Mukhaffaf = RINGAN = huruf mad bertemu sukun asli dan TIDAK diidghamkan (tiada sabdu).",
+"Ingat: dalam الٓمٓ, Lam dimasukkan ke dalam Mim (ada idgham) = berat = HARFI MUTHAQQAL.",
+"Ingat: dalam الٓر tiada idgham = ringan = HARFI MUKHAFFAF.",
+"Ingat: Mad Farqi = huruf ALIF SAHAJA. Mad Lazim = ALIF, WAU dan YA.",
+"Ingat: berhenti pada مَآءً → tanwin dibaca seperti baris atas dan dipanjangkan 2 HARAKAT (Mad 'Iwad).",
+"Ingat: Mad Tamkin berlaku dalam DUA-DUA keadaan (I dan II).",
+"Ingat: Silah Qasirah — ketika WASAL dibaca 2 harakat, ketika WAKAF ha dhamir dimatikan.",
+"Ingat: Basmallah TIDAK dibaca di antara Al-Anfal dan At-Taubah. Buang IV.",
+"Ingat: di awal At-Taubah — baca isti'azah TANPA Basmallah, kemudian terus baca surah."
+],
+sirah:[
+"Ingat: Perjanjian Hudaibiyah = tahun ke-6 Hijrah.",
+"Ingat: Rasulullah SAW ke Mekah untuk menunaikan UMRAH.",
+"Ingat: 1,400 orang sahabat (Hudaibiyah). 10,000 orang tentera (Pembukaan Kota Mekah).",
+"Ingat: utusan Rasulullah SAW ke Mekah ialah SAIDINA UTHMAN BIN AFFAN.",
+"Ingat: janji setia para sahabat di Hudaibiyah dinamakan BAI'AH RIDHWAN.",
+"Ingat: wakil Musyrikin Mekah ialah SUHAIL BIN AMRU.",
+"Ingat: gencatan senjata selama 10 TAHUN.",
+"Ingat: 6H Hudaibiyah → 8H Pembukaan Kota Mekah → 10H Haji Wada'.",
+"Ingat: Pembukaan Kota Mekah = 10,000 orang tentera.",
+"Ingat: BILAL melaungkan azan di atas Kaabah.",
+"Ingat: Wada' = SELAMAT TINGGAL. Haji terakhir Rasulullah SAW.",
+"Ingat: Haji Wada' = tahun ke-10 Hijrah.",
+"Ingat: unta Rasulullah SAW bernama QASWA.",
+"Ingat: Rasulullah SAW berihram di ZULHULAIFAH.",
+"Ingat: 9 Zulhijjah → ARAFAH.",
+"Ingat: Bani Bakar (sekutu Quraisy) menyerang Bani Khuza'ah. Jadi Quraisy MELANGGAR Perjanjian Hudaibiyah.",
+"Ingat: unggun api yang besar untuk MENUNJUKKAN KEKUATAN tentera Islam.",
+"Ingat: kesan Hudaibiyah — Quraisy MENGIKTIRAF Rasulullah SAW dan Negara Islam.",
+"Ingat: Rasulullah SAW MEMAAFKAN penduduk Mekah = sifat PEMAAF dan KASIH SAYANG.",
+"Ingat: memusnahkan berhala berkaitan KEPERCAYAAN kepada Allah = AKIDAH.",
+"Ingat: riba, rasuah dan jual beli = urusan MUAMALAT.",
+"Ingat: hak wanita dan membantu orang miskin = soal AKHLAK.",
+"Ingat: hukuman Islam MENDIDIK dan MENCEGAH, bukan menyeksa.",
+"Ingat: Kota Mekah dibuka secara AMAN tanpa pertumpahan darah.",
+"Ingat: hikmah Hudaibiyah — SYIAR ISLAM BERKEMBANG dengan pesat.",
+"Ingat: perjanjian membawa KEAMANAN → Islam berkembang → Kota Mekah dibuka.",
+"Ingat: orang yang mulia ialah yang paling BERTAKWA, bukan kerana warna kulit. Buang III.",
+"Ingat: walaupun berjaya, jangan SOMBONG. Bersyukurlah kepada Allah.",
+"Ingat: Jahiliah = AKAL dan HAWA NAFSU. Islam = AL-QURAN, AL-SUNNAH, IJMA' dan QIAS.",
+"Ingat: pemimpin yang baik bersikap ADIL dan suka BERMESYUARAT.",
+"Ingat: orang Islam yang lari ke Quraisy TIDAK PERLU dikembalikan. Jadi III salah.",
+"Ingat urutan: BERHENTI di Hudaibiyah → HANTAR Saidina Uthman → BERITA Saidina Uthman dibunuh → BAI'AH RIDHWAN.",
+"Ingat: bayar Dam Ihsar — SEMBELIH KAMBING, BERCUKUR atau BERGUNTING, BUKA PAKAIAN IHRAM.",
+"Ingat: selepas Hudaibiyah, KHALID BIN WALID dan UTHMAN BIN THALHAH memeluk Islam.",
+"Ingat: ABU SUFIAN bukan ketua tentera Islam. Dia pemimpin Quraisy yang memeluk Islam semasa Pembukaan Kota Mekah.",
+"Ingat: pertempuran kecil berlaku di pihak tentera KHALID BIN WALID.",
+"Ingat: Rasulullah SAW TIDAK menghalau penduduk Mekah. Buang IV.",
+"Ingat: MENTAUHIDKAN ALLAH ialah ajaran Islam, bukan kepercayaan Jahiliah. Buang IV.",
+"Ingat: Jahiliah — ibadat di TEMPAT IBADAT sahaja. Islam — semua perbuatan baik ialah ibadat, boleh di MANA-MANA.",
+"Ingat: 10 Zulhijjah → ke MINA, melontar JAMRATUL KUBRA, berKORBAN dan BERCUKUR."
+]};
+const HINT_B={
+akhlak:[
+"Ingat: KURANG SOKONGAN menyebabkan produktiviti rendah. Pilihan lain ialah perkara yang baik.",
+"Ingat: bersukan dapat MENGUJI KEBOLEHAN kita. Pilihan lain ialah keburukan.",
+"Ingat: berbincang dan bermuzakarah tentang satu perkara = BERMESYUARAT.",
+"Ingat: IKHLAS ialah sifat terpuji. Riak, malas dan sombong ialah sifat tercela.",
+"Ingat: membuat sesuatu kerana Allah SEMATA-MATA = IKHLAS.",
+"Ingat: orang yang IKHLAS takut menjadi terkenal kerana dia tidak mahu dipuji.",
+"Ingat: orang yang sabar dapat menahan diri daripada MARAH.",
+"Ingat: syukur (bahasa) = BERTERIMA KASIH.",
+"Ingat: rasa cinta datang dari HATI.",
+"Ingat: BERSYUKUR kepada Allah ialah sifat baik, jadi ia BUKAN punca hasad.",
+"Ingat: MENUTUP AIB orang ialah sifat baik, jadi ia BUKAN ciri hasad.",
+"Ingat: kategori riak termasuk PENAMPILAN dan PERBUATAN. Kemewahan dan kecemburuan bukan kategori riak.",
+"Ingat: orang riak SUKA DIPUJI dan SUKA MENUNJUK-NUNJUK amalan.",
+"Ingat: buat kerja dengan ISTIQAMAH (tetap dan berterusan) meningkatkan produktiviti.",
+"Ingat: sukan dalam Islam bertujuan mewujudkan PERPADUAN.",
+"Ingat: boleh bersukan, tetapi jangan LALAI daripada suruhan Allah seperti solat.",
+"Ingat: hukum mentaati pemimpin ialah WAJIB.",
+"Ingat: tidak beradab terhadap pemimpin akan DIMURKAI ALLAH. Pilihan lain ialah perkara yang baik.",
+"Ingat: mesyuarat SENTIASA berfaedah. Cari pilihan yang mengatakan mesyuarat tiada faedah.",
+"Ingat: beradab dalam mesyuarat membawa kebaikan: MASALAH SELESAI dan UMAT BERSATU PADU."
+],
+tajwid:[
+"Ingat: isti'azah = MEMOHON PERLINDUNGAN.",
+"Ingat: isti'azah TIDAK WAJIB, tetapi sangat dituntut.",
+"Ingat: Alif Lam Ta'rif ada DUA: Qamariah dan Syamsiah.",
+"Ingat: Mad 'Iwad berlaku pada tanwin baris dua di ATAS ( ً ).",
+"Ingat: huruf mad bertemu SUKUN ASLI = MAD LAZIM.",
+"Ingat: Mad Silah ada dua: Qasirah dan TOWILAH.",
+"Ingat: dalam Mad Silah Towilah, huruf selepas ha dhamir ialah HAMZAH, bukan alif. Jadi pernyataan tentang alif itu SALAH.",
+"Ingat: صلى dan قلى ialah tanda waqaf. ء dan ن ialah huruf biasa.",
+"Ingat: tanda ∴ = WAQAF TA'ANUQ = berhenti di SALAH SATU tempat sahaja.",
+"Ingat: nama lain isti'azah = TA'AWWUZ.",
+"Ingat: membaca Basmallah sebelum membuat perkara baik hukumnya SUNAT.",
+"Ingat: Alif Lam yang dibaca IZHAR (jelas) = AL QAMARIAH.",
+"Ingat: mad paling pendek 2 harakat, paling panjang 6 harakat.",
+"Ingat: Mad Jaiz Munfasil = 2, 4 atau 5 harakat. Tiada 3 harakat.",
+"Ingat: dalam جَآءُوكَ hamzah berada dalam SATU perkataan, jadi ia Mad WAJIB Muttasil, bukan Munfasil.",
+"Ingat: kaedah membaca Basmallah di antara 2 surah ada TIGA.",
+"Ingat: bahagian harakat mad ada EMPAT: 2, 4, 5 dan 6 harakat.",
+"Ingat: هُدًى ada tanwin baris dua di atas. Bila berhenti, ia dibaca 2 harakat = MAD 'IWAD.",
+"Ingat: dalam الٓمٓر, Lam dimasukkan ke dalam Mim (ada idgham), jadi ia MUTHAQQAL, bukan Mukhaffaf.",
+"Ingat: Mad Farqi = 6 HARAKAT."
+],
+sirah:[
+"Ingat: perjanjian damai Muslimin Madinah dengan Musyrikin Mekah = PERJANJIAN HUDAIBIYAH.",
+"Ingat: Hudaibiyah berlaku hari ISNIN, bulan ZULKAEDAH.",
+"Ingat: utusan Rasulullah SAW = SAIDINA UTHMAN BIN AFFAN.",
+"Ingat: 1,400 sahabat ke Mekah untuk menunaikan UMRAH.",
+"Ingat: orang Islam yang lari ke Quraisy TIDAK PERLU DIKEMBALIKAN.",
+"Ingat: orang Islam boleh tinggal di Mekah 3 HARI sahaja.",
+"Ingat: Rasulullah SAW menjalin hubungan politik dengan ROM, Parsi dan Habsyah.",
+"Ingat: semasa Haji Wada', Rasulullah SAW TIDAK pergi ke SYAM.",
+"Ingat: 10 Ramadhan tahun ke-8 Hijrah = PEMBUKAAN KOTA MEKAH.",
+"Ingat: kaum yang taat kepada Rasulullah SAW = BANI KHUZA'AH. Bani Bakar pula sekutu Quraisy.",
+"Ingat: tentera Islam bermalam di DAMARUL-ZHOHRAN dan menyalakan unggun api.",
+"Ingat: penipuan dalam muamalat berkaitan dengan RIBA.",
+"Ingat: Rasulullah SAW masuk ke Mekah dengan TAWADUK dan MERENDAH DIRI.",
+"Ingat: Rasulullah SAW bijak MELETAKKAN HAJARUL ASWAD di tempat asalnya.",
+"Ingat: masyarakat Arab sebelum Islam dipanggil Arab JAHILIAH.",
+"Ingat: Arab Jahiliah TIDAK menjaga hak wanita. Itu ajaran Islam.",
+"Ingat: Rasulullah SAW MENGHARAMKAN riba dan rasuah, bukan menghalalkannya.",
+"Ingat: sumber perundangan Islam ada EMPAT, dan keempat-empatnya ada dalam soalan.",
+"Ingat: MELANGGAR perintah Allah bukan hikmah. Buang ii.",
+"Ingat: orang Islam itu BERSAUDARA, bukan bermusuhan."
+]};
+for(const s of ["akhlak","tajwid","sirah"]){
+  if(HINT_A[s].length!==BANK[s].length||HINT_B[s].length!==EXAM[s].length)console.error("Bilangan hint tidak sepadan",s);
+  BANK[s].forEach((q,i)=>q[4]=HINT_A[s][i]);
+  EXAM[s].forEach((q,i)=>q[5]=HINT_B[s][i]);
+}
+ // markah mengikut aras
+const SUBJ={akhlak:{nm:"Akhlak",ic:"🤝",c:"var(--akhlak)"},tajwid:{nm:"Tajwid",ic:"📖",c:"var(--tajwid)"},sirah:{nm:"Sirah",ic:"🕌",c:"var(--sirah)"},
+pp_akhlak:{nm:"Akhlak (Peperiksaan)",sh:"Akhlak",ic:"🤝",c:"#c2410c",s:"akhlak"},pp_tajwid:{nm:"Tajwid (Peperiksaan)",sh:"Tajwid",ic:"📖",c:"#5b3fd6",s:"tajwid"},pp_sirah:{nm:"Sirah (Peperiksaan)",sh:"Sirah",ic:"🕌",c:"#0b7d99",s:"sirah"},
+hd_akhlak:{nm:"Akhlak (Tersukar)",sh:"Akhlak",ic:"🤝",c:"#111",acc:"#FF4D4D",s:"akhlak"},hd_tajwid:{nm:"Tajwid (Tersukar)",sh:"Tajwid",ic:"📖",c:"#111",acc:"#3EC1FF",s:"tajwid"},hd_sirah:{nm:"Sirah (Tersukar)",sh:"Sirah",ic:"🕌",c:"#111",acc:"#5BE36A",s:"sirah"}};
+const QN=20, PICK={1:8,2:5,3:7};
+// ===== BAHAGIAN C: ZON CABARAN (5 soalan tersukar setiap subjek) =====
+// Format: [soalan, [jawapan betul, salah, salah, salah], penjelasan, hint]
+const HARD={
+akhlak:[
+["Pak Samad menjual buah-buahan. Dia membaca Basmallah sebelum memulakan perniagaan, tetapi meletakkan buah yang rosak di bahagian bawah bakul supaya tidak dilihat oleh pembeli. Adab berjual-beli yang manakah DILANGGAR oleh Pak Samad?",["Jujur, tiada unsur penipuan dan judi","Memulakan perniagaan dengan membaca Basmallah dan berdoa","Menggunakan bahasa yang sopan","Menjaga kewajipan kepada Allah SWT"],"Menyorok buah yang rosak supaya pembeli tertipu ialah penipuan. Pak Samad melanggar adab jujur dan tiada unsur penipuan. Dia sudah membaca Basmallah, jadi adab itu tidak dilanggar.","Ingat: menyorok buah rosak supaya pembeli tidak nampak ialah PENIPUAN. Pak Samad sudah membaca Basmallah."],
+["Antara berikut, yang manakah AKIBAT tidak menjaga adab bermesyuarat?"+ST("I. Menjatuhkan maruah","II. Merenggangkan hubungan silaturahim","III. Mendapat keredhaan Allah SWT","IV. Masalah tidak dapat diselesaikan dengan baik"),["I, II dan IV","I, II dan III","II, III dan IV","I, II, III dan IV"],"Mendapat keredhaan Allah SWT ialah KEBAIKAN beradab ketika bermesyuarat, bukan akibat buruk. Akibat tidak menjaga adab: menjatuhkan maruah, merenggangkan silaturahim dan masalah tidak dapat diselesaikan.","Ingat: mendapat keredhaan Allah ialah KEBAIKAN, bukan akibat buruk. Buang III."],
+["Antara pasangan situasi dengan kategori riak berikut, yang manakah BETUL?",["Selalu berzikir di hadapan orang ramai supaya disangka ahli zikir — Perkataan","Menundukkan kepala dan memejamkan mata supaya disangka memikirkan akhirat — Penampilan pakaian","Memperlihatkan badan yang kurus dan pucat supaya disangka banyak berpuasa — Persahabatan","Memakai baju yang lusuh dan bertampal supaya disangka ahli tasawuf — Perbuatan"],"Berzikir di hadapan orang supaya disangka ahli zikir ialah riak PERKATAAN. Menunduk dan memejam mata ialah riak perbuatan. Badan kurus dan pucat ialah penampilan jasmani. Baju lusuh ialah penampilan pakaian.","Ingat: zikir dan cakap tentang agama = PERKATAAN. Menunduk dan pejam mata = perbuatan. Badan kurus = jasmani. Baju = pakaian."],
+["Amir sering mengumpat dan mendedahkan rahsia Badrul kerana tidak senang melihat Badrul dipuji guru. Apakah AKIBAT yang akan menimpa Amir jika dia berterusan bersifat demikian?"+ST("I. Dibenci oleh Allah SWT dan Rasul-Nya","II. Hidup tidak bahagia","III. Menambah pahala","IV. Memutuskan silaturahim"),["I, II dan IV","I, II dan III","II, III dan IV","I, II, III dan IV"],"Amir bersifat hasad. Akibat hasad: dibenci Allah dan Rasul-Nya, hidup tidak bahagia, memutuskan silaturahim, serta menghapus pahala dan menambah dosa. Hasad tidak menambah pahala.","Ingat: hasad membawa akibat buruk. Hasad MENGHAPUS pahala, bukan menambah pahala. Buang III."],
+["Antara berikut, yang manakah TANGGUNGJAWAB PEMIMPIN, dan bukan adab rakyat terhadap pemimpin?",["Menyediakan keperluan asas kepada rakyat","Memberi sokongan padu kepada pemimpin","Bekerjasama dan membantu pemimpin untuk mencapai wawasan","Melaksanakan dasar demi kebaikan bersama"],"Menyediakan keperluan asas kepada rakyat ialah tanggungjawab pemimpin. Tiga pilihan lain ialah adab rakyat terhadap pemimpin.","Ingat: TANGGUNGJAWAB pemimpin ialah tugas pemimpin kepada rakyat. Tiga pilihan lain ialah adab RAKYAT kepada pemimpin."]
+],
+tajwid:[
+["Perhatikan ayat "+A("إِنَّآ أَعْطَيْنَٰكَ ٱلْكَوْثَرَ")+". Apakah hukum mad pada "+A("إِنَّآ أَعْطَيْنَٰكَ")+" dan kadar bacaannya ketika WASAL?",["Mad Jaiz Munfasil: boleh 2 harakat, tetapi elok 4 atau 5 harakat","Mad Wajib Muttasil: mesti 4 atau 5 harakat","Mad Lazim Kalimi: wajib 6 harakat","Mad Asli: 2 harakat sahaja"],"Huruf mad (alif) berada di hujung "+A("إِنَّآ")+" dan hamzah berada di awal perkataan lain "+A("أَعْطَيْنَٰكَ")+". Ini Mad Jaiz Munfasil: boleh 2 harakat, tetapi elok 4 atau 5 harakat.","Ingat: alif di hujung إِنَّآ, hamzah di perkataan sebelah = MUNFASIL (jiran sebelah) = boleh 2, elok 4 atau 5."],
+["Dalam ayat "+A("إِذَا ٱلسَّمَآءُ ٱنشَقَّتْ")+", seorang murid memanjangkan "+A("ٱلسَّمَآءُ")+" sebanyak 2 harakat sahaja. Apakah ulasan yang PALING TEPAT?",["Salah, kerana ia Mad Wajib Muttasil yang mesti dibaca 4 atau 5 harakat","Betul, kerana ia Mad Asli yang dibaca 2 harakat","Betul, kerana ia Mad Jaiz Munfasil yang boleh dibaca 2 harakat","Salah, kerana ia Mad Lazim yang mesti dibaca 6 harakat"],"Dalam "+A("ٱلسَّمَآءُ")+", huruf mad dan hamzah berada dalam SATU perkataan. Ini Mad Wajib Muttasil, mesti 4 atau 5 harakat. Bacaan 2 harakat adalah salah.","Ingat: alif dan hamzah dalam SATU perkataan ٱلسَّمَآءُ = Mad WAJIB Muttasil = MESTI 4 atau 5."],
+["Seorang murid berhenti (waqaf) pada kalimah "+A("ٱلْفَلَقِ")+" dalam ayat "+A("قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ")+". Apakah hukum bacaan pada huruf "+A("ق")+" yang terakhir?",["Qalqalah Kubra","Qalqalah Sughra","Mad 'Iwad","Mad Asli"],"Huruf "+A("ق")+" ialah huruf qalqalah. Apabila ia dimatikan di hujung ayat kerana waqaf, lantunannya kuat. Ini Qalqalah Kubra.","Ingat: ق ialah huruf qalqalah. Berhenti di HUJUNG ayat = KUBRA."],
+["Antara pasangan kalimah dengan hukum Alif Lam Ta'rif berikut, yang manakah BETUL?"+ST("I. "+A("ٱلشَّمْسُ")+" — Alif Lam Syamsiah","II. "+A("ٱلْقَمَرُ")+" — Alif Lam Qamariah","III. "+A("ٱلنَّاسِ")+" — Alif Lam Qamariah","IV. "+A("ٱلْكِتَٰبُ")+" — Alif Lam Qamariah"),["I, II dan IV","I, II dan III","II, III dan IV","I, II, III dan IV"],"Dalam "+A("ٱلنَّاسِ")+", Lam tidak dibaca dan huruf Nun bersabdu. Jadi ia Alif Lam SYAMSIAH, bukan Qamariah. Pernyataan III salah.","Ingat: ش dan ن ialah huruf Syamsiah (ada sabdu). ق dan ك ialah huruf Qamariah (Lam bersukun). Jadi III salah."],
+["Antara berikut, mad yang manakah WAJIB dibaca 6 harakat?"+ST("I. Mad Lazim","II. Mad Farqi","III. Mad Wajib Muttasil","IV. Mad Silah Qasirah"),["I dan II","I dan III","II dan IV","I, II dan III"],"Mad Lazim dan Mad Farqi wajib dibaca 6 harakat. Mad Wajib Muttasil dibaca 4 atau 5 harakat. Mad Silah Qasirah dibaca 2 harakat.","Ingat: Mad Lazim = 6, Mad Farqi = 6. Muttasil = 4 atau 5. Silah Qasirah = 2."]
+],
+sirah:[
+["Susun peristiwa Pembukaan Kota Mekah berikut mengikut turutan yang BETUL."+ST("I. Abu Sufian memeluk Islam","II. Bani Bakar menyerang Bani Khuza'ah","III. Tentera Islam menyalakan unggun api di Damarul-Zhohran","IV. Tentera Islam memasuki Kota Mekah dalam 4 kumpulan"),["II → III → I → IV","II → I → III → IV","III → II → I → IV","I → II → III → IV"],"Bani Bakar menyerang Bani Khuza'ah (punca). Tentera Islam bergerak dan menyalakan unggun api di Damarul-Zhohran. Abu Sufian melihatnya, ditangkap, dibawa oleh Abbas, lalu memeluk Islam. Akhir sekali tentera Islam masuk ke Mekah dalam 4 kumpulan.","Ingat: semuanya bermula dengan Bani Bakar menyerang Bani Khuza'ah. Abu Sufian memeluk Islam selepas melihat unggun api, dan tentera masuk Mekah paling akhir."],
+["Antara pasangan tarikh dengan peristiwa Haji Wada' berikut, yang manakah BETUL?",["8 Zulhijjah — Rasulullah SAW menuju ke Mina dan bermalam di sana","9 Zulhijjah — Rasulullah SAW melontar Jamratul Kubra","10 Zulhijjah — Rasulullah SAW menuju ke Arafah","13 Zulhijjah — Rasulullah SAW berihram di Zulhulaifah"],"8 Zulhijjah: ke Mina dan bermalam. 9 Zulhijjah: ke Arafah. 10 Zulhijjah: melontar Jamratul Kubra, korban dan bercukur. Rasulullah SAW berihram di Zulhulaifah semasa keluar dari Madinah (25 Zulkaedah), bukan 13 Zulhijjah.","Ingat: 8 Zulhijjah → MINA (bermalam). 9 → Arafah. 10 → Jamratul Kubra."],
+["Antara pasangan sudut kepimpinan Rasulullah SAW dengan contohnya berikut, yang manakah BETUL?"+ST("I. Akidah — menegaskan hanya Islam agama yang benar","II. Ibadat — tidak mengadakan perantara antara makhluk dengan Allah","III. Muamalat — mengharamkan unsur riba dan rasuah","IV. Perundangan — hak wanita dinafikan dan ditindas"),["I, II dan III","I, II dan IV","II, III dan IV","I, II, III dan IV"],"Hak wanita dinafikan dan ditindas ialah perundangan Arab Jahiliah. Dalam perundangan Islam, hak wanita dan lelaki terpelihara. Pernyataan IV salah.","Ingat: HAK WANITA DINAFIKAN ialah perundangan Jahiliah, bukan Islam. Buang IV."],
+["Mengapakah Musyrikin Mekah akhirnya mengutus Suhail bin Amru untuk membuat perjanjian damai di Hudaibiyah?",["Mereka menjadi takut selepas para sahabat memeterai Bai'ah Ridhwan","Orang Islam datang dengan senjata lengkap untuk berperang","Saidina Uthman bin Affan telah dibunuh oleh mereka","Rasulullah SAW mahu menunaikan haji pada tahun itu"],"Selepas para sahabat berjanji setia (Bai'ah Ridhwan) untuk menuntut bela, Musyrikin Mekah menjadi takut. Mereka membebaskan Saidina Uthman dan mengutus Suhail bin Amru untuk berdamai. Berita Saidina Uthman dibunuh hanyalah khabar palsu.","Ingat: selepas para sahabat berjanji setia untuk berperang (Bai'ah Ridhwan), Musyrikin Mekah menjadi TAKUT."],
+["Isi khutbah Haji Wada' menyatakan bahawa orang yang paling mulia di sisi Allah ialah yang paling bertakwa. Apakah pengajaran yang PALING TEPAT?",["Kita tidak boleh memandang rendah orang lain kerana warna kulit atau kedudukannya","Orang kaya lebih mulia daripada orang miskin","Kita hanya perlu berkawan dengan orang yang sama warna kulit","Kedudukan seseorang menentukan kemuliaannya"],"Kemuliaan di sisi Allah diukur dengan takwa, bukan warna kulit atau kedudukan. Jadi kita tidak boleh memandang rendah orang lain.","Ingat: kemuliaan diukur dengan TAKWA, jadi jangan pandang rendah orang lain kerana warna kulit atau kedudukan."]
+]};
+const HARD_MARK=3;
+
+// ===== ANALISIS KERTAS PEPERIKSAAN =====
+const ANALISIS={
+akhlak:`
+<p class="zsrc">📂 Dianalisis: Peperiksaan Akhir Tahun 2022 dan Peperiksaan Setengah Tahun 2026 (Akhlak Darjah 5).</p>
+<h4>📋 Format kertas (50 soalan · 100 markah · 1 jam)</h4>
+<ul><li>S1–20 Objektif (40 markah) · S21–25 Betul/Salah · S26–30 Padankan · S31–40 Isi tempat kosong · S41–45 Peta minda · S46–50 Subjektif (20 markah)</li></ul>
+<h4>🔥 Topik paling kerap (soalan objektif)</h4>
+<div class="zbar"><span>Bersukan</span><i style="--w:100%"></i><b>8</b></div>
+<div class="zbar"><span>Mentaati Pemimpin</span><i style="--w:100%"></i><b>8</b></div>
+<div class="zbar"><span>Adab Bermesyuarat</span><i style="--w:88%"></i><b>7</b></div>
+<div class="zbar"><span>Pekerja Produktif</span><i style="--w:63%"></i><b>5</b></div>
+<div class="zbar"><span>Adab Berjual-Beli</span><i style="--w:38%"></i><b>3</b></div>
+<div class="zbar"><span>Ikhlas · Syukur · Hasad · Riak</span><i style="--w:25%"></i><b>2 setiap satu</b></div>
+<div class="zbar"><span>Sabar</span><i style="--w:13%"></i><b>1</b></div>
+<h4>✍️ Soalan subjektif yang pernah keluar</h4>
+<ul><li>Nyatakan adab berjual beli.</li><li>Tulis akibat tidak menjaga adab bersukan.</li><li>Nyatakan akibat tidak menjaga adab mesyuarat.</li><li>Nyatakan cara menjauhkan diri daripada sifat riak.</li><li>Nyatakan dua faktor yang mempengaruhi produktiviti kerja.</li><li>Tulis dua cara meningkatkan produktiviti orang Islam.</li><li>Tulis pengertian mesyuarat dalam Islam.</li><li>Tulis dua sifat terpuji dalam mesyuarat.</li><li>Tulis kesan buruk tidak beradab terhadap pemimpin (berdasarkan situasi).</li></ul>
+<h4>🎯 Ramalan untuk esok</h4>
+<ul><li><b>Pasti keluar:</b> Bersukan, Pemimpin dan Mesyuarat. Ketiga-tiga topik ini paling banyak soalan dalam kedua-dua kertas.</li>
+<li><b>Jika esok Peperiksaan Akhir Tahun:</b> Ikhlas, Sabar, Syukur, Hasad, Riak dan Takabbur akan turut keluar. Takabbur pernah keluar dalam soalan padanan (Pembahagian Takabbur: kepada Allah, kepada Rasulullah dan kepada sesama manusia).</li>
+<li><b>Hafal untuk subjektif:</b> adab berjual-beli, akibat tidak jaga adab sukan dan mesyuarat, serta cara menjauhi riak.</li></ul>`,
+tajwid:`
+<p class="zsrc">📂 Dianalisis: Peperiksaan Penggal Kedua 2023, Peperiksaan Setengah Tahun 2026, Peperiksaan Akhir Tahun 2025 dan Ujian Penilaian 2026 (Tajwid Darjah 5).</p>
+<h4>📋 Format kertas (50 soalan · 100 markah · 1 jam)</h4>
+<ul><li>S1–20 Objektif (40 markah) · S21–25 Betul/Salah · S26–30 Padankan · S31–40 Isi tempat kosong · S41–45 Peta minda · S46–50 Subjektif (20 markah)</li></ul>
+<h4>🔥 Topik paling kerap (soalan objektif, 4 kertas)</h4>
+<div class="zbar"><span>Isti'azah</span><i style="--w:100%"></i><b>8</b></div>
+<div class="zbar"><span>Basmallah</span><i style="--w:88%"></i><b>7</b></div>
+<div class="zbar"><span>Mad Wajib &amp; Jaiz</span><i style="--w:88%"></i><b>7</b></div>
+<div class="zbar"><span>Alif Lam Ta'rif</span><i style="--w:75%"></i><b>6</b></div>
+<div class="zbar"><span>Mad (pengertian &amp; bahagian)</span><i style="--w:75%"></i><b>6</b></div>
+<div class="zbar"><span>Mad 'Aridh Lissukun ⚠️</span><i style="--w:63%"></i><b>5</b></div>
+<div class="zbar"><span>Mad Lazim · Mad Silah · Tanda Waqaf</span><i style="--w:50%"></i><b>4 setiap satu</b></div>
+<div class="zbar"><span>Mad Lin ⚠️ · Mad 'Iwad · Mad Farqi</span><i style="--w:38%"></i><b>3 setiap satu</b></div>
+<div class="zbar"><span>Mad Badal ⚠️ · Mad Tamkin</span><i style="--w:25%"></i><b>2 setiap satu</b></div>
+<div class="zwarn"><h4>⚠️ Kerap keluar tetapi TIADA dalam nota</h4>
+<ul><li><b>Mad 'Aridh Lissukun:</b> berlaku apabila berhenti (waqaf) pada huruf terakhir dan sebelumnya ada huruf mad (ا و ي). Contoh: berhenti pada <span class="ar">ٱلرَّحِيمِ</span>. Hukumnya <b>harus</b> dibaca <b>2, 4 atau 6 harakat</b>.</li>
+<li><b>Mad Lin:</b> huruf Wau atau Ya bertanda mati, dan huruf sebelumnya berbaris atas, ketika waqaf. Contoh: berhenti pada <span class="ar">قُرَيْشٍ</span>. Kadarnya <b>2, 4 atau 6 harakat</b>.</li>
+<li><b>Mad Badal:</b> huruf hamzah berada SEBELUM huruf mad. Contoh: <span class="ar">ءَامَنُوا۟</span>. Kadarnya <b>2 harakat</b>.</li></ul></div>
+<h4>✍️ Soalan subjektif yang pernah keluar</h4>
+<ul><li>Tulis dua cara membaca isti'azah pada awal Surah At-Taubah.</li><li>Tulis dua kadar harakat pada Mad 'Aridh Lissukun.</li><li>Tulis dua keadaan Mad Tamkin.</li><li>Tulis bahagian Mad Lazim Harfi (Muthaqqal dan Mukhaffaf).</li><li>Apakah maksud tanda waqaf Jim (ج)?</li><li>Apakah pengertian Mad Badal?</li><li>Berapakah kadar harakat Mad Tamkin?</li><li>Tulis bahagian Mad Lazim Kalimi.</li><li>Berapakah bahagian Mad Silah?</li><li>Apakah maksud waqaf lazim (م)?</li></ul>
+<h4>🎯 Ramalan untuk esok</h4>
+<ul><li><b>Pasti keluar:</b> Isti'azah, Basmallah, Alif Lam Ta'rif dan Mad Wajib/Jaiz. Topik ini keluar dalam setiap kertas.</li>
+<li><b>Sangat berpotensi:</b> Mad 'Aridh Lissukun, Mad Lazim (Kalimi dan Harfi), Mad Silah dan tanda waqaf.</li>
+<li><b>Hafal kadar harakat:</b> Asli 2 · Wajib 4/5 · Jaiz 2/4/5 · 'Aridh 2/4/6 · Lin 2/4/6 · Badal 2 · 'Iwad 2 · Tamkin 2 · Farqi 6 · Lazim 6 · Silah Qasirah 2 · Silah Towilah 4/5.</li></ul>`,
+sirah:`
+<p class="zsrc">📂 Dianalisis: Peperiksaan Penggal Kedua 2023, Peperiksaan Akhir Tahun 2025, Peperiksaan Setengah Tahun 2026 dan Ujian Penilaian 2026 (Sirah Darjah 5).</p>
+<h4>📋 Format kertas (50 soalan · 100 markah)</h4>
+<ul><li>S1–20 Objektif (40 markah), diikuti soalan Betul/Salah, Padankan, Isi tempat kosong, Peta minda dan Subjektif.</li></ul>
+<h4>🔥 Topik paling kerap (soalan objektif)</h4>
+<div class="zbar"><span>Rasulullah SAW Pemimpin Agung</span><i style="--w:100%"></i><b>21</b></div>
+<div class="zbar"><span>Perjanjian Hudaibiyah</span><i style="--w:76%"></i><b>16</b></div>
+<div class="zbar"><span>Haji Wada'</span><i style="--w:62%"></i><b>13</b></div>
+<div class="zbar"><span>Pembukaan Kota Mekah</span><i style="--w:43%"></i><b>9</b></div>
+<div class="zbar"><span>Kewafatan Rasulullah SAW ⚠️</span><i style="--w:29%"></i><b>6</b></div>
+<div class="zwarn"><h4>⚠️ Kerap keluar tetapi TIADA dalam nota: Kewafatan Rasulullah SAW</h4>
+<ul><li>Rasulullah SAW wafat pada hari <b>Isnin, 12 Rabiulawal</b>, tahun 11 Hijrah.</li>
+<li>Selepas pulang dari perkuburan Baqi', baginda diuji dengan <b>sakit kepala dan demam</b>.</li>
+<li>Semasa sakit, baginda meminta <b>Saidina Abu Bakar mengimamkan solat</b>.</li>
+<li>Selepas kewafatan baginda, Saidina Abu Bakar mengesahkan kewafatan, berucap kepada orang ramai dan membaca <b>Surah Ali 'Imran ayat 144</b>.</li></ul></div>
+<h4>✍️ Soalan subjektif yang pernah keluar</h4>
+<ul><li>Siapakah yang diperintahkan oleh Rasulullah SAW untuk mengerjakan haji (tahun ke-9 Hijrah)?</li><li>Berapa lama Rasulullah SAW berada di Madinah sebelum mengerjakan haji? (9 tahun)</li><li>Apakah nama unta yang ditunggang oleh Rasulullah SAW semasa menuju ke Mekah? (Qaswa)</li><li>Tawaf yang dilakukan oleh Rasulullah SAW sebelum bertolak balik ke Madinah.</li><li>Nyatakan dua kandungan khutbah Haji Wada'.</li></ul>
+<h4>🎯 Ramalan untuk esok</h4>
+<ul><li><b>Pasti keluar:</b> Rasulullah SAW Pemimpin Agung (sudut akidah, ibadat, akhlak, perundangan dan muamalat). Topik ini paling banyak soalan.</li>
+<li><b>Sangat berpotensi:</b> Perjanjian Hudaibiyah (tarikh, utusan, isi kandungan, kesan dan hikmah) dan Haji Wada' (tarikh, tempat, khutbah).</li>
+<li><b>Jika esok Peperiksaan Akhir Tahun:</b> 2 hingga 4 soalan tentang Kewafatan Rasulullah SAW mungkin keluar. Baca kotak amaran di atas.</li></ul>`
+};
+
+ // Bahagian A: 20 soalan setiap kali (8 senang, 5 sederhana, 7 sukar)
+const LVN={1:"Senang",2:"Sederhana",3:"Sukar"};
+const L="ABCD", KEYS=["akhlak","tajwid","sirah"];
+let cur,qs,i,earned,total,correct,wrong,answered,fullSet,last;
+const $=id=>document.getElementById(id);
+const esc=t=>t.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const shuffle=a=>{a=a.slice();for(let k=a.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[a[k],a[j]]=[a[j],a[k]];}return a};
+function best(k){try{return localStorage.getItem("kuizD5b_"+k)}catch(e){return null}}
+function saveBest(k,v){try{const b=+best(k)||0;if(v>b)localStorage.setItem("kuizD5b_"+k,v)}catch(e){}}
+function mk(s,q){return {s,lv:q[0],mark:MARK[q[0]],q:q[1],ans:q[2][0],opts:shuffle(q[2]),ex:q[3],hint:q[4]}}
+function mkH(s,q){return {s,lv:"hd",mark:HARD_MARK,tag:"Soalan Tersukar · Bahagian C",q:q[0],ans:q[1][0],opts:shuffle(q[1]),ex:q[2],hint:q[3]}}
+function mkE(s,q){return {s,lv:"pp",mark:EXAM_MARK,tag:`${q[0]} · Soalan ${q[1]}`,q:q[2],ans:q[3][0],opts:shuffle(q[3]),ex:q[4],hint:q[5]}}
+function build(k){
+  if(k.startsWith("pp_")){const sb=SUBJ[k].s;return EXAM[sb].map(q=>mkE(sb,q))}
+  if(k.startsWith("hd_")){const sb=SUBJ[k].s;return HARD[sb].map(q=>mkH(sb,q))}
+  return [1,2,3].flatMap(l=>shuffle(BANK[k].filter(q=>q[0]===l)).slice(0,PICK[l])).map(q=>mk(k,q));
+}
+function countOf(k){return k.startsWith("pp_")?EXAM[SUBJ[k].s].length:k.startsWith("hd_")?HARD[SUBJ[k].s].length:QN}
+function renderHome(){
+  const card=k=>{
+    const b=best(k);
+    return `<button class="sub${k.startsWith("pp_")?" pp":""}${k.startsWith("hd_")?" hd":""}" style="background:${SUBJ[k].c};${SUBJ[k].acc?"--acc:"+SUBJ[k].acc:""}" onclick="start('${k}')"><div class="ic">${SUBJ[k].ic}</div><div class="nm">${SUBJ[k].sh||SUBJ[k].nm}</div><div class="ct">${countOf(k)} soalan</div>${PROG&&PROG.cur===k?`<div class="resume">⏸ Sambung ${PROG.i+(PROG.answered?1:0)}/${PROG.qs.length}</div>`:b?`<div class="best">Terbaik: ${b}%</div>`:""}</button>`};
+  const ks=Object.keys(SUBJ);
+  $("subs").innerHTML=ks.filter(k=>!k.includes("_")).map(card).join("");
+  $("subsHD").innerHTML=ks.filter(k=>k.startsWith("hd_")).map(card).join("");
+  $("subsPP").innerHTML=ks.filter(k=>k.startsWith("pp_")).map(card).join("");
+}
+function show(id){["home","quiz","result","certPage","login","admin","analisis"].forEach(s=>$(s).classList.toggle("hide",s!==id));window.scrollTo(0,0)}
+function goHome(){renderHome();show("home")}
+// ===== kemajuan kuiz (wajib siap) =====
+let PROG=null,picked=-1;
+function saveProg(){PROG={cur,fullSet,qs,i,earned,total,correct,wrong,answered,picked,name:$("sname").value.trim()};try{localStorage.setItem("kuizD5_prog",JSON.stringify(PROG))}catch(e){}}
+function clearProg(){PROG=null;try{localStorage.removeItem("kuizD5_prog")}catch(e){}}
+function loadProg(){try{const t=localStorage.getItem("kuizD5_prog");if(t)PROG=JSON.parse(t);if(PROG&&!SUBJ[PROG.cur])clearProg()}catch(e){PROG=null}}
+function remaining(){return PROG?PROG.qs.length-PROG.i-(PROG.answered?1:0):0}
+function modal(icon,title,text,btns){
+  $("mIcon").textContent=icon;$("mTitle").textContent=title;$("mText").innerHTML=text;
+  $("mBtns").innerHTML="";btns.forEach(([lbl,cls,fn])=>{const b=document.createElement("button");b.className="btn "+cls;b.innerHTML=lbl;b.onclick=()=>{closeModal();fn&&fn()};$("mBtns").appendChild(b)});
+  $("modal").classList.remove("hide");
+}
+function closeModal(){$("modal").classList.add("hide")}
+function askLeave(){
+  saveProg();const n=remaining();
+  modal("⏸️","Kuiz belum selesai!",`Anda masih ada <b>${n} soalan</b> yang belum dijawab. Sila siapkan semua soalan sebelum ke soalan yang seterusnya.<br><br>Kemajuan anda disimpan. Anda boleh sambung semula dari menu utama.`,
+    [["▶️ Teruskan Menjawab","next-c",null],["🏠 Ke Menu Utama","ghost",()=>{renderHome();show("home")}]]);
+  document.querySelector("#mBtns .next-c").style.cssText="background:var(--green);color:#fff";
+}
+function resume(){
+  const P=PROG;cur=P.cur;fullSet=P.fullSet;qs=P.qs;i=P.i;earned=P.earned;total=P.total;correct=P.correct;wrong=P.wrong;
+  if(!$("sname").value.trim())$("sname").value=P.name||"";
+  paint();show("quiz");renderQ();
+  if(P.answered&&P.picked>=0)showPick(P.picked);
+}
+function paint(){const c=SUBJ[cur].c;$("pill").textContent=SUBJ[cur].nm;$("pill").style.background=c;$("prog").style.background=c;$("next").style.background=c;$("retry").style.background=c}
+function start(k,list){
+  if(PROG){
+    if(!list&&k===PROG.cur){resume();return}
+    modal("📝","Siapkan kuiz dahulu!",`Anda masih ada kuiz <b>${SUBJ[PROG.cur].nm}</b> yang belum selesai (<b>${remaining()} soalan</b> belum dijawab). Sila siapkan semua soalan dahulu.`,
+      [["▶️ Sambung "+SUBJ[PROG.cur].nm,"next-c",resume],["Tutup","ghost",null]]);
+    document.querySelector("#mBtns .next-c").style.cssText="background:var(--green);color:#fff";
+    return;
+  }
+  const nm=$("sname").value.trim();
+  if(!nm){$("nerr").textContent="Sila tulis nama murid dahulu.";$("sname").focus();return}
+  $("nerr").textContent="";
+  cur=k;fullSet=!list;qs=shuffle(list||build(k));i=0;earned=0;correct=0;wrong=[];
+  total=qs.reduce((a,q)=>a+q.mark,0);
+  paint();show("quiz");renderQ();saveProg()}
+function startWrong(){start(cur,wrong.map(({pick,...x})=>({...x,opts:shuffle(x.opts)})))}
+function renderQ(){
+  answered=false;const q=qs[i];
+  $("qn").textContent=`Soalan ${i+1} / ${qs.length}`+"";
+  $("qtg").innerHTML=q.tag?`<span class="qtag">📌 ${q.tag}</span>`:"";
+  $("qt").innerHTML=q.q;$("sc").textContent=`Markah: ${earned}`;
+  $("prog").style.width=(i/qs.length*100)+"%";
+  $("opts").innerHTML=q.opts.map((o,j)=>`<button class="opt" onclick="pick(${j})"><b>${L[j]}</b><span>${o}</span></button>`).join("");
+  $("fb").className="fb";
+  $("hint").style.display="none";$("hint").innerHTML=q.hint?`💡 <b>Hint:</b> ${q.hint}`:"";$("hb").style.display=q.hint?"":"none";
+  $("next").classList.add("wait");$("next").textContent=i===qs.length-1?"Lihat Keputusan 🎉":"Soalan Seterusnya ▶";picked=-1;
+}
+function showHint(){$("hint").style.display="block";$("hb").style.display="none"}
+function pick(j){
+  if(answered)return;const q=qs[i],ok=q.opts[j]===q.ans;
+  if(ok){earned+=q.mark;correct++}else{wrong.push({...q,pick:q.opts[j]})}
+  showPick(j);saveProg();
+}
+function showPick(j){
+  answered=true;picked=j;const q=qs[i],btns=[...document.querySelectorAll(".opt")],ok=q.opts[j]===q.ans;
+  btns.forEach((b,k)=>{b.disabled=true;if(q.opts[k]===q.ans)b.classList.add("ok")});
+  if(!ok)btns[j].classList.add("no");
+  $("hb").style.display="none";
+  $("fb").className="fb "+(ok?"ok":"no");
+  $("fb").innerHTML=(ok?"✅ Betul! ":"❌ Salah. ")+q.ex;
+  $("sc").textContent=`Markah: ${earned}`;
+  $("next").classList.remove("wait");
+  $("next").scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+function nextQ(){
+  if(!answered){modal("✋","Soalan belum dijawab!","Sila siapkan soalan yang belum dijawab sebelum ke soalan yang seterusnya. Pilih satu jawapan: A, B, C atau D.",[["👍 Baik","next-c",null]]);document.querySelector("#mBtns .next-c").style.cssText="background:var(--yellow)";return}
+  i++;answered=false;picked=-1;
+  if(i<qs.length){renderQ();saveProg()}else{clearProg();finish()}
+}
+function gradeOf(p){return p>=80?["A","Cemerlang","#1fa463"]:p>=60?["B","Baik","#2f7de1"]:p>=40?["C","Memuaskan","#f0a020"]:["D","Perlu Bimbingan","#e5484d"]}
+function finish(){
+  const p=Math.round(earned/total*100),[g,gd,gc]=gradeOf(p);
+  if(fullSet)saveBest(cur,p);
+  last={name:$("sname").value.trim(),subj:SUBJ[cur].nm,cs:cur.startsWith("hd_")?`5 Soalan Tersukar — ${SUBJ[cur].sh} Darjah 5`:cur.startsWith("pp_")?`Soalan Peperiksaan Sebenar — ${SUBJ[cur].sh} Darjah 5`:`Kuiz ${SUBJ[cur].nm} — Akhlak, Tajwid dan Sirah Darjah 5`,p,g,gd,earned,total,date:new Date()};
+  $("pct").textContent=p+"%";$("pct").style.color=gc;
+  $("grd").textContent=`Gred ${g} · ${gd}`;$("grd").style.background=gc;
+  $("rdet").textContent=`Markah terkumpul: ${earned} / ${total} · ${correct} daripada ${qs.length} soalan dijawab dengan betul`;
+  const [e,m]=p>=80?["🏆","Cemerlang! Tahniah!"]:p>=CERT_MIN?["🌟","Syabas! Anda layak menerima sijil."]:p>=40?["👍","Hampir berjaya. Ulang kaji soalan yang salah dan cuba lagi."]:["💪","Jangan putus asa. Ulang kaji dan cuba lagi."];
+  $("emo").textContent=e;$("rmsg").textContent=m;
+  $("certArea").innerHTML=p>=CERT_MIN&&fullSet?`<div class="row"><button class="btn certbtn" onclick="showCert()">🏅 Lihat Sijil</button></div>`
+    :p>=CERT_MIN?`<div class="nocert">Sijil hanya diberi bagi set soalan penuh. Pilih "Cuba Lagi" untuk mendapatkan sijil.</div>`
+    :`<div class="nocert">Sijil diberi kepada murid yang mendapat sekurang-kurangnya ${CERT_MIN}%. Markah anda ${p}%. Teruskan usaha!</div>`;
+  $("retryWrong").style.display=wrong.length?"":"none";
+  $("rv").innerHTML=wrong.length?`<h3>📝 Semak Jawapan Salah (${wrong.length})</h3>`+wrong.map(w=>`<div class="ri">${w.tag?`<span class="qtag">📌 ${w.tag}</span><br>`:""}${w.q}<br><span class="y">✗ Jawapan anda: ${w.pick}</span><br><span class="a">✓ Jawapan betul: ${w.ans}</span><br><small>${w.ex}</small></div>`).join(""):"<h3 style='text-align:center'>Semua betul! MasyaAllah! 🎉</h3>";
+  show("result");
+}
+function showCert(){
+  const d=last.date.toLocaleDateString("ms-MY",{day:"numeric",month:"long",year:"numeric"});
+  $("cert").innerHTML=`<div class="b1"></div><div class="b2"></div><div class="b3"></div>
+  <div class="corner c1"></div><div class="corner c2"></div><div class="corner c3"></div><div class="corner c4"></div>
+  <div class="medal"><div><span>${last.g}</span><br><small>GRED</small></div></div>
+  <div class="inner">
+    <div class="bism">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+    <h2>SIJIL PENGHARGAAN</h2>
+    <div class="sub2">KUIZ DARJAH 5</div>
+    <div class="orn"></div>
+    <div class="txt">Dengan ini diperakui bahawa</div>
+    <div class="nm">${esc(last.name)}</div>
+    <div class="txt">telah berjaya menduduki</div>
+    <div class="subj">${last.cs}</div>
+    <div class="res">
+      <div><small>PERATUS</small><b>${last.p}%</b></div>
+      <div><small>GRED</small><b>${last.g}</b></div>
+      <div><small>TAHAP</small><b>${last.gd}</b></div>
+      <div><small>MARKAH</small><b>${last.earned}/${last.total}</b></div>
+    </div>
+    <div class="txt" style="margin-top:6px">Semoga ilmu yang dipelajari diberkati dan diamalkan.</div>
+    <div class="sign">
+      <div><hr>Tarikh: ${d}</div>
+      <div><hr>Tandatangan Guru / Muallim</div>
+    </div>
+  </div>`;
+  show("certPage");requestAnimationFrame(fitCert);
+}
+function fitCert(){const w=$("cert").parentElement,c=$("cert");if(!w||$("certPage").classList.contains("hide"))return;const sc=Math.min(1,w.clientWidth/1000);c.style.transform=`scale(${sc})`;w.style.height=(700*sc)+"px"}
+window.addEventListener("resize",fitCert);window.addEventListener("orientationchange",()=>setTimeout(fitCert,300));
+function loadH2C(){return window.html2canvas?Promise.resolve():new Promise((ok,no)=>{const sc=document.createElement("script");sc.src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js";sc.onload=ok;sc.onerror=no;document.head.appendChild(sc)})}
+async function saveCertPNG(){
+  const c=$("cert"),old=c.style.transform;
+  try{
+    await loadH2C();
+    if(document.fonts&&document.fonts.ready)await document.fonts.ready;
+    c.style.transform="none";
+    const cv=await html2canvas(c,{scale:2,backgroundColor:"#fffdf6",width:1000,height:700,windowWidth:1100});
+    c.style.transform=old;
+    const nm=(last.name||"murid").replace(/[^\w\- ]+/g,"").trim().replace(/\s+/g,"_")||"murid";
+    const file=`Sijil_${nm}.png`;
+    cv.toBlob(async b=>{
+      const f=new File([b],file,{type:"image/png"});
+      if(navigator.canShare&&navigator.canShare({files:[f]})){try{await navigator.share({files:[f],title:"Sijil Penghargaan"});return}catch(e){}}
+      const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=file;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1500);
+    },"image/png");
+  }catch(e){c.style.transform=old;alert("Gambar tidak dapat dijana (perlukan internet). Sila guna butang Cetak / PDF.")}
+}
+function printCert(){document.body.classList.add("printcert");window.print();setTimeout(()=>document.body.classList.remove("printcert"),500)}
+
+// ===== DASHBOARD GURU / MUALLIM =====
+const ADM={id:"admin",pw:"arsenal"};
+let admOn=false;
+function doLogin(){
+  if($("uid").value.trim()===ADM.id&&$("pwd").value===ADM.pw){admOn=true;$("err").textContent="";$("pwd").value="";showAdmin("akhlak")}
+  else $("err").textContent="ID atau kata laluan salah.";
+}
+function logout(){admOn=false;$("uid").value="";goHome()}
+const SEL=new Set();let TABIDS=[];
+const ORD=id=>{const [sec,sb,i]=id.split("|");return ({A:0,B:1,C:2})[sec]*1e6+KEYS.indexOf(sb)*1e4+(+i)};
+const sortIds=a=>a.sort((x,y)=>ORD(x)-ORD(y));
+function itemData(id){
+  const [sec,sb,i]=id.split("|");
+  if(sec==="A"){const q=BANK[sb][+i];return {head:`${SUBJ[sb].nm} · ${LVN[q[0]]} · ${MARK[q[0]]} markah`,q:q[1],ans:q[2][0],ex:q[3],hint:q[4]}}
+  if(sec==="C"){const q=HARD[sb][+i];return {head:`${SUBJ[sb].nm} · ⚫ Soalan Tersukar · ${HARD_MARK} markah`,q:q[0],ans:q[1][0],ex:q[2],hint:q[3]}}
+  const q=EXAM[sb][+i];return {head:`${SUBJ[sb].nm} · <span class="qtag">📌 ${q[0]} · Soalan ${q[1]}</span>`,q:q[2],ans:q[3][0],ex:q[4],hint:q[5]};
+}
+function akItem(id,num,forPrint){
+  const d=itemData(id),on=SEL.has(id);
+  return `<div class="ak${on&&!forPrint?" sel":""}" data-id="${id}"><div class="akh"><span class="no">${num}. ${d.head}</span>${forPrint?"":`<span class="akb"><button class="ico" title="Pilih untuk dicetak" onclick="togSel('${id}')">${on?"✅":"⬜"}</button><button class="ico" title="Cetak soalan ini sahaja" onclick="printIds(['${id}'])">🖨️</button></span>`}</div>${d.q}<div class="jw">✓ Jawapan: ${d.ans}</div><div class="pj">📖 Penjelasan: ${d.ex}</div>${d.hint?`<div class="hn">💡 Hint: ${d.hint}</div>`:""}</div>`;
+}
+function showAnalisis(k){
+  $("anTabs").innerHTML=KEYS.map(t=>`<button class="btn tab${t===k?" on":""}" onclick="showAnalisis('${t}')">${SUBJ[t].ic} ${SUBJ[t].nm}</button>`).join("");
+  $("anBody").innerHTML=ANALISIS[k];show("analisis");
+}
+function resetProg(){if(!PROG){modal("ℹ️","Tiada kuiz tergantung","Tiada kuiz murid yang belum selesai.",[["OK","ghost",null]]);return}modal("♻️","Set semula?",`Kuiz <b>${SUBJ[PROG.cur].nm}</b> milik <b>${esc(PROG.name||"murid")}</b> (${remaining()} soalan belum dijawab) akan dipadam.`,[["Ya, set semula","ghost",()=>{clearProg();renderHome()}],["Batal","ghost",null]])}
+function togSel(id){SEL.has(id)?SEL.delete(id):SEL.add(id);refreshSel()}
+function refreshSel(){
+  document.querySelectorAll("#akList .ak[data-id]").forEach(el=>{const on=SEL.has(el.dataset.id);el.classList.toggle("sel",on);const b=el.querySelector(".ico");if(b)b.textContent=on?"✅":"⬜"});
+  $("selc").textContent=SEL.size;
+}
+function selTab(on){TABIDS.forEach(id=>on?SEL.add(id):SEL.delete(id));refreshSel()}
+function printIds(ids){
+  if(!ids.length){alert("Sila pilih sekurang-kurangnya satu soalan untuk dicetak.");return}
+  const d=new Date().toLocaleDateString("ms-MY",{day:"numeric",month:"long",year:"numeric"});
+  $("printArea").innerHTML=`<h1>Skema Jawapan dan Penjelasan</h1><div class="pinfo">Kuiz Akhlak, Tajwid dan Sirah Darjah 5 · ${ids.length} soalan · Dicetak pada ${d}</div>`+ids.map((id,n)=>akItem(id,n+1,true)).join("");
+  document.body.classList.add("printsel");window.print();setTimeout(()=>document.body.classList.remove("printsel"),800);
+}
+function showAdmin(k){
+  if(!admOn)return show("login");
+  const all=KEYS.reduce((a,s)=>a+BANK[s].length,0),ne=KEYS.reduce((a,s)=>a+EXAM[s].length,0);
+  $("admInfo").innerHTML=`Bahagian A: bank ${all} soalan; setiap kuiz murid memilih 20 soalan secara rawak (8 senang, 5 sederhana, 7 sukar; Senang = 1, Sederhana = 2, Sukar = 3 markah). Bahagian B: ${ne} soalan peperiksaan sebenar (${EXAM_MARK} markah setiap soalan). Peratus = markah terkumpul ÷ jumlah markah × 100. Label aras hanya dipaparkan di dashboard ini. Sijil: ${CERT_MIN}% ke atas.`;
+  $("tabs").innerHTML=KEYS.map(t=>`<button class="btn tab${t===k?" on":""}" style="${t===k?"background:"+SUBJ[t].c:""}" onclick="showAdmin('${t}')">${SUBJ[t].ic} ${SUBJ[t].nm} (A)</button>`).join("")
+    +`<button class="btn tab${k==="pp"?" on":""}" style="${k==="pp"?"background:#1d2b4f":""}" onclick="showAdmin('pp')">📝 Bahagian B: Peperiksaan Sebenar</button>`
+    +`<button class="btn tab${k==="hd"?" on":""}" style="${k==="hd"?"background:#111":""}" onclick="showAdmin('hd')">⚫ Bahagian C: Tersukar</button>`;
+  if(k==="hd"){
+    TABIDS=[];
+    $("akList").innerHTML=`<div class="ak" style="background:#f4f8fe">Bahagian C mengandungi 5 soalan tersukar bagi setiap subjek (${HARD_MARK} markah setiap soalan).</div>`+
+    KEYS.map(s=>`<h3 class="lvh" style="color:${SUBJ[s].c}">${SUBJ[s].ic} ${SUBJ[s].nm} (${HARD[s].length} soalan)</h3>`+HARD[s].map((q,i)=>{const id=`C|${s}|${i}`;TABIDS.push(id);return akItem(id,i+1)}).join("")).join("");
+    refreshSel();show("admin");return;
+  }
+  TABIDS=[];let html="";
+  if(k==="pp"){
+    html=`<div class="ak" style="background:#f4f8fe">Bahagian B mengandungi ${ne} soalan objektif daripada kertas peperiksaan sebenar Darjah 5 Sekolah Agama Kerajaan Johor. Setiap soalan ditag dengan nama kertas dan nombor soalan asal.</div>`+
+    KEYS.map(s=>`<h3 class="lvh" style="color:${SUBJ[s].c}">${SUBJ[s].ic} ${SUBJ[s].nm} (${EXAM[s].length} soalan · ${EXAM[s].length*EXAM_MARK} markah)</h3>`+
+      EXAM[s].map((q,i)=>{const id=`B|${s}|${i}`;TABIDS.push(id);return akItem(id,i+1)}).join("")).join("");
+  }else{
+    html=[k].map(s=>{
+      let n=0;const tot=BANK[s].reduce((a,q)=>a+MARK[q[0]],0);
+      return `<h3 class="lvh" style="color:${SUBJ[s].c}">${SUBJ[s].ic} ${SUBJ[s].nm} (${BANK[s].length} soalan · ${tot} markah)</h3>`+[1,2,3].map(l=>
+        `<div class="lvh"><span class="lv lv${l}">${LVN[l]} · ${MARK[l]} markah setiap soalan</span></div>`+
+        BANK[s].map((q,i)=>[q,i]).filter(([q])=>q[0]===l).map(([q,i])=>{const id=`A|${s}|${i}`;TABIDS.push(id);return akItem(id,++n)}).join("")
+      ).join("");
+    }).join("");
+  }
+  $("akList").innerHTML=html;refreshSel();show("admin");
+}
+loadProg();renderHome();
+</script>
+</body>
+</html>
