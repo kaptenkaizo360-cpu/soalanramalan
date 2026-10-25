@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#5C94FC">
 <meta name="mobile-web-app-capable" content="yes">
-<title>Kuiz Akhlak, Tajwid dan Sirah Darjah 5</title>
+<title>Kuiz Darjah 5: Akhlak, Tajwid, Sirah &amp; Bahasa Arab</title>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@600;700;800;900&family=Amiri:wght@400;700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
 <style>
-:root{--red:#E60012;--blue:#049CD8;--yellow:#FBD000;--green:#43B047;--orange:#F58B2D;--purple:#8E4FD8;--pink:#FF6FB5;--sky:#5C94FC;--ink:#1b1b1b;--line:#1b1b1b;--muted:#4a4a4a;--card:#fff;--ok:#2e9e3a;--okbg:#dff7d9;--no:#E60012;--nobg:#ffe1e1;--akhlak:#E60012;--tajwid:#049CD8;--sirah:#43B047;--semua:#F58B2D;--cabaran:#8E4FD8;--l1:#43B047;--l2:#F58B2D;--l3:#E60012;--gold:#b8892b;--green-c:#0f5c3a;--sh:0 5px 0 var(--line)}
+:root{--red:#E60012;--blue:#049CD8;--yellow:#FBD000;--green:#43B047;--orange:#F58B2D;--purple:#8E4FD8;--pink:#FF6FB5;--sky:#5C94FC;--ink:#1b1b1b;--line:#1b1b1b;--muted:#4a4a4a;--card:#fff;--ok:#2e9e3a;--okbg:#dff7d9;--no:#E60012;--nobg:#ffe1e1;--akhlak:#E60012;--tajwid:#049CD8;--sirah:#43B047;--arab:#FF6FB5;--semua:#F58B2D;--cabaran:#8E4FD8;--l1:#43B047;--l2:#F58B2D;--l3:#E60012;--gold:#b8892b;--green-c:#0f5c3a;--sh:0 5px 0 var(--line)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{font-family:'Nunito',system-ui,sans-serif;color:var(--ink);min-height:100vh;padding:16px;padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right));padding-bottom:calc(70px + env(safe-area-inset-bottom));overflow-x:hidden;
@@ -148,6 +148,10 @@ footer{text-align:center;color:#fff;font-size:.88rem;margin-top:22px;font-weight
 .zwarn{background:#2a1a00;border:2px dashed var(--orange);border-radius:14px;padding:4px 14px 10px;margin-top:14px}
 .zwarn h4{color:var(--orange)!important}
 .znote{background:#1c1c1c;border-radius:12px;padding:10px 12px;color:#bbb;font-weight:700;font-size:.85rem;margin-top:16px;line-height:1.5}
+#subs{grid-template-columns:repeat(4,1fr)}
+@media (max-width:520px){#subs{grid-template-columns:repeat(2,1fr);gap:10px}}
+.pend{background:#fff;border:3px solid var(--line);border-radius:16px;padding:12px;margin:10px 0 4px;box-shadow:0 4px 0 var(--line);font-weight:800;display:flex;flex-direction:column;gap:8px}
+.pendbtn{color:#fff;text-align:left;text-shadow:0 1px 0 rgba(0,0,0,.35);font-size:.95rem}
 /* popup */
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:18px;z-index:50}
 .modal .box{background:#fff;border:4px solid var(--line);border-radius:20px;box-shadow:0 7px 0 var(--line);max-width:420px;width:100%;padding:20px 18px;text-align:center;animation:pop .3s}
@@ -235,7 +239,7 @@ footer{text-align:center;color:#fff;font-size:.88rem;margin-top:22px;font-weight
 
 <div id="home">
   <header>
-    <h1>⭐ <span class="c1">Kuiz</span> Akhlak, Tajwid<br>dan Sirah <span class="c1">Darjah 5</span> ⭐</h1>
+    <h1>⭐ <span class="c1">Kuiz</span> Akhlak, Tajwid,<br>Sirah &amp; Bahasa Arab <span class="c1">Darjah 5</span> ⭐</h1>
     <p>Jawab semua soalan dengan teliti. Dapat 70% ke atas, layak terima sijil! 🏅</p>
   </header>
   <div class="namebox">
@@ -243,6 +247,7 @@ footer{text-align:center;color:#fff;font-size:.88rem;margin-top:22px;font-weight
     <input id="sname" placeholder="Tulis nama penuh" autocomplete="off" maxlength="60">
     <div class="err" id="nerr"></div>
   </div>
+  <div id="pendBox"></div>
   <div class="sech"><span class="tagb">BAHAGIAN A</span> Latihan Berdasarkan Nota</div>
   <div class="grid" id="subs"></div>
   <div class="sech"><span class="tagb">BAHAGIAN B</span> Soalan Peperiksaan Sebenar <small>Sekolah Agama Kerajaan Johor</small></div>
@@ -773,10 +778,10 @@ for(const s of ["akhlak","tajwid","sirah"]){
   EXAM[s].forEach((q,i)=>q[5]=HINT_B[s][i]);
 }
  // markah mengikut aras
-const SUBJ={akhlak:{nm:"Akhlak",ic:"🤝",c:"var(--akhlak)"},tajwid:{nm:"Tajwid",ic:"📖",c:"var(--tajwid)"},sirah:{nm:"Sirah",ic:"🕌",c:"var(--sirah)"},
+const SUBJ={akhlak:{nm:"Akhlak",ic:"🤝",c:"var(--akhlak)"},tajwid:{nm:"Tajwid",ic:"📖",c:"var(--tajwid)"},sirah:{nm:"Sirah",ic:"🕌",c:"var(--sirah)"},arab:{nm:"Bahasa Arab",ic:"🔤",c:"var(--arab)"},
 pp_akhlak:{nm:"Akhlak (Peperiksaan)",sh:"Akhlak",ic:"🤝",c:"#c2410c",s:"akhlak"},pp_tajwid:{nm:"Tajwid (Peperiksaan)",sh:"Tajwid",ic:"📖",c:"#5b3fd6",s:"tajwid"},pp_sirah:{nm:"Sirah (Peperiksaan)",sh:"Sirah",ic:"🕌",c:"#0b7d99",s:"sirah"},
 hd_akhlak:{nm:"Akhlak (Tersukar)",sh:"Akhlak",ic:"🤝",c:"#111",acc:"#FF4D4D",s:"akhlak"},hd_tajwid:{nm:"Tajwid (Tersukar)",sh:"Tajwid",ic:"📖",c:"#111",acc:"#3EC1FF",s:"tajwid"},hd_sirah:{nm:"Sirah (Tersukar)",sh:"Sirah",ic:"🕌",c:"#111",acc:"#5BE36A",s:"sirah"}};
-const QN=20, PICK={1:8,2:5,3:7};
+const QN=20, PICK={1:8,2:5,3:7}, PICK_AR={1:25,2:17,3:8}; // Bahasa Arab: semua 50 soalan (nisbah 3:2:1)
 // ===== BAHAGIAN C: ZON CABARAN (5 soalan tersukar setiap subjek) =====
 // Format: [soalan, [jawapan betul, salah, salah, salah], penjelasan, hint]
 const HARD={
@@ -802,6 +807,66 @@ sirah:[
 ["Isi khutbah Haji Wada' menyatakan bahawa orang yang paling mulia di sisi Allah ialah yang paling bertakwa. Apakah pengajaran yang PALING TEPAT?",["Kita tidak boleh memandang rendah orang lain kerana warna kulit atau kedudukannya","Orang kaya lebih mulia daripada orang miskin","Kita hanya perlu berkawan dengan orang yang sama warna kulit","Kedudukan seseorang menentukan kemuliaannya"],"Kemuliaan di sisi Allah diukur dengan takwa, bukan warna kulit atau kedudukan. Jadi kita tidak boleh memandang rendah orang lain.","Ingat: kemuliaan diukur dengan TAKWA, jadi jangan pandang rendah orang lain kerana warna kulit atau kedudukan."]
 ]};
 const HARD_MARK=3;
+// ===== BAHASA ARAB TAHUN 5 (Buku Teks KSSR Semakan 2017, DBP 2020) — 50 soalan, semua tajuk =====
+// [aras, soalan, [betul, salah, salah, salah], penjelasan, hint]   25 senang : 17 sederhana : 8 sukar
+const ATAG={T:"Tamhid",U1:"Unit 1: Di Dapur",U2:"Unit 2: Alangkah Sedapnya Makanan!",U3:"Unit 3: Aktiviti Kokurikulum",U4:"Unit 4: Belas Kasihan Terhadap Haiwan",UA:"Ujian Akhir Buku Teks"};
+const tg=k=>`<span class="qtag">📘 ${ATAG[k]}</span><br>`;
+BANK.arab=[
+// ---------- SENANG (25) ----------
+[1,tg("T")+"Cikgu berkata: "+A("صَبَاحَ الخَيْرِ")+". Apakah jawapan yang betul?",[A("صَبَاحَ النُّورِ"),A("شُكْرًا"),A("مَعَ السَّلَامَةِ"),A("أَنَا آسِفٌ")],"Ucapan "+A("صَبَاحَ الخَيْرِ")+" (selamat pagi) dijawab dengan "+A("صَبَاحَ النُّورِ")+".","Ingat: صَبَاحَ الخَيْرِ dijawab صَبَاحَ النُّورِ."],
+[1,tg("T")+"Apakah maksud "+A("شُكْرًا")+"?",["Terima kasih","Maaf","Selamat pagi","Silakan duduk"],A("شُكْرًا")+" bermaksud terima kasih.","Ingat: شُكْرًا = TERIMA KASIH."],
+[1,tg("U1")+"Apakah maksud "+A("صَحْنٌ")+"?",["Pinggan","Cawan","Sudu","Garfu"],A("صَحْنٌ")+" bermaksud pinggan.","Ingat: صَحْنٌ = PINGGAN."],
+[1,tg("U1")+"Apakah maksud "+A("فِنْجَانٌ")+"?",["Cawan","Gelas","Pinggan","Periuk"],A("فِنْجَانٌ")+" bermaksud cawan. Gelas pula "+A("كُوبٌ")+".","Ingat: فِنْجَانٌ = CAWAN, كُوبٌ = gelas."],
+[1,tg("U1")+"Apakah maksud "+A("سِكِّينٌ")+"?",["Pisau","Garfu","Sudu","Senduk"],A("سِكِّينٌ")+" bermaksud pisau.","Ingat: سِكِّينٌ = PISAU."],
+[1,tg("U1")+"Apakah maksud "+A("ثَلَّاجَةٌ")+"?",["Peti ais","Ketuhar","Dapur","Cerek"],A("ثَلَّاجَةٌ")+" bermaksud peti ais.","Ingat: ثَلَّاجَةٌ = PETI AIS."],
+[1,tg("U1")+"Apakah maksud "+A("مَوْقِدٌ")+"?",["Dapur","Ketuhar","Peti ais","Kuali"],A("مَوْقِدٌ")+" bermaksud dapur (tempat memasak). Ketuhar pula "+A("فُرْنٌ")+".","Ingat: مَوْقِدٌ = DAPUR. فُرْنٌ = ketuhar."],
+[1,tg("U1")+"Apakah perkataan Arab bagi 'SUDU'?",[A("مِلْعَقَةٌ"),A("شَوْكَةٌ"),A("مِغْرَفَةٌ"),A("مِقْلَاةٌ")],"Sudu = "+A("مِلْعَقَةٌ")+". Garfu = "+A("شَوْكَةٌ")+", senduk = "+A("مِغْرَفَةٌ")+", kuali = "+A("مِقْلَاةٌ")+".","Ingat: مِلْعَقَةٌ = SUDU, شَوْكَةٌ = garfu, مِغْرَفَةٌ = senduk."],
+[1,tg("U2")+"Apakah maksud "+A("أَرُزٌّ")+"?",["Nasi","Roti","Mi","Kek"],A("أَرُزٌّ")+" bermaksud nasi.","Ingat: أَرُزٌّ = NASI, خُبْزٌ = roti."],
+[1,tg("U2")+"Apakah maksud "+A("حَلِيبٌ")+"?",["Susu","Teh","Kopi","Jus"],A("حَلِيبٌ")+" bermaksud susu.","Ingat: حَلِيبٌ = SUSU."],
+[1,tg("U2")+"Apakah maksud "+A("بُوظَةٌ")+"?",["Aiskrim","Kek","Kuih","Roti"],A("بُوظَةٌ")+" bermaksud aiskrim.","Ingat: بُوظَةٌ = AISKRIM."],
+[1,tg("U2")+"Apakah maksud "+A("خَضْرَاوَاتٌ")+"?",["Sayur-sayuran","Buah-buahan","Ikan","Kuih"],A("خَضْرَاوَاتٌ")+" bermaksud sayur-sayuran. Buah-buahan = "+A("فَوَاكِهُ")+".","Ingat: خَضْرَاوَاتٌ = SAYUR, فَوَاكِهُ = buah."],
+[1,tg("U2")+"Apakah perkataan Arab bagi 'KOPI'?",[A("قَهْوَةٌ"),A("شَايٌ"),A("عَصِيرٌ"),A("حَلِيبٌ")],"Kopi = "+A("قَهْوَةٌ")+". Teh = "+A("شَايٌ")+", jus = "+A("عَصِيرٌ")+", susu = "+A("حَلِيبٌ")+".","Ingat: قَهْوَةٌ = KOPI, شَايٌ = teh."],
+[1,tg("U3")+"Apakah maksud "+A("كُرَةُ القَدَمِ")+"?",["Bola sepak","Bola jaring","Bola baling","Badminton"],A("كُرَةُ القَدَمِ")+" bermaksud bola sepak ("+A("قَدَمٌ")+" = kaki).","Ingat: كُرَةُ القَدَمِ = BOLA SEPAK (bola + kaki)."],
+[1,tg("U3")+"Apakah maksud "+A("كُرَةُ الرِّيشَةِ")+"?",["Badminton","Bola tampar","Bola sepak","Bola jaring"],A("كُرَةُ الرِّيشَةِ")+" bermaksud badminton.","Ingat: كُرَةُ الرِّيشَةِ = BADMINTON (bola bulu)."],
+[1,tg("U3")+"Apakah maksud "+A("القَفْزُ العَالِي")+"?",["Lompat tinggi","Lompat jauh","Lumba lari","Lontar peluru"],A("القَفْزُ العَالِي")+" = lompat tinggi. "+A("القَفْزُ الطَّوِيلُ")+" = lompat jauh.","Ingat: العَالِي = TINGGI, الطَّوِيلُ = jauh/panjang."],
+[1,tg("U3")+"Apakah maksud "+A("فِرْقَةُ الكَشَّافَةِ")+"?",["Pengakap","Puteri Islam","Pandu Puteri","Kadet Remaja Sekolah"],A("فِرْقَةُ الكَشَّافَةِ")+" bermaksud Pengakap.","Ingat: فِرْقَةُ الكَشَّافَةِ = PENGAKAP."],
+[1,tg("U3")+"Apakah maksud "+A("نَادِي اللُّغَةِ")+"?",["Kelab Bahasa","Kelab Komputer","Pengakap","Persatuan Bulan Sabit Merah"],A("نَادِي")+" = kelab, "+A("اللُّغَةِ")+" = bahasa.","Ingat: نَادِي = KELAB, اللُّغَة = BAHASA."],
+[1,tg("U4")+"Apakah maksud "+A("فِيلٌ")+"?",["Gajah","Harimau","Singa","Beruang"],A("فِيلٌ")+" bermaksud gajah.","Ingat: فِيلٌ = GAJAH."],
+[1,tg("U4")+"Apakah maksud "+A("تِمْسَاحٌ")+"?",["Buaya","Ular","Monyet","Kuda"],A("تِمْسَاحٌ")+" bermaksud buaya.","Ingat: تِمْسَاحٌ = BUAYA."],
+[1,tg("U4")+"Apakah perkataan Arab bagi 'KUCING'?",[A("قِطٌّ"),A("كَلْبٌ"),A("بَطٌّ"),A("دِيكٌ")],"Kucing = "+A("قِطٌّ")+". Anjing = "+A("كَلْبٌ")+", itik = "+A("بَطٌّ")+", ayam jantan = "+A("دِيكٌ")+".","Ingat: قِطٌّ = KUCING, بَطٌّ = itik, دِيكٌ = ayam jantan."],
+[1,tg("U4")+"Apakah maksud "+A("حِصَانٌ")+"?",["Kuda","Kambing","Lembu","Arnab"],A("حِصَانٌ")+" bermaksud kuda. Kambing = "+A("مَاعِزٌ")+", lembu = "+A("بَقَرٌ")+".","Ingat: حِصَانٌ = KUDA, مَاعِزٌ = kambing."],
+[1,tg("U4")+"Apakah maksud "+A("ثُعْبَانٌ")+"?",["Ular","Buaya","Monyet","Singa"],A("ثُعْبَانٌ")+" bermaksud ular.","Ingat: ثُعْبَانٌ = ULAR."],
+[1,tg("U3")+"Rakan anda menang pertandingan. Apakah ucapan yang sesuai?",[A("مُبَارَكٌ"),A("لَا تَيْأَسْ"),A("هَنِيئًا مَرِيئًا"),A("صَبَاحَ النُّورِ")],A("مُبَارَكٌ")+" bermaksud tahniah.","Ingat: مُبَارَكٌ = TAHNIAH."],
+[1,tg("U3")+"Apakah maksud "+A("لَا تَيْأَسْ!")+"?",["Jangan putus asa!","Tahniah!","Tindakan hebat!","Terima kasih!"],A("لَا تَيْأَسْ")+" bermaksud jangan putus asa. Diucapkan kepada kawan yang kalah.","Ingat: لَا تَيْأَسْ = JANGAN PUTUS ASA."],
+// ---------- SEDERHANA (17) ----------
+[2,tg("T")+"Cikgu bertanya: "+A("كَيْفَ حَالُكُمْ؟")+" Apakah jawapan yang betul?",[A("نَحْنُ بِخَيْرٍ."),A("صَبَاحَ النُّورِ."),A("أَنَا مِنَ المَطْعَمِ."),A("وَصَلْنَا إِلَى الصَّفْحَةِ السَّادِسَةِ.")],A("كَيْفَ حَالُكُمْ؟")+" = Apa khabar kamu semua? Jawapan: "+A("نَحْنُ بِخَيْرٍ")+" (Kami baik).","Ingat: كَيْفَ حَالُكُمْ؟ = APA KHABAR? Jawab: نَحْنُ بِخَيْرٍ (kami baik)."],
+[2,tg("U1")+A("مَا شَكْلُ الثَّلَّاجَةِ؟")+" Pilih jawapan yang betul.",[A("شَكْلُ الثَّلَّاجَةِ مُسْتَطِيلٌ."),A("شَكْلُ الثَّلَّاجَةِ دَائِرِيٌّ."),A("شَكْلُ الثَّلَّاجَةِ بَيْضَاوِيٌّ."),A("أَضَعُ الفَوَاكِهَ فِي الثَّلَّاجَةِ.")],"Peti ais berbentuk segi empat tepat = "+A("مُسْتَطِيلٌ")+". Pilihan terakhir tidak menjawab soalan 'apakah bentuk'.","Ingat: مُسْتَطِيلٌ = segi empat TEPAT, مُرَبَّعٌ = segi empat sama, دَائِرِيٌّ = bulat, بَيْضَاوِيٌّ = bujur."],
+[2,tg("U1")+"Lengkapkan ayat: ____ "+A("مِقْلَاةٌ."),[A("هٰذِهِ"),A("هٰذَا"),A("ذٰلِكَ"),A("أَنَا")],A("مِقْلَاةٌ")+" berakhir dengan "+A("ة")+" (perempuan), maka guna "+A("هٰذِهِ")+". Buku: "+A("هٰذِهِ مِقْلَاةٌ."),"Ingat: perkataan yang berakhir dengan ة guna هٰذِهِ. Perkataan tanpa ة guna هٰذَا."],
+[2,tg("U1")+"Perkataan manakah yang sesuai digunakan dengan "+A("ذٰلِكَ")+"?",[A("قِدْرٌ"),A("ثَلَّاجَةٌ"),A("مِقْلَاةٌ"),A("مِلْعَقَةٌ")],A("ذٰلِكَ")+" (itu) untuk perkataan lelaki tanpa "+A("ة")+". Buku: "+A("ذٰلِكَ قِدْرٌ.")+" Perkataan dengan "+A("ة")+" guna "+A("تِلْكَ")+".","Ingat: ذٰلِكَ untuk perkataan TANPA ة. تِلْكَ untuk perkataan dengan ة."],
+[2,tg("U1")+"Ahmad ditanya: "+A("أَيْنَ تَضَعُ الفَوَاكِهَ؟")+" Apakah jawapan yang betul?",[A("أَضَعُ الفَوَاكِهَ فِي الثَّلَّاجَةِ."),A("أَنَا أَطْبُخُ الدَّجَاجَ."),A("شَكْلُ الفَوَاكِهِ دَائِرِيٌّ."),A("أَنَا أُنَظِّفُ الفِنْجَانَ.")],A("أَيْنَ")+" = di mana. "+A("أَيْنَ تَضَعُ ...؟")+" = Di manakah kamu letak ...? Jawapan: "+A("أَضَعُ ... فِي الثَّلَّاجَةِ")+".","Ingat: أَيْنَ = DI MANA. Jawapan mesti sebut TEMPAT (فِي الثَّلَّاجَةِ)."],
+[2,tg("U1")+"Ibu berkata kepada Fatimah: "+A("سَلَامَتَكِ يَا بِنْتِي.")+" Apakah maksud "+A("سَلَامَتَكِ")+"?",["Jaga keselamatan kamu","Bagus kamu","Hebat","Terima kasih"],A("سَلَامَتَكَ / سَلَامَتَكِ")+" bermaksud jaga keselamatan kamu. "+A("أَحْسَنْتَ")+" = bagus kamu, "+A("عَظِيمٌ")+" = hebat.","Ingat: سَلَامَتَكَ = JAGA KESELAMATAN KAMU."],
+[2,tg("U2")+"Apakah maksud "+A("مَا أَلَذَّ اللَّحْمَ!")+"?",["Alangkah sedapnya daging!","Alangkah manisnya daging!","Saya memasak daging.","Saya membeli daging."],A("مَا أَلَذَّ ...!")+" = alangkah sedapnya ...! Manakala "+A("مَا أَحْلَى ...!")+" = alangkah manisnya ...!","Ingat: مَا أَلَذَّ = alangkah SEDAPNYA. مَا أَحْلَى = alangkah manisnya."],
+[2,tg("U2")+"Ucapan yang bermaksud 'Selamat menjamu selera' ialah...",[A("هَنِيئًا مَرِيئًا"),A("لَا تَيْأَسْ"),A("سَلَامَتَكَ"),A("مُبَارَكٌ")],A("هَنِيئًا مَرِيئًا")+" = selamat menjamu selera.","Ingat: هَنِيئًا مَرِيئًا = SELAMAT MENJAMU SELERA."],
+[2,tg("U2")+"Antara berikut, yang manakah termasuk dalam kumpulan "+A("البُرُوتِينَاتُ")+" (protein)?",[A("دَجَاجٌ"),A("أَرُزٌّ"),A("خُبْزٌ"),A("كَعْكٌ")],"Dalam buku teks, "+A("دَجَاجٌ")+" dan "+A("لَحْمٌ")+" ialah protein. Nasi, roti dan kek ialah karbohidrat.","Ingat: ayam (دَجَاجٌ) dan daging (لَحْمٌ) = PROTEIN. Nasi, roti, kek = karbohidrat."],
+[2,tg("U2")+"Apakah maksud soalan "+A("مَاذَا تُفَضِّلِينَ؟")+"?",["Apakah yang kamu pilih?","Apakah yang kamu beli?","Apakah yang kamu jual?","Apakah yang kamu minum?"],A("تُفَضِّلِينَ")+" = kamu (perempuan) pilih/gemari. Jawapannya: "+A("أَنَا أُفَضِّلُ ...")+".","Ingat: تُفَضِّلُ / تُفَضِّلِينَ = PILIH. تَشْتَرِي = beli, تَبِيعُ = jual."],
+[2,tg("U2")+"Baca petikan "+A("بَرْنَامَجُ الدَّعْمِ الغِذَائِيِّ")+":"+ST(A("يَأْكُلُ التَّلَامِيذُ الأَرُزَّ وَالدَّجَاجَ وَالفَوَاكِهَ وَالخَضْرَاوَاتِ."),A("يَشْرَبُ التَّلَامِيذُ المَاءَ وَالحَلِيبَ."))+"Apakah yang DIMINUM oleh murid?",["Air dan susu","Kopi dan teh","Jus dan susu","Air dan jus"],A("يَشْرَبُ")+" = minum. Murid minum "+A("المَاءَ")+" (air) dan "+A("الحَلِيبَ")+" (susu).","Ingat: يَشْرَبُ = MINUM. مَاءٌ = air, حَلِيبٌ = susu."],
+[2,tg("U3")+"Ahmad ditanya: "+A("مَاذَا تَشْتَرِكُ؟")+" Apakah jawapan yang betul?",[A("أَشْتَرِكُ فِي فِرْقَةِ الكَشَّافَةِ."),A("أَنَا أَلْعَبُ كُرَةَ القَدَمِ."),A("أَنَا أُشَاهِدُ الحِصَانَ."),A("أَنَا أُرَبِّي البَطَّ.")],A("مَاذَا تَشْتَرِكُ؟")+" = Apakah yang kamu sertai? Jawapan: "+A("أَشْتَرِكُ فِي ...")+".","Ingat: تَشْتَرِكُ = kamu SERTAI. Jawab dengan أَشْتَرِكُ فِي ..."],
+[2,tg("U3")+"Soalan: "+A("هَلْ تَفُوزُ فِي مُبَارَاةِ كُرَةِ اليَدِ؟")+" Apakah jawapan yang tepat?",[A("نَعَمْ، أَفُوزُ فِي مُبَارَاةِ كُرَةِ اليَدِ."),A("نَعَمْ، أَلْعَبُ كُرَةَ القَدَمِ."),A("نَعَمْ، أُشَاهِدُ الطَّائِرَ."),A("نَعَمْ، أَشْتَرِكُ فِي نَادِي اللُّغَةِ.")],A("هَلْ تَفُوزُ ...؟")+" = Adakah kamu berjaya ...? Jawapan mesti guna "+A("أَفُوزُ")+" dan sukan yang sama.","Ingat: تَفُوزُ = BERJAYA/MENANG. Jawab dengan أَفُوزُ dan sukan yang sama."],
+[2,tg("U3")+"Apakah maksud "+A("العَقْلُ السَّلِيمُ فِي الجِسْمِ السَّلِيمِ")+"?",["Akal yang cerdas daripada badan yang sihat","Saya bermain di padang","Jangan putus asa","Tindakan hebat"],"Ungkapan ini ada dalam dialog bersukan: "+A("العَقْلُ")+" = akal, "+A("الجِسْمِ")+" = badan, "+A("السَّلِيمِ")+" = sihat.","Ingat: العَقْلُ = AKAL, الجِسْمُ = BADAN, السَّلِيمُ = SIHAT."],
+[2,tg("U4")+"Antara berikut, yang manakah "+A("حَيَوَانٌ أَلِيفٌ")+" (haiwan jinak)?",[A("مَاعِزٌ"),A("نَمِرٌ"),A("أَسَدٌ"),A("تِمْسَاحٌ")],"Buku: "+A("المَاعِزُ حَيَوَانٌ أَلِيفٌ.")+" Harimau, singa dan buaya ialah "+A("مُفْتَرِسٌ")+" (pemangsa).","Ingat: أَلِيفٌ = JINAK. مَاعِزٌ (kambing) jinak. Harimau, singa, buaya = pemangsa."],
+[2,tg("U4")+"Antara berikut, yang manakah "+A("حَيَوَانٌ مُفْتَرِسٌ")+" (haiwan pemangsa)?",[A("ثُعْبَانٌ"),A("أَرْنَبٌ"),A("حِصَانٌ"),A("بَقَرٌ")],"Nasyid Unit 4: "+A("الثُّعْبَانُ حَيَوَانٌ مُفْتَرِسٌ.")+" Arnab, kuda dan lembu ialah haiwan jinak.","Ingat: مُفْتَرِسٌ = PEMANGSA. ثُعْبَانٌ (ular) ialah pemangsa."],
+[2,tg("U4")+"Apakah maksud "+A("الفِيلُ يَعِيشُ فِي الغَابَةِ.")+"?",["Gajah hidup di dalam hutan.","Gajah ialah haiwan kecil.","Saya memelihara gajah.","Gajah hidup di dalam sangkar."],A("يَعِيشُ")+" = hidup, "+A("فِي الغَابَةِ")+" = di dalam hutan. "+A("القَفَصِ")+" = sangkar, "+A("الحَظِيرَةِ")+" = kandang.","Ingat: يَعِيشُ = HIDUP, الغَابَةُ = HUTAN."],
+// ---------- SUKAR (8) ----------
+[3,tg("UA")+"Susun perkataan berikut menjadi ayat yang betul:"+ST(A("الكُوبِ – أَنَا – العَصِيرَ – أَسْكُبُ – فِي")),[A("أَنَا أَسْكُبُ العَصِيرَ فِي الكُوبِ."),A("أَنَا الكُوبِ أَسْكُبُ فِي العَصِيرَ."),A("العَصِيرَ أَنَا فِي أَسْكُبُ الكُوبِ."),A("أَسْكُبُ الكُوبِ أَنَا العَصِيرَ فِي.")],"Saya (أَنَا) + menuang (أَسْكُبُ) + jus (العَصِيرَ) + ke dalam gelas (فِي الكُوبِ).","Ingat susunan: SIAPA → BUAT APA → APA → DI MANA."],
+[3,tg("UA")+"Susun perkataan berikut menjadi ayat yang betul:"+ST(A("المِقْلَاةَ – المَوْقِدِ – عَلَى – أَضَعُ")),[A("أَضَعُ المِقْلَاةَ عَلَى المَوْقِدِ."),A("أَضَعُ المَوْقِدِ عَلَى المِقْلَاةَ."),A("المِقْلَاةَ أَضَعُ المَوْقِدِ عَلَى."),A("عَلَى أَضَعُ المِقْلَاةَ المَوْقِدِ.")],"Maksud: Saya meletakkan kuali di atas dapur. Kuali yang diletakkan di atas dapur, bukan sebaliknya.","Ingat: أَضَعُ (saya letak) → المِقْلَاةَ (kuali) → عَلَى (di atas) → المَوْقِدِ (dapur)."],
+[3,tg("UA")+"Susun perkataan berikut menjadi soalan yang betul:"+ST(A("تُحِبُّ – الدُّبَّ؟ – هَلْ")),[A("هَلْ تُحِبُّ الدُّبَّ؟"),A("تُحِبُّ هَلْ الدُّبَّ؟"),A("الدُّبَّ هَلْ تُحِبُّ؟"),A("هَلْ الدُّبَّ تُحِبُّ؟")],"Soalan bermula dengan "+A("هَلْ")+" (adakah), kemudian kata kerja "+A("تُحِبُّ")+" (kamu suka), dan akhir sekali "+A("الدُّبَّ")+" (beruang). Maksud: Adakah kamu suka beruang?","Ingat: soalan هَلْ SENTIASA di HADAPAN, kemudian kata kerja, kemudian benda."],
+[3,tg("UA")+"Susun perkataan berikut menjadi ayat yang betul:"+ST(A("أَفُوزُ – فِي – مُبَارَاةِ – لَا – الرِّيشَةِ – كُرَةِ")),[A("لَا أَفُوزُ فِي مُبَارَاةِ كُرَةِ الرِّيشَةِ."),A("أَفُوزُ لَا فِي كُرَةِ مُبَارَاةِ الرِّيشَةِ."),A("لَا فِي أَفُوزُ مُبَارَاةِ الرِّيشَةِ كُرَةِ."),A("فِي مُبَارَاةِ لَا أَفُوزُ كُرَةِ الرِّيشَةِ.")],A("لَا")+" diletakkan sebelum kata kerja "+A("أَفُوزُ")+". Maksud: Saya tidak berjaya dalam perlawanan badminton.","Ingat: لَا (tidak) → أَفُوزُ (berjaya) → فِي مُبَارَاةِ (dalam perlawanan) → كُرَةِ الرِّيشَةِ (badminton)."],
+[3,tg("UA")+"Fatimah sedang memasak. Lengkapkan soalan: "+A("مَاذَا")+" ____ "+A("يَا فَاطِمَةُ؟"),[A("تَطْبُخِينَ"),A("تَطْبُخُ"),A("أَطْبُخُ"),A("نَطْبُخُ")],"Fatimah ialah perempuan, jadi soalan guna "+A("تَطْبُخِينَ")+". "+A("تَطْبُخُ")+" untuk lelaki, "+A("أَطْبُخُ")+" = saya memasak, "+A("نَطْبُخُ")+" = kami memasak.","Ingat: bertanya kepada PEREMPUAN → kata kerja berakhir dengan ـِينَ (تَطْبُخِينَ)."],
+[3,tg("UA")+"Seorang budak memberi makan itik dan ayam jantan. Pilih perkataan yang sesuai: "+A("أَنَا أُرَبِّي")+" ____ "+A("وَالدِّيكَ."),[A("البَطَّ"),A("الجَرْيِ"),A("المُبَارَاةَ"),A("المَكَرُونَةَ")],A("أُرَبِّي")+" = saya memelihara. Haiwan yang dipelihara bersama ayam jantan ialah itik ("+A("البَطَّ")+"). Pilihan lain bukan haiwan.","Ingat: أُرَبِّي = saya MEMELIHARA. Pilih HAIWAN: بَطٌّ = itik."],
+[3,tg("U4")+"Baca teka-teki daripada drama "+A("الدِّيكُ وَالبَطُّ")+":"+ST(A("هٰذَا حَيَوَانٌ مُفْتَرِسٌ وَصَوْتُهُ زَئِيرٌ، وَهُوَ مَلِكُ الغَابَةِ."))+"Apakah jawapannya?",[A("أَسَدٌ"),A("فِيلٌ"),A("أَرْنَبٌ"),A("مَاعِزٌ")],"Haiwan pemangsa yang mengaum dan digelar 'raja hutan' ("+A("مَلِكُ الغَابَةِ")+") ialah singa ("+A("أَسَدٌ")+").","Ingat: مُفْتَرِسٌ = pemangsa, مَلِكُ الغَابَةِ = RAJA HUTAN."],
+[3,tg("U1")+"Baca petikan "+A("الزِّيَارَةُ إِلَى بَيْتِ جَدَّتِي")+":"+ST(A("سَاعَدْنَا جَدَّتِي فِي تَرْتِيبِ البَيْتِ."),A("تَنَاوَلْنَا الغَدَاءَ مَعَ جَدَّتِي."),A("نَظَّفْنَا الصَّحْنَ وَالكُوبَ وَالمِلْعَقَةَ وَالشَّوْكَةَ."))+"Apakah yang DIBERSIHKAN oleh murid?",["Pinggan, gelas, sudu dan garfu","Periuk, kuali, senduk dan pisau","Cawan, cerek, sudu dan pisau","Peti ais, ketuhar, dapur dan cerek"],A("نَظَّفْنَا")+" = kami membersihkan: "+A("الصَّحْنَ")+" (pinggan), "+A("الكُوبَ")+" (gelas), "+A("المِلْعَقَةَ")+" (sudu), "+A("الشَّوْكَةَ")+" (garfu).","Ingat: نَظَّفْنَا = kami BERSIHKAN. صَحْنٌ = pinggan, كُوبٌ = gelas, مِلْعَقَةٌ = sudu, شَوْكَةٌ = garfu."]
+];
+
 
 // ===== ANALISIS KERTAS PEPERIKSAAN =====
 const ANALISIS={
@@ -885,26 +950,36 @@ function mkE(s,q){return {s,lv:"pp",mark:EXAM_MARK,tag:`${q[0]} · Soalan ${q[1]
 function build(k){
   if(k.startsWith("pp_")){const sb=SUBJ[k].s;return EXAM[sb].map(q=>mkE(sb,q))}
   if(k.startsWith("hd_")){const sb=SUBJ[k].s;return HARD[sb].map(q=>mkH(sb,q))}
-  return [1,2,3].flatMap(l=>shuffle(BANK[k].filter(q=>q[0]===l)).slice(0,PICK[l])).map(q=>mk(k,q));
+  const pk=k==="arab"?PICK_AR:PICK;
+  return [1,2,3].flatMap(l=>shuffle(BANK[k].filter(q=>q[0]===l)).slice(0,pk[l])).map(q=>mk(k,q));
 }
-function countOf(k){return k.startsWith("pp_")?EXAM[SUBJ[k].s].length:k.startsWith("hd_")?HARD[SUBJ[k].s].length:QN}
+function countOf(k){if(k==="arab")return BANK.arab.length;return k.startsWith("pp_")?EXAM[SUBJ[k].s].length:k.startsWith("hd_")?HARD[SUBJ[k].s].length:QN}
 function renderHome(){
   const card=k=>{
     const b=best(k);
-    return `<button class="sub${k.startsWith("pp_")?" pp":""}${k.startsWith("hd_")?" hd":""}" style="background:${SUBJ[k].c};${SUBJ[k].acc?"--acc:"+SUBJ[k].acc:""}" onclick="start('${k}')"><div class="ic">${SUBJ[k].ic}</div><div class="nm">${SUBJ[k].sh||SUBJ[k].nm}</div><div class="ct">${countOf(k)} soalan</div>${PROG&&PROG.cur===k?`<div class="resume">⏸ Sambung ${PROG.i+(PROG.answered?1:0)}/${PROG.qs.length}</div>`:b?`<div class="best">Terbaik: ${b}%</div>`:""}</button>`};
+    return `<button class="sub${k.startsWith("pp_")?" pp":""}${k.startsWith("hd_")?" hd":""}" style="background:${SUBJ[k].c};${SUBJ[k].acc?"--acc:"+SUBJ[k].acc:""}" onclick="start('${k}')"><div class="ic">${SUBJ[k].ic}</div><div class="nm">${SUBJ[k].sh||SUBJ[k].nm}</div><div class="ct">${countOf(k)} soalan</div>${PROGS[k]?`<div class="resume">⏸ Sambung ${PROGS[k].i+(PROGS[k].answered?1:0)}/${PROGS[k].qs.length}</div>`:b?`<div class="best">Terbaik: ${b}%</div>`:""}</button>`};
   const ks=Object.keys(SUBJ);
   $("subs").innerHTML=ks.filter(k=>!k.includes("_")).map(card).join("");
   $("subsHD").innerHTML=ks.filter(k=>k.startsWith("hd_")).map(card).join("");
   $("subsPP").innerHTML=ks.filter(k=>k.startsWith("pp_")).map(card).join("");
+  const pk=pendingKeys();
+  $("pendBox").innerHTML=pk.length?`<div class="pend"><b>📝 Kuiz belum siap (wajib disiapkan):</b>${pk.map(k=>`<button class="btn pendbtn" style="background:${SUBJ[k].c}" onclick="resume('${k}')">${SUBJ[k].ic} ${SUBJ[k].nm} · baki ${remaining(k)} soalan ▶</button>`).join("")}</div>`:"";
 }
 function show(id){["home","quiz","result","certPage","login","admin","analisis"].forEach(s=>$(s).classList.toggle("hide",s!==id));window.scrollTo(0,0)}
 function goHome(){renderHome();show("home")}
 // ===== kemajuan kuiz (wajib siap) =====
-let PROG=null,picked=-1;
-function saveProg(){PROG={cur,fullSet,qs,i,earned,total,correct,wrong,answered,picked,name:$("sname").value.trim()};try{localStorage.setItem("kuizD5_prog",JSON.stringify(PROG))}catch(e){}}
-function clearProg(){PROG=null;try{localStorage.removeItem("kuizD5_prog")}catch(e){}}
-function loadProg(){try{const t=localStorage.getItem("kuizD5_prog");if(t)PROG=JSON.parse(t);if(PROG&&!SUBJ[PROG.cur])clearProg()}catch(e){PROG=null}}
-function remaining(){return PROG?PROG.qs.length-PROG.i-(PROG.answered?1:0):0}
+let PROGS={},picked=-1;
+function persist(){try{localStorage.setItem("kuizD5_progs",JSON.stringify(PROGS))}catch(e){}}
+function saveProg(){PROGS[cur]={cur,fullSet,qs,i,earned,total,correct,wrong,answered,picked,name:$("sname").value.trim()};persist()}
+function clearProg(k){delete PROGS[k===undefined?cur:k];persist()}
+function loadProg(){
+  try{const t=localStorage.getItem("kuizD5_progs");if(t)PROGS=JSON.parse(t)||{};
+    const old=localStorage.getItem("kuizD5_prog");if(old){const o=JSON.parse(old);if(o&&o.cur&&!PROGS[o.cur])PROGS[o.cur]=o;localStorage.removeItem("kuizD5_prog")}
+  }catch(e){PROGS={}}
+  for(const k in PROGS)if(!SUBJ[k]||!PROGS[k]||!PROGS[k].qs)delete PROGS[k];persist();
+}
+function remaining(k){const P=PROGS[k===undefined?cur:k];return P?P.qs.length-P.i-(P.answered?1:0):0}
+function pendingKeys(){return Object.keys(PROGS)}
 function modal(icon,title,text,btns){
   $("mIcon").textContent=icon;$("mTitle").textContent=title;$("mText").innerHTML=text;
   $("mBtns").innerHTML="";btns.forEach(([lbl,cls,fn])=>{const b=document.createElement("button");b.className="btn "+cls;b.innerHTML=lbl;b.onclick=()=>{closeModal();fn&&fn()};$("mBtns").appendChild(b)});
@@ -913,25 +988,19 @@ function modal(icon,title,text,btns){
 function closeModal(){$("modal").classList.add("hide")}
 function askLeave(){
   saveProg();const n=remaining();
-  modal("⏸️","Kuiz belum selesai!",`Anda masih ada <b>${n} soalan</b> yang belum dijawab. Sila siapkan semua soalan sebelum ke soalan yang seterusnya.<br><br>Kemajuan anda disimpan. Anda boleh sambung semula dari menu utama.`,
+  modal("⏸️","Kuiz belum selesai!",`Anda masih ada <b>${n} soalan ${SUBJ[cur].nm}</b> yang belum dijawab.<br><br>Anda <b>boleh menjawab subjek lain dahulu</b>. Kemajuan anda disimpan, tetapi anda <b>WAJIB kembali</b> dan menyiapkan semua soalan ini.`,
     [["▶️ Teruskan Menjawab","next-c",null],["🏠 Ke Menu Utama","ghost",()=>{renderHome();show("home")}]]);
   document.querySelector("#mBtns .next-c").style.cssText="background:var(--green);color:#fff";
 }
-function resume(){
-  const P=PROG;cur=P.cur;fullSet=P.fullSet;qs=P.qs;i=P.i;earned=P.earned;total=P.total;correct=P.correct;wrong=P.wrong;
+function resume(k){
+  const P=PROGS[k];cur=P.cur;fullSet=P.fullSet;qs=P.qs;i=P.i;earned=P.earned;total=P.total;correct=P.correct;wrong=P.wrong;
   if(!$("sname").value.trim())$("sname").value=P.name||"";
   paint();show("quiz");renderQ();
   if(P.answered&&P.picked>=0)showPick(P.picked);
 }
 function paint(){const c=SUBJ[cur].c;$("pill").textContent=SUBJ[cur].nm;$("pill").style.background=c;$("prog").style.background=c;$("next").style.background=c;$("retry").style.background=c}
 function start(k,list){
-  if(PROG){
-    if(!list&&k===PROG.cur){resume();return}
-    modal("📝","Siapkan kuiz dahulu!",`Anda masih ada kuiz <b>${SUBJ[PROG.cur].nm}</b> yang belum selesai (<b>${remaining()} soalan</b> belum dijawab). Sila siapkan semua soalan dahulu.`,
-      [["▶️ Sambung "+SUBJ[PROG.cur].nm,"next-c",resume],["Tutup","ghost",null]]);
-    document.querySelector("#mBtns .next-c").style.cssText="background:var(--green);color:#fff";
-    return;
-  }
+  if(!list&&PROGS[k]){resume(k);return}
   const nm=$("sname").value.trim();
   if(!nm){$("nerr").textContent="Sila tulis nama murid dahulu.";$("sname").focus();return}
   $("nerr").textContent="";
@@ -970,13 +1039,13 @@ function showPick(j){
 function nextQ(){
   if(!answered){modal("✋","Soalan belum dijawab!","Sila siapkan soalan yang belum dijawab sebelum ke soalan yang seterusnya. Pilih satu jawapan: A, B, C atau D.",[["👍 Baik","next-c",null]]);document.querySelector("#mBtns .next-c").style.cssText="background:var(--yellow)";return}
   i++;answered=false;picked=-1;
-  if(i<qs.length){renderQ();saveProg()}else{clearProg();finish()}
+  if(i<qs.length){renderQ();saveProg()}else{clearProg(cur);finish()}
 }
 function gradeOf(p){return p>=80?["A","Cemerlang","#1fa463"]:p>=60?["B","Baik","#2f7de1"]:p>=40?["C","Memuaskan","#f0a020"]:["D","Perlu Bimbingan","#e5484d"]}
 function finish(){
   const p=Math.round(earned/total*100),[g,gd,gc]=gradeOf(p);
   if(fullSet)saveBest(cur,p);
-  last={name:$("sname").value.trim(),subj:SUBJ[cur].nm,cs:cur.startsWith("hd_")?`5 Soalan Tersukar — ${SUBJ[cur].sh} Darjah 5`:cur.startsWith("pp_")?`Soalan Peperiksaan Sebenar — ${SUBJ[cur].sh} Darjah 5`:`Kuiz ${SUBJ[cur].nm} — Akhlak, Tajwid dan Sirah Darjah 5`,p,g,gd,earned,total,date:new Date()};
+  last={name:$("sname").value.trim(),subj:SUBJ[cur].nm,cs:cur.startsWith("hd_")?`5 Soalan Tersukar — ${SUBJ[cur].sh} Darjah 5`:cur.startsWith("pp_")?`Soalan Peperiksaan Sebenar — ${SUBJ[cur].sh} Darjah 5`:`Kuiz ${SUBJ[cur].nm} Darjah 5`,p,g,gd,earned,total,date:new Date()};
   $("pct").textContent=p+"%";$("pct").style.color=gc;
   $("grd").textContent=`Gred ${g} · ${gd}`;$("grd").style.background=gc;
   $("rdet").textContent=`Markah terkumpul: ${earned} / ${total} · ${correct} daripada ${qs.length} soalan dijawab dengan betul`;
@@ -1048,7 +1117,7 @@ function doLogin(){
 }
 function logout(){admOn=false;$("uid").value="";goHome()}
 const SEL=new Set();let TABIDS=[];
-const ORD=id=>{const [sec,sb,i]=id.split("|");return ({A:0,B:1,C:2})[sec]*1e6+KEYS.indexOf(sb)*1e4+(+i)};
+const ORD=id=>{const [sec,sb,i]=id.split("|");return ({A:0,B:1,C:2})[sec]*1e6+[...KEYS,"arab"].indexOf(sb)*1e4+(+i)};
 const sortIds=a=>a.sort((x,y)=>ORD(x)-ORD(y));
 function itemData(id){
   const [sec,sb,i]=id.split("|");
@@ -1064,7 +1133,7 @@ function showAnalisis(k){
   $("anTabs").innerHTML=KEYS.map(t=>`<button class="btn tab${t===k?" on":""}" onclick="showAnalisis('${t}')">${SUBJ[t].ic} ${SUBJ[t].nm}</button>`).join("");
   $("anBody").innerHTML=ANALISIS[k];show("analisis");
 }
-function resetProg(){if(!PROG){modal("ℹ️","Tiada kuiz tergantung","Tiada kuiz murid yang belum selesai.",[["OK","ghost",null]]);return}modal("♻️","Set semula?",`Kuiz <b>${SUBJ[PROG.cur].nm}</b> milik <b>${esc(PROG.name||"murid")}</b> (${remaining()} soalan belum dijawab) akan dipadam.`,[["Ya, set semula","ghost",()=>{clearProg();renderHome()}],["Batal","ghost",null]])}
+function resetProg(){const pk=pendingKeys();if(!pk.length){modal("ℹ️","Tiada kuiz tergantung","Tiada kuiz murid yang belum selesai.",[["OK","ghost",null]]);return}modal("♻️","Set semula?",`Kuiz yang belum selesai berikut akan dipadam:<br>${pk.map(k=>`• <b>${SUBJ[k].nm}</b> (${esc(PROGS[k].name||"murid")}, baki ${remaining(k)} soalan)`).join("<br>")}`,[["Ya, set semula","ghost",()=>{PROGS={};persist();renderHome()}],["Batal","ghost",null]])}
 function togSel(id){SEL.has(id)?SEL.delete(id):SEL.add(id);refreshSel()}
 function refreshSel(){
   document.querySelectorAll("#akList .ak[data-id]").forEach(el=>{const on=SEL.has(el.dataset.id);el.classList.toggle("sel",on);const b=el.querySelector(".ico");if(b)b.textContent=on?"✅":"⬜"});
@@ -1074,14 +1143,14 @@ function selTab(on){TABIDS.forEach(id=>on?SEL.add(id):SEL.delete(id));refreshSel
 function printIds(ids){
   if(!ids.length){alert("Sila pilih sekurang-kurangnya satu soalan untuk dicetak.");return}
   const d=new Date().toLocaleDateString("ms-MY",{day:"numeric",month:"long",year:"numeric"});
-  $("printArea").innerHTML=`<h1>Skema Jawapan dan Penjelasan</h1><div class="pinfo">Kuiz Akhlak, Tajwid dan Sirah Darjah 5 · ${ids.length} soalan · Dicetak pada ${d}</div>`+ids.map((id,n)=>akItem(id,n+1,true)).join("");
+  $("printArea").innerHTML=`<h1>Skema Jawapan dan Penjelasan</h1><div class="pinfo">Kuiz Darjah 5 · ${ids.length} soalan · Dicetak pada ${d}</div>`+ids.map((id,n)=>akItem(id,n+1,true)).join("");
   document.body.classList.add("printsel");window.print();setTimeout(()=>document.body.classList.remove("printsel"),800);
 }
 function showAdmin(k){
   if(!admOn)return show("login");
   const all=KEYS.reduce((a,s)=>a+BANK[s].length,0),ne=KEYS.reduce((a,s)=>a+EXAM[s].length,0);
-  $("admInfo").innerHTML=`Bahagian A: bank ${all} soalan; setiap kuiz murid memilih 20 soalan secara rawak (8 senang, 5 sederhana, 7 sukar; Senang = 1, Sederhana = 2, Sukar = 3 markah). Bahagian B: ${ne} soalan peperiksaan sebenar (${EXAM_MARK} markah setiap soalan). Peratus = markah terkumpul ÷ jumlah markah × 100. Label aras hanya dipaparkan di dashboard ini. Sijil: ${CERT_MIN}% ke atas.`;
-  $("tabs").innerHTML=KEYS.map(t=>`<button class="btn tab${t===k?" on":""}" style="${t===k?"background:"+SUBJ[t].c:""}" onclick="showAdmin('${t}')">${SUBJ[t].ic} ${SUBJ[t].nm} (A)</button>`).join("")
+  $("admInfo").innerHTML=`Bahagian A: bank ${all} soalan + Bahasa Arab ${BANK.arab.length} soalan (semua 50 soalan dijawab: 25 senang : 17 sederhana : 8 sukar, meliputi Tamhid, Unit 1–4 dan Ujian Akhir buku teks); setiap kuiz murid memilih 20 soalan secara rawak (8 senang, 5 sederhana, 7 sukar; Senang = 1, Sederhana = 2, Sukar = 3 markah). Bahagian B: ${ne} soalan peperiksaan sebenar (${EXAM_MARK} markah setiap soalan). Peratus = markah terkumpul ÷ jumlah markah × 100. Label aras hanya dipaparkan di dashboard ini. Sijil: ${CERT_MIN}% ke atas.`;
+  $("tabs").innerHTML=[...KEYS,"arab"].map(t=>`<button class="btn tab${t===k?" on":""}" style="${t===k?"background:"+SUBJ[t].c:""}" onclick="showAdmin('${t}')">${SUBJ[t].ic} ${SUBJ[t].nm} (A)</button>`).join("")
     +`<button class="btn tab${k==="pp"?" on":""}" style="${k==="pp"?"background:#1d2b4f":""}" onclick="showAdmin('pp')">📝 Bahagian B: Peperiksaan Sebenar</button>`
     +`<button class="btn tab${k==="hd"?" on":""}" style="${k==="hd"?"background:#111":""}" onclick="showAdmin('hd')">⚫ Bahagian C: Tersukar</button>`;
   if(k==="hd"){
